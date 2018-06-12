@@ -1,0 +1,1 @@
+2016-03-24 15:41:28: Added course to Flex: NUTD1101_2016_S1_DE

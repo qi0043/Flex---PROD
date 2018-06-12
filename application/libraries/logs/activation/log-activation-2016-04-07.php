@@ -1,0 +1,1 @@
+2016-04-07 11:22:31: Added course to Flex: EDUC1224_2016_NS1_SG

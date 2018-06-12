@@ -1,0 +1,2 @@
+2017-03-28 11:33:01: Added course to Flex: BUSN9260_2017_NS2_DE
+2017-03-28 11:33:01: Added course to Flex: BUSN9260_2017_NS1_DE

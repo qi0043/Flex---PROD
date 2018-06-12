@@ -1,0 +1,3 @@
+2016-07-02 23:09:11: Added course to Flex: DSRS1216_2016_S2_DE_2
+2016-07-02 23:09:11: Added course to Flex: DSRS1216_2016_S2_DE
+2016-07-02 23:09:12: Added course to Flex: DSRS1216_2016_S2

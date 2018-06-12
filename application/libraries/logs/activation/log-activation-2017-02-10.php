@@ -1,0 +1,7 @@
+2017-02-10 11:08:13: Added course to Flex: SPTH2907_2017_S1
+2017-02-10 11:59:17: Added course to Flex: MMED9104_2017_S1_DE
+2017-02-10 15:25:24: Added course to Flex: SCME2003_2017_S1
+2017-02-10 15:45:42: Added course to Flex: EDUC4726_2017_NS1
+2017-02-10 15:50:05: Added course to Flex: EDUC9311_2017_NS1
+2017-02-10 15:51:51: Added course to Flex: SCME8009_2017_S1
+2017-02-10 16:06:58: Added course to Flex: EDUC9825_2017_NS1

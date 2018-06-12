@@ -1,0 +1,3 @@
+2015-12-02 11:44:18: Added course to Flex: ARCH3107_2016_S1
+2015-12-02 17:11:51: Added course to Flex: POAD9028_2016_S1
+2015-12-02 17:11:51: Added course to Flex: POAD9028_2016_NS1_DE

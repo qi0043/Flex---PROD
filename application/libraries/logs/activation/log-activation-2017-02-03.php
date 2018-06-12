@@ -1,0 +1,8 @@
+2017-02-03 10:47:19: Added course to Flex: NURS9017_2017_S1_DE
+2017-02-03 11:11:52: Added course to Flex: EDUC3531B_2017_S1
+2017-02-03 11:29:23: Added course to Flex: EDUC4729G_2017_NS1_5
+2017-02-03 13:18:07: Added course to Flex: DRAM2102_2017_NS1
+2017-02-03 14:48:39: Added course to Flex: EDUC4729B_2017_NS1_3
+2017-02-03 16:42:27: Added course to Flex: EDUC4723_2017_NS1
+2017-02-03 16:53:13: Added course to Flex: EDUC9301_2017_NS1
+2017-02-03 16:54:25: Added course to Flex: EDUC9303_2017_NS1

@@ -1,0 +1,2 @@
+2016-01-27 15:44:41: Error: it was not possible to open the API call URL: 0 could not connect to the host "flex.flinders.edu.au"
+2016-01-27 15:44:41: Rollover Failed with user: brad0221, from: MMED8103_2015_HY1_DA to MMED8103_2016_HY1_DA, index: 48, reading link: https://flex.flinders.edu.au/items/7671c8ed-0421-4bf6-a455-573e0359b89d/1/?.vi=file&attachment.uuid=a0a70bfc-49a9-4447-9e37-b90defcf838d

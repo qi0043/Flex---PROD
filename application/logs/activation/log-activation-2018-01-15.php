@@ -1,0 +1,7 @@
+2018-01-15 09:23:43: Added course to Flex: NURS2004_2018_NS1_RV
+2018-01-15 09:23:44: Added course to Flex: NURS2004_2018_NS1_2
+2018-01-15 09:23:44: Added course to Flex: NURS2004_2018_NS1
+2018-01-15 09:32:08: Added course to Flex: LLAW3274_2018_NS1_YK
+2018-01-15 09:50:27: Added course to Flex: EDUC4726_2018_NS1
+2018-01-15 09:51:07: Added course to Flex: EDUC9311_2018_NS1
+2018-01-15 15:00:29: Added course to Flex: DISH8007_2018_S1_DE

@@ -1,0 +1,3 @@
+2016-03-08 09:45:59: Added course to Flex: SOAD1008_2016_S1
+2016-03-08 13:47:00: Added course to Flex: NURS8731_2016_S1_DE
+2016-03-08 13:47:00: Added course to Flex: NURS8731_2016_S1

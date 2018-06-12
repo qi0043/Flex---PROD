@@ -1,0 +1,8 @@
+2017-06-28 08:12:46: Added course to Flex: SOAD1006_2017_S2
+2017-06-28 08:23:57: Added course to Flex: PHCA2510_2017_S2
+2017-06-28 10:00:21: Added course to Flex: SOCI2004_2017_S2
+2017-06-28 10:24:56: Added course to Flex: COMS2000_2017_S2
+2017-06-28 10:35:51: Added course to Flex: HLTH3105_2017_S2
+2017-06-28 12:12:16: Added course to Flex: ENGL7714_2017_S2
+2017-06-28 14:22:04: Added course to Flex: SOCI2022_2017_S2
+2017-06-28 17:19:29: Added course to Flex: EDUC9720_2017_NS2_DE

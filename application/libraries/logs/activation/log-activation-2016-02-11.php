@@ -1,0 +1,9 @@
+2016-02-11 11:14:06: Added course to Flex: POAD8130_2016_NS1_DE
+2016-02-11 11:50:19: Added course to Flex: PALL8437_2016_S1_DP
+2016-02-11 11:50:19: Added course to Flex: PALL8437_2016_S1_DE
+2016-02-11 14:09:51: Added course to Flex: LLAW1213_2016_S1
+2016-02-11 14:13:40: Added course to Flex: HLTH3102_2016_S1_DE
+2016-02-11 14:13:40: Added course to Flex: HLTH3102_2016_S1
+2016-02-11 15:01:57: Added course to Flex: CRIM3302_2016_S1
+2016-02-11 16:28:46: Added course to Flex: CRIM2204_2016_S1
+2016-02-11 16:36:04: Added course to Flex: MIDW9009_2016_S1_FLC

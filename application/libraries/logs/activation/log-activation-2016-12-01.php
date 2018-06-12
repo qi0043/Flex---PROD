@@ -1,0 +1,3 @@
+2016-12-01 10:52:26: Added course to Flex: HACM9300_2017_S2_DE
+2016-12-01 10:52:26: Added course to Flex: HACM9300_2017_S2_ADL
+2016-12-01 10:52:27: Added course to Flex: HACM9300_2017_NS1_SG

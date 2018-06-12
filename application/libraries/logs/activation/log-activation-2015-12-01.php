@@ -1,0 +1,4 @@
+2015-12-01 10:14:11: Added course to Flex: EDUC2420_2016_NS2
+2015-12-01 15:06:06: Added course to Flex: EDUC9400_2016_NS2
+2015-12-01 15:22:40: Added course to Flex: PHYT8004_2016_NS1_DP
+2015-12-01 16:13:46: Added course to Flex: NURS2010_2016_NS1

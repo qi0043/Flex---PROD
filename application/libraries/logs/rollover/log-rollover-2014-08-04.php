@@ -1,0 +1,2 @@
+2014-08-04 12:35:55: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Activation would put you in violation of statutory copyright law. Please contact Kylie Jarrett <a href="mailto:kylie.jarrett@flinders.edu.au">kylie.jarrett@flinders.edu.au</a> for assistance.)
+2014-08-04 12:35:55: Rollover Failed with user: perr0123, from: EDUC9608_2013_NS2 to EDUC9608_2014_NS2, index: 20, reading link: https://flex.flinders.edu.au/items/bc0f68b5-fcea-4468-91f8-d25d4654d237/1/?.vi=file&attachment.uuid=20a56fdc-bc99-44ba-8a10-033b4d88621f

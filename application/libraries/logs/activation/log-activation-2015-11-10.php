@@ -1,0 +1,3 @@
+2015-11-10 07:38:02: Added course to Flex: BIOL2722_2016_S2
+2015-11-10 09:54:00: Added course to Flex: MMED8204_2016_HY1_DA
+2015-11-10 09:54:00: Added course to Flex: MMED8204_2016_HY1

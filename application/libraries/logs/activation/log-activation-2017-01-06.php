@@ -1,0 +1,6 @@
+2017-01-06 10:17:00: Added course to Flex: ENGL2143_2017_S1
+2017-01-06 10:18:40: Added course to Flex: CREA1021_2017_S1
+2017-01-06 15:01:45: Added course to Flex: INTR3104_2017_NS1_DE
+2017-01-06 15:01:45: Added course to Flex: INTR3104_2017_NS1
+2017-01-06 15:18:00: Added course to Flex: DVST8010_2017_S1_DE
+2017-01-06 15:18:00: Added course to Flex: DVST8010_2017_S1

@@ -1,0 +1,4 @@
+2016-05-11 08:49:25: Added course to Flex: NURS3004_2016_NS2_RV
+2016-05-11 08:49:25: Added course to Flex: NURS3004_2016_NS2_3
+2016-05-11 08:49:25: Added course to Flex: NURS3004_2016_NS2_2
+2016-05-11 08:49:25: Added course to Flex: NURS3004_2016_NS2

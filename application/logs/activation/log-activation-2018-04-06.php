@@ -1,0 +1,3 @@
+2018-04-06 11:28:14: Added course to Flex: POAD9028_2018_NS1_DE
+2018-04-06 14:28:11: Added course to Flex: REHB8031_2018_S1_DE
+2018-04-06 14:28:11: Added course to Flex: REHB8031_2018_S1

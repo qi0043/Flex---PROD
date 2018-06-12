@@ -1,0 +1,20 @@
+2015-07-03 10:29:53: Added course to Flex: DSRS2237_2015_S2_DE
+2015-07-03 10:29:53: Added course to Flex: DSRS2237_2015_S2
+2015-07-03 10:30:11: Error: REMOTE_USER not set.
+2015-07-03 10:30:11: Error: REMOTE_USER not set.
+2015-07-03 23:16:01: Error: REMOTE_USER not set.
+2015-07-03 23:16:06: Error: REMOTE_USER not set.
+2015-07-03 23:16:07: Error: REMOTE_USER not set.
+2015-07-03 23:16:07: Error: REMOTE_USER not set.
+2015-07-03 23:16:07: Error: REMOTE_USER not set.
+2015-07-03 23:16:07: Error: REMOTE_USER not set.
+2015-07-03 23:16:07: Error: REMOTE_USER not set.
+2015-07-03 23:16:07: Error: REMOTE_USER not set.
+2015-07-03 23:16:07: Error: REMOTE_USER not set.
+2015-07-03 23:16:07: Error: REMOTE_USER not set.
+2015-07-03 23:16:07: Error: REMOTE_USER not set.
+2015-07-03 23:16:07: Error: REMOTE_USER not set.
+2015-07-03 23:16:07: Error: REMOTE_USER not set.
+2015-07-03 23:16:07: Error: REMOTE_USER not set.
+2015-07-03 23:16:08: Error: REMOTE_USER not set.
+2015-07-03 23:16:08: Error: REMOTE_USER not set.

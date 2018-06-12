@@ -1,0 +1,24 @@
+2015-07-23 10:43:22: Added course to Flex: EDUC9824_2015_S2_DE
+2015-07-23 10:54:36: Added course to Flex: NURS3006_2015_NS2_RV
+2015-07-23 10:54:37: Added course to Flex: NURS3006_2015_NS2_2
+2015-07-23 10:54:37: Added course to Flex: NURS3006_2015_NS2
+2015-07-23 10:54:51: Added course to Flex: NURS3006A_2015_NS2_RV
+2015-07-23 10:54:51: Added course to Flex: NURS3006A_2015_NS2_2
+2015-07-23 10:54:51: Added course to Flex: NURS3006A_2015_NS2
+2015-07-23 12:08:28: Added course to Flex: HLPE2542_2015_S2
+2015-07-23 12:08:44: Error: REMOTE_USER not set.
+2015-07-23 13:45:24: Added course to Flex: EDUC9707_2015_S2
+2015-07-23 13:45:30: Error: REMOTE_USER not set.
+2015-07-23 15:56:14: Added course to Flex: SOAD1008_2015_S2
+2015-07-23 15:56:16: Added course to Flex: EDUC9765_2015_S2
+2015-07-23 15:56:20: Error: REMOTE_USER not set.
+2015-07-23 16:17:57: Added course to Flex: SOAD4006_2015_S2
+2015-07-23 16:18:02: Error: REMOTE_USER not set.
+2015-07-23 20:58:43: Added course to Flex: ENVS3732_2015_S2
+2015-07-23 20:58:57: Error: REMOTE_USER not set.
+2015-07-23 21:18:40: Added course to Flex: EDUC9706_2015_S2
+2015-07-23 21:18:58: Error: REMOTE_USER not set.
+2015-07-23 22:02:40: Added course to Flex: REHB8019_2015_S2_DP
+2015-07-23 22:02:40: Added course to Flex: REHB8019_2015_S2_DE
+2015-07-23 22:04:30: Error: REMOTE_USER not set.
+2015-07-23 22:04:30: Error: REMOTE_USER not set.

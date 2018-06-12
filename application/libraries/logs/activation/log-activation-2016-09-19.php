@@ -1,0 +1,4 @@
+2016-09-19 11:42:35: Added course to Flex: DSRS4110_2016_S2_DE
+2016-09-19 11:42:35: Added course to Flex: DSRS4110_2016_S2
+2016-09-19 12:08:22: Added course to Flex: DRAM3103_2016_NS2
+2016-09-19 12:13:54: Added course to Flex: DRAM7105_2016_S2

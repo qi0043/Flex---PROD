@@ -1,0 +1,2 @@
+2017-03-03 09:40:57: Added course to Flex: VISA1001_2017_S1
+2017-03-03 16:48:37: Added course to Flex: NURS8752_2017_S2_DE

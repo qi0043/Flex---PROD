@@ -1,0 +1,1 @@
+2017-05-18 13:55:16: Added course to Flex: LLIR9510_2017_NS1_DE

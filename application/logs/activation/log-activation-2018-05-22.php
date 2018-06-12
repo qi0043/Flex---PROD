@@ -1,0 +1,9 @@
+2018-05-22 09:08:40: Added course to Flex: OCCT3003_2018_S2
+2018-05-22 09:26:41: Added course to Flex: HLPE2531_2018_S2
+2018-05-22 13:27:14: Added course to Flex: SPTH9220_2018_NS2
+2018-05-22 14:14:41: Added course to Flex: EDUC9553_2018_S2_DE
+2018-05-22 14:17:13: Added course to Flex: EDUC9512_2018_S2_DE
+2018-05-22 14:17:13: Added course to Flex: EDUC9512_2018_NS2
+2018-05-22 15:11:06: Added course to Flex: NURS8823_2018_S2_DE
+2018-05-22 16:46:50: Added course to Flex: PHCA9514_2018_NS1_DE
+2018-05-22 16:46:50: Added course to Flex: PHCA9514_2018_NS1

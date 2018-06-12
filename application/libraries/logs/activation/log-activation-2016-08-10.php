@@ -1,0 +1,9 @@
+2016-08-10 09:47:29: Added course to Flex: DISH8005_2016_S2_DE
+2016-08-10 10:22:41: Added course to Flex: WMST3013_2016_S2_DE
+2016-08-10 10:22:41: Added course to Flex: WMST3013_2016_S2
+2016-08-10 10:22:52: Added course to Flex: WMST8008_2016_S2_DE
+2016-08-10 10:22:52: Added course to Flex: WMST8008_2016_S2
+2016-08-10 13:42:58: Added course to Flex: WMST2017_2016_S2_DE
+2016-08-10 13:42:58: Added course to Flex: WMST2017_2016_S2
+2016-08-10 13:43:06: Added course to Flex: WMST8003_2016_S2_DE
+2016-08-10 13:43:06: Added course to Flex: WMST8003_2016_S2

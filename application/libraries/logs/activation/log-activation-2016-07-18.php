@@ -1,0 +1,19 @@
+2016-07-18 08:19:11: Added course to Flex: POAD8007_2016_S2_ADL
+2016-07-18 08:19:11: Added course to Flex: POAD8007_2016_S2
+2016-07-18 08:19:11: Added course to Flex: POAD8007_2016_NS2_DE
+2016-07-18 08:35:29: Added course to Flex: ARCH3109_2016_S2
+2016-07-18 09:04:39: Added course to Flex: EDUC1222_2016_S2
+2016-07-18 10:35:07: Added course to Flex: EDUC9512_2016_S2_DE
+2016-07-18 10:35:08: Added course to Flex: EDUC9512_2016_NS2
+2016-07-18 11:10:48: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
+2016-07-18 12:14:16: Added course to Flex: SOCI3052_2016_S2
+2016-07-18 12:57:41: Added course to Flex: EDUC1120_2016_S2
+2016-07-18 13:29:59: Added course to Flex: ENVS3732_2016_S2
+2016-07-18 13:36:19: Added course to Flex: ENVS8732_2016_S2
+2016-07-18 14:10:35: Added course to Flex: EDUC8602_2016_NS2_TJ
+2016-07-18 14:10:36: Added course to Flex: EDUC8602_2016_NS1_TJ
+2016-07-18 14:11:03: Added course to Flex: LEGL3112_2016_S2
+2016-07-18 14:16:16: Added course to Flex: DVST9032_2016_S2_DE
+2016-07-18 14:16:16: Added course to Flex: DVST9032_2016_S2_ADL
+2016-07-18 14:31:21: Added course to Flex: VISA3404_2016_S2
+2016-07-18 14:50:14: Added course to Flex: POAD9119_2016_S2

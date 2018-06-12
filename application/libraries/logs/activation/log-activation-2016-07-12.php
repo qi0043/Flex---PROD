@@ -1,0 +1,14 @@
+2016-07-12 09:35:12: Added course to Flex: LLAW2223_2016_S2
+2016-07-12 09:52:52: Added course to Flex: EDUC3629_2016_NS2_SG
+2016-07-12 09:53:38: Added course to Flex: EDUC4731_2016_NS2_SG
+2016-07-12 09:54:35: Added course to Flex: EDUC8601_2016_NS2_TJ
+2016-07-12 09:56:19: Added course to Flex: EDUC9610_2016_NS2_TJ
+2016-07-12 10:05:26: Added course to Flex: LLAW2222_2016_S2
+2016-07-12 12:21:55: Added course to Flex: CRIM3303_2016_S2
+2016-07-12 13:59:39: Added course to Flex: EDUC9221_2016_NS2
+2016-07-12 14:18:22: Added course to Flex: POAD9030_2016_S2_DE
+2016-07-12 14:18:22: Added course to Flex: POAD9030_2016_NS2
+2016-07-12 15:09:11: Added course to Flex: POLI2002_2016_S2_DE
+2016-07-12 15:09:11: Added course to Flex: POLI2002_2016_S2
+2016-07-12 15:19:06: Added course to Flex: EDUC9404_2016_S2
+2016-07-12 16:35:44: Added course to Flex: LLAW1212_2016_S2

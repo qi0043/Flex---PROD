@@ -1,0 +1,11 @@
+2016-02-09 11:16:09: Added course to Flex: SOCI3048_2016_S1
+2016-02-09 13:53:45: Added course to Flex: NURS9126_2016_S2_FLC
+2016-02-09 13:53:45: Added course to Flex: NURS9126_2016_S2
+2016-02-09 13:53:45: Added course to Flex: NURS9126_2016_S1_FLC
+2016-02-09 13:53:45: Added course to Flex: NURS9126_2016_S1
+2016-02-09 14:06:12: Added course to Flex: SOAD9107_2016_S2_DE
+2016-02-09 14:06:12: Added course to Flex: SOAD9107_2016_S2
+2016-02-09 14:06:12: Added course to Flex: SOAD9107_2016_S1_DE
+2016-02-09 14:06:12: Added course to Flex: SOAD9107_2016_S1
+2016-02-09 14:26:43: Added course to Flex: NURS9028_2016_S2_FLC
+2016-02-09 14:26:43: Added course to Flex: NURS9028_2016_S1_FLC

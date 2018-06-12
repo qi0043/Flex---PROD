@@ -1,0 +1,4 @@
+2018-04-24 08:26:43: Added course to Flex: EDUC9704_2018_S1_DE
+2018-04-24 08:26:43: Added course to Flex: EDUC9704_2018_S1
+2018-04-24 14:10:45: Added course to Flex: AGES1012_2018_NS2_DE
+2018-04-24 14:10:45: Added course to Flex: AGES1012_2018_NS1_DE

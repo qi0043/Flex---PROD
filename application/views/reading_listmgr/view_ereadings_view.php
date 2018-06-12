@@ -1,0 +1,330 @@
+<?php
+
+include 'header.php';
+#include 'view_ereading_nav.php';
+
+if($ereadings === false)
+    $readings_count = 0;
+else
+    $readings_count = count($ereadings);
+
+if($rollover_today_readings === false)
+    $rollover_readings_count = 0;
+else
+    $rollover_readings_count = count($rollover_today_readings);
+
+#$count = $readings_count; 
+#$toavail_count = count($to_avails);
+#if($readings_count>0)
+{
+$access_from = $avail_info['access_from'];
+$access_from = substr($access_from, 0, strpos($access_from, ' '));
+$access_to = $avail_info['access_to'];
+$access_to = substr($access_to, 0, strpos($access_to, ' '));
+}
+?>
+
+<!--<script src="<?php echo base_url() . 'resource/listmgr/';?>js/ereadings.js" type="text/javascript"></script>-->
+<div class="page-header" style="background-color:#EEE">
+  <div class="container" >
+    <div class="row">
+      <div class="col-md-12"> <br />
+        <h1 id="view_er_step_titile">Step 2: View eReadings list</h1>
+        <br />
+      </div>
+    </div>
+  <div id="view_er_nav" class="row ">
+      <div role="navigation"> 
+        <!-- For current step display: btn btn-success disabled AND >> before the next step  --> 
+        <!-- For previous step display: btn btn-success AND tick before the next step  --> 
+        <!-- For following steps display: btn btn-default AND >> before the next step  -->
+        <div id="view_er_step1">
+          <div class="col-md-2"> <a href="view_er_chktopic.html?topic_code=<?php echo $from_topic_code;?>&view_type=ereading" class="btn btn-success btn-block" tabindex="100">1. <span class="hidden-md">Select list</span><span class="visible-md-inline">Select list</span></a> </div>
+          <div class="col-md-1"> 
+            <!--<p class="text-center lead hidden-xs hidden-sm" > >> </p>-->
+            <p class="text-success lead hidden-xs hidden-sm" style="color:#5cb85c;"><span class="glyphicon glyphicon-ok"></span></p>
+          </div>
+        </div>
+        <div id="view_er_step2">
+          <div class="col-md-2"> <a href="" class="btn btn-success disabled btn-block" tabindex="100">2. <span class="hidden-md">View list</span><span class="visible-md-inline">eReadings</span></a> </div>
+          <div class="col-md-1">
+            <p class="text-center lead hidden-xs hidden-sm" >  </p>
+            <!--<p class="text-success lead hidden-xs hidden-sm" style="color:#5cb85c;"><span class="glyphicon glyphicon-ok"></span></p>--> 
+          </div>
+        </div>
+        
+      </div>
+  </div>
+ </div>
+ </div>
+<br>
+
+<script type="text/javascript"> 
+  $(function() {
+    //$( "button" ).button();
+    $("#closebutton").click(function(){
+        if(confirm("Are you sure you want to close the window?") === false)
+            return;
+        window.open('', '_self', '');
+        window.close();});
+    //$("#submit_request_btn").click(function(){$('#create_request_form').submit();});
+  });
+</script>
+
+
+<style>
+  .ui-progressbar {
+    position: relative;
+    height: 17px;
+  }
+  .progress-label {
+    position: absolute;
+    left: 40%;
+    top: 1px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+  }
+</style>
+
+<style>
+.tooltip-inner {
+    text-align:left !important;
+    white-space:pre;
+    max-width:none;
+}
+
+body{
+    font-size: 13px;
+}
+</style>
+
+<div id="sel_ereadings" style="display:inline">
+
+<script>
+    //var tooltip_open=false;
+    $(function() {
+        //$( "#aaa" ).tooltip( "option", "content", "Awesome title!" );
+       //$( "a[id^=usage]" ).tooltip({ items: "a" });
+       //tooltips = $( "a[id^=usage]" ).tooltip('show');
+  });
+  $(function() {
+      $("a[id^=usage]").prop('name', 'hide');
+      $( "a[id^=usage]" )
+      .click(function( ) {
+       if($(this).prop('name') == 'hide')
+       {
+          $( this ).tooltip("show");
+          $(this).prop('name','show');
+       }
+       else
+       {
+          $( this ).tooltip("hide");
+          $(this).prop('name', 'hide');
+       }
+      });
+    });
+</script>
+
+<script>
+    $(function() {   
+     $( "[name^=backto_avails]" )
+      .button()
+      .click(function( ) {
+        window.location.href = "chktopic?topic_code=<?php echo $from_topic_code;?>&view_type=ereading";
+      });
+     
+     a = $("#rollover_nav #rollover_step1 div a");
+     a.prop("href", 'chktopic?topic_code=<?php echo $from_topic_code;?>&view_type=ereading');
+    });
+    
+    $("#header_level_2_txt").html("View eReadings list");
+</script>
+
+
+
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+  <h2>eReadings table</h2>
+  <p>List for: <b><?php echo $from_avail; ?></b></p>
+  <ul>
+    <li>Teaching period: <?php if( isset($access_from)) echo $access_from . ' to '. $access_to;?></li>
+    <li>No. of students: <?php echo $avail_info["num_students"]; ?></li>
+    <li>No. of eReadings: <?php echo($readings_count + $num_rollover_ereadings);?></li>
+  </ul>
+  
+  <a class="btn btn-warning" href='view_erlist_url.html?from_avail=<?php echo $from_avail;?>' target="_blank"> Print Version </a>
+  <ul>
+    <li>If your teaching team needs a copy of the list, give them the print version URL.</li>
+    <li>Use the print version if you want to copy links to eReadings.
+    <ul>
+      <li class="text-danger">Important: do not copy links from the list below.
+    </ul>
+    </li>
+  </ul>
+</div>
+
+    <div class="col-md-4">
+      <h2>Help</h2>
+      <p>To select a different list use the green button: <br />
+        <b>1. Select existing list</b>.
+        </li>
+      </p>
+      <p>To return the start page use the home link: <br />
+        <b><span class="glyphicon glyphicon-home"></span> eReadings List Management</b>.
+        </li>
+      </p>
+      <p><i>Each eReading is viewable via its link. The link is valid for half an hour. After that you need to refresh the page.</i></p>
+    </div>
+    <div class="col-md-4">
+      <div class="hidden-xs hidden-sm">
+        <h2>Usage data</h2>
+        <p>While you can see how often each eReading was accessed during the teaching period, this may not be specific to this list - the eReading may have been on another list with an overlapping teaching period. </p>
+        <ul>
+          <li>Hover over a usage number for more info.</li>
+        </ul>
+        <p>Data collection commenced:</p>
+        <ul>
+          <li>16 Aug 2013 - link name ending with '.pdf'</li>
+          <li>10 Feb 2014 - all eReadings</li>
+        </ul>
+      </div>
+    </div>
+    
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table id="ereading_table" class="table table-hover table-striped">
+    <?php if ($readings_count > 0){ ?>
+    <thead>
+        
+    <th></th>
+    <th>eReading</th>
+    <th>Notes for students</th>
+    <th>Usage</th>
+    <?php if($is_tc == false){?>
+    <th>Status</th>
+    <?php }?>
+    <th>Library notes</th>
+    </thead>
+    <?php }?>
+    <?php for($i=0;$i<$readings_count;$i++){ ?>
+    <tr <?php #echo(($i%2==1) ? "class='even'" : "class='odd'");; ?> >
+        <?php $usage_info = 'Total no. of times accessed: ' . $ereadings[$i]['usg_total'] . '<br>' . 
+                'Unique users: [' . $ereadings[$i]['usg_unique_users'] . ']<br>' . 
+                'Topic availabilities:' . '<br>' . str_replace(",", "<br>", $ereadings[$i]['usg_avails']); ?>
+        <script>
+            $(function() {
+              $("#usage<?php echo $i; ?>")
+                //.tooltip('hide')
+                .tooltip({html:true})
+                .attr('data-original-title', "<?php echo $usage_info; ?>")
+                .tooltip('fixTitle');
+                
+            });
+        </script>
+        
+        <td><?php echo $i+1; ?>
+        </td>
+        
+        <td class="tdreadinglink"><?php echo $ereadings[$i]['reading_citation']?><br>
+            <a href="<?php echo $ereadings[$i]['reading_link'];?>" target="_blank"> <?php echo $ereadings[$i]['reading_description'];?></a>
+        </td>
+        
+        <td>
+            <?php echo $ereadings[$i]['reading_notes']; ?>
+        </td>
+        
+        <td>
+            <a id="usage<?php echo $i; ?>"><?php echo $ereadings[$i]['usg_total']; 
+                  if($ereadings[$i]['usg_total'] > 0)  echo (' [' . $ereadings[$i]['usg_unique_users'] . ']');?></a>
+        </td>
+        <?php if($is_tc == false){?>
+        <td>
+            <?php if ($ereadings[$i]['status'] == 'Active') echo 'a'; 
+             else if ($ereadings[$i]['status'] == 'Inactive') echo 'i';
+             else if ($ereadings[$i]['status'] == 'Pending') echo 'p';?>
+        </td>
+        <?php }?>
+        <td>
+            <?php echo $ereadings[$i]['internal_notes']; ?>
+        </td>
+        
+    </tr>
+    <?php } ?>
+  </table>
+  </div>
+</div>
+ 
+<?php if($rollover_today_readings != false){ ?>
+<h4> Below eReadings are rolled over today:</h4>
+<div class="row">
+  <div class="col-md-12">
+    <table id="rollover_today_table" class="table table-striped table-hover">
+
+    <thead>
+    <th></th>
+
+    <th>eReading</th>
+    <th>Notes for students</th>
+    
+    <th>Library notes</th>
+    <th>Rollover from</th>
+    </thead>
+    <tbody>
+    
+    <?php for($i=0;$i<$rollover_readings_count;$i++){ ?>
+    <tr <?php #echo(($i%2==1) ? "class='even'" : "class='odd'");; ?> >
+        <?php #$usage_info = 'Total no. of times accessed: ' . $ereadings[$i]['usg_total'] . '<br>' . 
+              #  'Unique users: [' . $ereadings[$i]['usg_unique_users'] . ']<br>' . 
+              #  'Topic availabilities:' . '<br>' . str_replace(",", "<br>", $ereadings[$i]['usg_avails']); ?>
+        
+        
+        <td><?php echo $i+1; ?>
+        </td>
+        
+        <td class="tdreadinglink"><?php echo $rollover_today_readings[$i]['reading_citation']?><br>
+            <a href="<?php echo $rollover_today_readings[$i]['reading_link'];?>" target="_blank"> <?php echo $rollover_today_readings[$i]['reading_description'];?></a>
+        </td>
+        
+        <td>
+            <?php echo $rollover_today_readings[$i]['reading_notes']; ?>
+        </td>
+        
+        <td>
+            <?php echo $rollover_today_readings[$i]['internal_notes']; ?>
+        </td>
+        <td>
+            <?php echo $rollover_today_readings[$i]['rollover_from']; ?>
+        </td>
+    </tr>
+    <?php }?>
+    </tbody>
+  </table>
+  </div>
+</div>
+<?php } ?>      
+<?php if($activate_today_readings != false){ ?>    
+<br><br>There are <?php echo count($activate_today_readings); ?> eReadings activated (not rollover) in this system today, they will be shown from tomorrow.
+<?php }?>    
+</div>
+
+
+<br>
+
+</div>
+
+<div id="avails">
+    <input type="hidden" id="from_avail" value="<?php echo $from_avail; ?>"/>
+    <input type="hidden" id="to_avails" value="<?php #echo implode($to_avails,',');?>"/>
+</div>
+
+<!--<div id="dialog-form" title="Rollover eReadings">-->
+
+
+<?php
+
+include 'footer.php';
+
+?>

@@ -1,0 +1,2 @@
+2015-12-15 13:45:42: Added course to Flex: NURS9710_2016_S1_DE
+2015-12-15 13:45:42: Added course to Flex: NURS9710_2016_S1

@@ -1,0 +1,2 @@
+2017-05-15 09:21:43: Added course to Flex: DSRS1211_2017_S2_DE
+2017-05-15 09:21:43: Added course to Flex: DSRS1211_2017_S2

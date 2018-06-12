@@ -1,0 +1,5 @@
+2016-11-10 12:08:33: Added course to Flex: PALL8439_2017_S1_DE
+2016-11-10 12:12:59: Added course to Flex: PALL8439_2017_S1_DP
+2016-11-10 13:49:47: Added course to Flex: NURS2004_2017_NS1_RV
+2016-11-10 13:49:47: Added course to Flex: NURS2004_2017_NS1_2
+2016-11-10 13:49:47: Added course to Flex: NURS2004_2017_NS1

@@ -1,0 +1,10 @@
+2015-04-29 16:15:56: Added course to Flex: BIOL2701_2015_S1
+2015-04-29 16:34:22: Added course to Flex: BIOL2712_2015_S1
+2015-04-29 23:02:08: Error: REMOTE_USER not set.
+2015-04-29 23:02:08: Error: REMOTE_USER not set.
+2015-04-29 23:02:08: Error: REMOTE_USER not set.
+2015-04-29 23:02:08: Error: REMOTE_USER not set.
+2015-04-29 23:02:08: Error: REMOTE_USER not set.
+2015-04-29 23:02:08: Error: REMOTE_USER not set.
+2015-04-29 23:02:08: Error: REMOTE_USER not set.
+2015-04-29 23:02:08: Error: REMOTE_USER not set.

@@ -1,0 +1,4 @@
+2017-03-10 08:49:33: Added course to Flex: SPTH9123_2017_S1
+2017-03-10 10:37:59: Added course to Flex: INNO3001_2017_S2_TON
+2017-03-10 17:02:16: Added course to Flex: EDUC9309_2017_S1
+2017-03-10 17:02:16: Added course to Flex: EDUC9309_2017_NS1

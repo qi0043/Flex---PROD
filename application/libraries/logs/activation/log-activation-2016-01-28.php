@@ -1,0 +1,3 @@
+2016-01-28 11:35:57: Added course to Flex: MMED9110_2016_S1_DE
+2016-01-28 13:22:10: Added course to Flex: NUTD9166_2016_S1
+2016-01-28 13:28:35: Added course to Flex: NUTD4050_2016_SU

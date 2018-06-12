@@ -1,0 +1,9 @@
+2017-01-09 09:39:08: Added course to Flex: NURS3003_2017_NS1_RV
+2017-01-09 09:39:08: Added course to Flex: NURS3003_2017_NS1_3
+2017-01-09 09:39:08: Added course to Flex: NURS3003_2017_NS1_2
+2017-01-09 09:39:08: Added course to Flex: NURS3003_2017_NS1
+2017-01-09 10:16:11: Added course to Flex: MMED2008_2017_S1
+2017-01-09 14:28:13: Added course to Flex: NURS9710_2017_S1_DE
+2017-01-09 14:28:13: Added course to Flex: NURS9710_2017_S1
+2017-01-09 14:47:36: Added course to Flex: NURS1003_2017_NS1_RV
+2017-01-09 14:47:36: Added course to Flex: NURS1003_2017_NS1

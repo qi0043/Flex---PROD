@@ -1,0 +1,8 @@
+2017-01-18 10:47:19: Added course to Flex: COMS9001_2017_SU
+2017-01-18 10:47:50: Added course to Flex: COMS9001_2017_S2_DE
+2017-01-18 10:47:51: Added course to Flex: COMS9001_2017_S2
+2017-01-18 10:47:51: Added course to Flex: COMS9001_2017_S1
+2017-01-18 10:47:51: Added course to Flex: COMS9001_2017_NS2_2
+2017-01-18 13:37:28: Added course to Flex: BUSN2036_2017_S1
+2017-01-18 22:15:48: Added course to Flex: HLTH3102_2017_S1_DE
+2017-01-18 22:15:48: Added course to Flex: HLTH3102_2017_S1

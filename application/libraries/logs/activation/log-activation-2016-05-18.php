@@ -1,0 +1,4 @@
+2016-05-18 13:33:39: Added course to Flex: NUTD1106_2016_S2_DA
+2016-05-18 13:33:40: Added course to Flex: NUTD1106_2016_S2
+2016-05-18 15:28:43: Added course to Flex: HLED9113A_2016_S1_DE
+2016-05-18 15:30:12: Added course to Flex: HLED9113A_2016_S2_DE

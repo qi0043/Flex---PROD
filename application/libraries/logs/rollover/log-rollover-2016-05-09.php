@@ -1,0 +1,4 @@
+2016-05-09 10:18:42: Error: Response status 400 Response: {"code":400,"error":"Bad Request","error_description":"fromuntil: 'Until' date must be after today."}
+2016-05-09 10:18:42: Rollover Failed with user: eale0003, from: POAD9057_2016_NS1_DE to POAD9057_2016_NS2_DE, index: 0, reading link: https://flex.flinders.edu.au/items/cf33519f-d658-44a1-b978-83c3d07c0098/1/?.vi=file&attachment.uuid=232c441a-32ee-4756-8b90-b4a4e03c9c3f
+2016-05-09 10:18:42: Error: Response status 400 Response: {"code":400,"error":"Bad Request","error_description":"fromuntil: 'Until' date must be after today."}
+2016-05-09 10:18:42: Rollover Failed with user: eale0003, from: POAD9057_2016_NS1_DE to POAD9057_2016_NS2_DE, index: 1, reading link: https://flex.flinders.edu.au/items/c6383ee2-7cbe-43fe-b4a1-dcb6935baaf2/1/?.vi=file&attachment.uuid=55633127-7833-48d1-ac70-816b5ed187dd

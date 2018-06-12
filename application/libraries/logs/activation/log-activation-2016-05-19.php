@@ -1,0 +1,13 @@
+2016-05-19 09:04:47: Added course to Flex: HLED9113B_2016_S1_DE
+2016-05-19 09:09:10: Added course to Flex: HLED9113B_2016_S2_DE
+2016-05-19 09:32:36: Added course to Flex: PHCA9502_2016_S2_DE
+2016-05-19 09:32:36: Added course to Flex: PHCA9502_2016_S2
+2016-05-19 09:41:24: Added course to Flex: HACM9200_2016_S2_DE
+2016-05-19 09:41:24: Added course to Flex: HACM9200_2016_S2_ADL
+2016-05-19 09:41:25: Added course to Flex: HACM9200_2016_NS2_SG
+2016-05-19 14:02:44: Added course to Flex: MDSC3100_2016_S2
+2016-05-19 15:01:52: Added course to Flex: SOAD9110_2016_S2_DE
+2016-05-19 15:01:52: Added course to Flex: SOAD9110_2016_S2
+2016-05-19 15:01:52: Added course to Flex: SOAD9110_2016_S1_DE
+2016-05-19 15:01:52: Added course to Flex: SOAD9110_2016_S1
+2016-05-19 17:36:01: Added course to Flex: MDSC8002_2016_S2_DE

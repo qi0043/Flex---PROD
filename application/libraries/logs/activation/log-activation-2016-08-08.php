@@ -1,0 +1,5 @@
+2016-08-08 12:08:48: Added course to Flex: EASC8742_2016_S2_DE
+2016-08-08 12:08:48: Added course to Flex: EASC8742_2016_S2
+2016-08-08 12:33:17: Added course to Flex: DSRS9058_2016_S2_DE
+2016-08-08 12:33:17: Added course to Flex: DSRS9058_2016_S2
+2016-08-08 14:52:56: Added course to Flex: INTR1102_2016_S2

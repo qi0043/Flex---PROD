@@ -1,0 +1,10 @@
+2016-02-15 08:45:46: Added course to Flex: ARCH8409_2016_S1_FLC
+2016-02-15 10:21:07: Added course to Flex: INTR1101_2016_S1
+2016-02-15 11:16:11: Added course to Flex: BUSN9261_2016_S1_ADL
+2016-02-15 11:16:40: Added course to Flex: PALL8435_2016_S1_DE
+2016-02-15 11:19:25: Added course to Flex: EDUC9302_2016_NS1
+2016-02-15 11:19:35: Added course to Flex: EDUC3521_2016_S1
+2016-02-15 11:27:59: Added course to Flex: COMS9001_2016_S1
+2016-02-15 11:54:10: Added course to Flex: NURS8750_2016_S1_FLC
+2016-02-15 14:01:21: Added course to Flex: POLI2011_2016_S1_DE
+2016-02-15 14:01:21: Added course to Flex: POLI2011_2016_S1

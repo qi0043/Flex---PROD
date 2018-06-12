@@ -1,0 +1,4 @@
+2015-12-24 08:54:13: Added course to Flex: SOCI3009_2016_S1
+2015-12-24 10:45:11: Added course to Flex: OCCT8001_2016_S1_DP
+2015-12-24 12:24:49: Added course to Flex: NURS1004_2016_NS1_RV
+2015-12-24 12:24:49: Added course to Flex: NURS1004_2016_NS1

@@ -1,0 +1,9 @@
+2018-01-17 14:36:41: Added course to Flex: EDUC3521_2018_S1
+2018-01-17 14:38:07: Added course to Flex: EDUC9302_2018_NS1
+2018-01-17 14:40:15: Added course to Flex: EDUC1221_2018_S2
+2018-01-17 14:41:23: Added course to Flex: EDUC2324_2018_NS1
+2018-01-17 14:41:54: Added course to Flex: EDUC3528_2018_S1
+2018-01-17 14:44:38: Added course to Flex: EDUC2424_2018_NS2
+2018-01-17 15:02:54: Added course to Flex: BUSN9241_2018_NS1_DE
+2018-01-17 15:06:53: Added course to Flex: BUSN9230_2018_NS1_DE
+2018-01-17 15:17:08: Added course to Flex: HLTH1101_2018_S1

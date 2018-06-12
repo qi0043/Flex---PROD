@@ -1,0 +1,4 @@
+2016-12-21 11:43:00: Added course to Flex: INNO3004_2017_S1_TON
+2016-12-21 12:59:54: Added course to Flex: HLTH2101_2017_S1_DE
+2016-12-21 12:59:54: Added course to Flex: HLTH2101_2017_S1
+2016-12-21 14:44:14: Added course to Flex: OCCT8005_2017_NS1_DP

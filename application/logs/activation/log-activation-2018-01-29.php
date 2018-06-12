@@ -1,0 +1,2 @@
+2018-01-29 09:53:46: Added course to Flex: OPTO8003_2018_NS1
+2018-01-29 13:43:43: Added course to Flex: NURS8730_2018_NS1

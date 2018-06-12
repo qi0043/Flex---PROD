@@ -1,0 +1,2 @@
+2016-08-26 09:18:54: Added course to Flex: EDUC9123_2016_NS2
+2016-08-26 10:07:03: Added course to Flex: SOAD2005_2016_S2

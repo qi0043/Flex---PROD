@@ -1,0 +1,3 @@
+2018-04-26 15:23:07: Added course to Flex: HACM9101_2018_S2_DE
+2018-04-26 15:23:07: Added course to Flex: HACM9101_2018_S2_ADL
+2018-04-26 15:23:07: Added course to Flex: HACM9101_2018_NS2_SG

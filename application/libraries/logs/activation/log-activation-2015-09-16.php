@@ -1,0 +1,1 @@
+2015-09-16 15:12:39: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Activation would put you in violation of statutory copyright law. Please contact the eReadings Coordinator <a href="mailto:ereserve@flinders.edu.au">ereserve@flinders.edu.au</a> for assistance.)

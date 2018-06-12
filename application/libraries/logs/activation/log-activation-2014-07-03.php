@@ -1,0 +1,1 @@
+2014-07-03 08:47:22: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Activation would put you in violation of statutory copyright law. Please contact Kylie Jarrett <a href="mailto:kylie.jarrett@flinders.edu.au">kylie.jarrett@flinders.edu.au</a> for assistance.)

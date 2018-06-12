@@ -1,0 +1,2 @@
+2016-07-11 14:27:20: Added course to Flex: LLAW9603_2016_S2_DE_2
+2016-07-11 14:27:20: Added course to Flex: LLAW9603_2016_S2_DE

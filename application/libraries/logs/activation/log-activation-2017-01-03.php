@@ -1,0 +1,6 @@
+2017-01-03 08:51:10: Added course to Flex: MMED9150_2017_NS1_DA
+2017-01-03 08:51:10: Added course to Flex: MMED9150_2017_NS1
+2017-01-03 10:43:54: Added course to Flex: SOAD9226_2017_NS2
+2017-01-03 10:43:54: Added course to Flex: SOAD9226_2017_NS1
+2017-01-03 16:14:12: Added course to Flex: MMED9151_2017_NS2_DA
+2017-01-03 16:14:12: Added course to Flex: MMED9151_2017_NS2

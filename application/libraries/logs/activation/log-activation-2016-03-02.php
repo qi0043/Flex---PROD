@@ -1,0 +1,13 @@
+2016-03-02 10:01:55: Added course to Flex: BUSN9261B_2016_S2_ADL
+2016-03-02 10:01:55: Added course to Flex: BUSN9261B_2016_S1_ADL
+2016-03-02 10:01:56: Added course to Flex: BUSN9261B_2016_NS2_DE
+2016-03-02 10:01:56: Added course to Flex: BUSN9261B_2016_NS1_DE
+2016-03-02 10:36:44: Added course to Flex: MMED9104_2016_S1_DE
+2016-03-02 12:30:38: Added course to Flex: NURS8720_2016_S2_DE
+2016-03-02 12:30:38: Added course to Flex: NURS8720_2016_S2
+2016-03-02 12:30:39: Added course to Flex: NURS8720_2016_S1_DE
+2016-03-02 12:30:39: Added course to Flex: NURS8720_2016_S1
+2016-03-02 14:45:04: Added course to Flex: SOAD3016_2016_S1
+2016-03-02 14:45:15: Added course to Flex: SOAD8011_2016_S1_DE
+2016-03-02 14:45:15: Added course to Flex: SOAD8011_2016_S1
+2016-03-02 15:27:50: Added course to Flex: HLPE1530_2016_S1

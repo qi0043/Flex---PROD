@@ -1,0 +1,4 @@
+2015-12-23 10:29:30: Added course to Flex: BUSN2029_2016_S1
+2015-12-23 10:29:30: Added course to Flex: BUSN2029_2016_NS1_HK
+2015-12-23 12:53:20: Added course to Flex: EDUC4841_2016_NS2
+2015-12-23 14:17:30: Added course to Flex: EDUC9609_2016_S2_FLC

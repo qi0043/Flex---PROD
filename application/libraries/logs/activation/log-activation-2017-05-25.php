@@ -1,0 +1,1 @@
+2017-05-25 11:25:44: Added course to Flex: EDUC3623_2017_NS2

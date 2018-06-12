@@ -1,0 +1,5 @@
+2016-06-22 09:41:36: Added course to Flex: EDUC9703_2016_NS2_BJ
+2016-06-22 09:43:50: Added course to Flex: EDUC9761_2016_NS2_BJ
+2016-06-22 15:14:04: Added course to Flex: WMST2015_2016_S2
+2016-06-22 15:30:35: Added course to Flex: OCCT3003_2016_S2
+2016-06-22 16:01:56: Added course to Flex: HIST3001_2016_S2

@@ -1,0 +1,3 @@
+2014-01-16 12:40:51: Activation Successful with user: pris0005, availability: NURS2004_2014_S1_RV, reading link: https://flex.flinders.edu.au/items/3aa19e4b-5411-46fe-bd60-84703e86fcc3/1/?.vi=file&attachment.uuid=8caf582e-8ace-4646-9a07-41efd24a3da0
+2014-01-16 12:40:51: Activation Successful with user: pris0005, availability: NURS2004_2014_S1, reading link: https://flex.flinders.edu.au/items/3aa19e4b-5411-46fe-bd60-84703e86fcc3/1/?.vi=file&attachment.uuid=8caf582e-8ace-4646-9a07-41efd24a3da0
+2014-01-16 16:36:26: Activation Successful with user: pris0005, availability: PALL8435_2014, reading link: https://flex.flinders.edu.au/items/33812544-cf8b-4a83-929d-df783b601bf6/1/?.vi=file&attachment.uuid=642e8297-4342-43d3-b3da-4c37a35cbcc7

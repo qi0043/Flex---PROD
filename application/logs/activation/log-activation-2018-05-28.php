@@ -1,0 +1,7 @@
+2018-05-28 10:17:02: Added course to Flex: NURS3004_2018_NS2_RV
+2018-05-28 10:17:02: Added course to Flex: NURS3004_2018_NS2_2
+2018-05-28 10:17:02: Added course to Flex: NURS3004_2018_NS2
+2018-05-28 10:55:23: Added course to Flex: EDUC9617_2018_NS1_BJ
+2018-05-28 11:03:09: Added course to Flex: HLED9107_2018_S2_DE
+2018-05-28 13:48:29: Added course to Flex: OCCT2001_2018_S2_DA
+2018-05-28 13:48:29: Added course to Flex: OCCT2001_2018_S2

@@ -1,0 +1,4 @@
+2017-01-13 12:07:22: Added course to Flex: EDUC9553_2017_NS1_DE
+2017-01-13 15:01:46: Added course to Flex: BUSN9230_2017_S1_ADL
+2017-01-13 15:01:46: Added course to Flex: BUSN9230_2017_NS2_DE
+2017-01-13 15:01:46: Added course to Flex: BUSN9230_2017_NS1_DE

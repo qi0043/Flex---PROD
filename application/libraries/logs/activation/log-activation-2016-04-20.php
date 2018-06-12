@@ -1,0 +1,2 @@
+2016-04-20 15:11:45: Added course to Flex: POLI3010_2016_S2_DE
+2016-04-20 15:11:45: Added course to Flex: POLI3010_2016_S2_ADL

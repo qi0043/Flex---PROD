@@ -1,0 +1,12 @@
+2017-02-09 08:58:11: Added course to Flex: EDUC9125_2017_S1
+2017-02-09 08:58:23: Added course to Flex: EDUC1222_2017_S2
+2017-02-09 11:11:23: Added course to Flex: SOAD1010_2017_S1
+2017-02-09 11:41:51: Added course to Flex: EDUC9120_2017_S1
+2017-02-09 11:52:28: Added course to Flex: DVST2701_2017_S1
+2017-02-09 11:55:00: Added course to Flex: PPHR2721_2017_S1
+2017-02-09 11:56:05: Added course to Flex: DVST8701_2017_S1
+2017-02-09 11:59:00: Added course to Flex: EDUC8618_2017_S2_DE
+2017-02-09 11:59:00: Added course to Flex: EDUC8618_2017_NS1
+2017-02-09 12:01:39: Added course to Flex: PPHR9701_2017_S1
+2017-02-09 14:43:23: Added course to Flex: EDUC9709_2017_NS1_DE
+2017-02-09 14:43:23: Added course to Flex: EDUC9709_2017_NS1

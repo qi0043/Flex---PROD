@@ -1,0 +1,10 @@
+2016-01-07 08:44:09: Added course to Flex: MMED8400_2016_NS_DA
+2016-01-07 08:44:10: Added course to Flex: MMED8400_2016_NS
+2016-01-07 09:03:21: Added course to Flex: DSRS9070_2016_S1_DE
+2016-01-07 09:03:21: Added course to Flex: DSRS9070_2016_S1
+2016-01-07 09:03:42: Added course to Flex: DSRS4104_2016_S1_DE_2
+2016-01-07 09:03:42: Added course to Flex: DSRS4104_2016_S1_DE
+2016-01-07 09:03:43: Added course to Flex: DSRS4104_2016_S1
+2016-01-07 09:05:36: Added course to Flex: DSRS9051_2016_S1_DE
+2016-01-07 09:05:36: Added course to Flex: DSRS9051_2016_S1
+2016-01-07 10:04:49: Added course to Flex: PHYT8001_2016_S1_DP

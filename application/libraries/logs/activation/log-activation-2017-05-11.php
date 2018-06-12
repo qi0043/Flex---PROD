@@ -1,0 +1,2 @@
+2017-05-11 11:09:33: Added course to Flex: HACM9101_2017_NS2_SG
+2017-05-11 11:11:59: Added course to Flex: HACM9200_2017_NS2_SG

@@ -1,0 +1,8 @@
+2018-02-09 12:09:20: Added course to Flex: EDUC1224_2018_S1
+2018-02-09 12:32:03: Added course to Flex: EDUC8821_2018_S1_DE
+2018-02-09 12:35:22: Added course to Flex: EDUC9767_2018_S1_DE
+2018-02-09 12:35:22: Added course to Flex: EDUC9767_2018_S1
+2018-02-09 12:35:22: Added course to Flex: EDUC9767_2018_NS1
+2018-02-09 12:36:04: Added course to Flex: PALL8437_2018_S1_DE
+2018-02-09 12:36:05: Added course to Flex: PALL8437_2018_S1
+2018-02-09 13:19:54: Added course to Flex: SPTH2905_2018_S1

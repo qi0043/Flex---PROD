@@ -1,0 +1,4 @@
+2017-11-06 09:58:53: Added course to Flex: EDUC3626_2018_NS2
+2017-11-06 11:54:20: Added course to Flex: PHYT8004_2018_NS1_DP
+2017-11-06 14:19:03: Added course to Flex: NURS9126_2018_S1_DE
+2017-11-06 14:19:03: Added course to Flex: NURS9126_2018_S1

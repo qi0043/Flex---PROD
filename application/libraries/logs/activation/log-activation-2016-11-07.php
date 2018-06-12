@@ -1,0 +1,5 @@
+2016-11-07 16:31:04: Added course to Flex: BUSN2029_2017_S1
+2016-11-07 16:37:04: Added course to Flex: SOAD9206_2017_S2_DE
+2016-11-07 16:37:04: Added course to Flex: SOAD9206_2017_S2
+2016-11-07 16:37:04: Added course to Flex: SOAD9206_2017_S1_DE
+2016-11-07 16:37:04: Added course to Flex: SOAD9206_2017_S1

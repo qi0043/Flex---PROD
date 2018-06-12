@@ -1,0 +1,64 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2017-12-28 04:24:41 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 42
+ERROR - 2017-12-28 04:24:41 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 57
+ERROR - 2017-12-28 04:27:00 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 42
+ERROR - 2017-12-28 04:27:00 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 57
+ERROR - 2017-12-28 06:34:56 --> Severity: Warning  --> session_start(): Cannot send session cookie - headers already sent by (output started at /opt/www/flextra-sites/flextra.flinders/flex/application/controllers/rhd/cron.php:463) /opt/www/flextra-sites/flextra.flinders/flex/application/controllers/rhd/cron.php 12
+ERROR - 2017-12-28 06:34:56 --> Severity: Warning  --> session_start(): Cannot send session cache limiter - headers already sent (output started at /opt/www/flextra-sites/flextra.flinders/flex/application/controllers/rhd/cron.php:463) /opt/www/flextra-sites/flextra.flinders/flex/application/controllers/rhd/cron.php 12
+ERROR - 2017-12-28 09:40:34 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 42
+ERROR - 2017-12-28 09:40:34 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 57
+ERROR - 2017-12-28 11:02:20 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 42
+ERROR - 2017-12-28 11:02:20 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 57
+ERROR - 2017-12-28 12:13:37 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 12:13:37 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 12:13:37 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 12:21:30 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 12:21:30 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 12:21:30 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 13:47:53 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 42
+ERROR - 2017-12-28 13:47:53 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 57
+ERROR - 2017-12-28 13:56:08 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 472
+ERROR - 2017-12-28 13:56:08 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 472
+ERROR - 2017-12-28 13:56:08 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 472
+ERROR - 2017-12-28 13:56:08 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 472
+ERROR - 2017-12-28 13:56:17 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 472
+ERROR - 2017-12-28 14:07:28 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 472
+ERROR - 2017-12-28 14:12:15 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 14:12:15 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 14:12:15 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 15:37:54 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 15:37:54 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 15:37:54 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 15:38:31 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 42
+ERROR - 2017-12-28 15:38:31 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 57
+ERROR - 2017-12-28 15:38:46 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 42
+ERROR - 2017-12-28 15:38:46 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 57
+ERROR - 2017-12-28 15:40:22 --> view SAM from flo, multiple SAMs found for topic availability: NURS3002_2017_NS1_3
+ERROR - 2017-12-28 16:32:04 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 16:32:04 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 16:32:04 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_itemFLOsingle.php 639
+ERROR - 2017-12-28 16:32:22 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 42
+ERROR - 2017-12-28 16:32:22 --> Severity: Notice  --> Undefined variable: flexserv /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/webpageFLO.php 57
+ERROR - 2017-12-28 18:40:41 --> Severity: Notice  --> Undefined index: instructions /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 474
+ERROR - 2017-12-28 18:40:41 --> Severity: Notice  --> Undefined variable: href /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 527
+ERROR - 2017-12-28 18:40:41 --> Severity: Notice  --> Undefined index: instructions /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 527
+ERROR - 2017-12-28 18:40:41 --> Severity: Notice  --> Undefined index: resourceType /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 543
+ERROR - 2017-12-28 18:40:41 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 612
+ERROR - 2017-12-28 18:40:41 --> Severity: Notice  --> Undefined index: resourceType /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 543
+ERROR - 2017-12-28 18:40:41 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 612
+ERROR - 2017-12-28 18:40:41 --> Severity: Notice  --> Undefined index: resourceType /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 543
+ERROR - 2017-12-28 18:40:41 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 612
+ERROR - 2017-12-28 18:40:41 --> Severity: Notice  --> Undefined index: resourceType /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 543
+ERROR - 2017-12-28 18:40:41 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 612
+ERROR - 2017-12-28 18:49:09 --> Severity: Notice  --> Undefined index: instructions /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 474
+ERROR - 2017-12-28 18:49:09 --> Severity: Notice  --> Undefined variable: href /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 527
+ERROR - 2017-12-28 18:49:09 --> Severity: Notice  --> Undefined index: instructions /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 527
+ERROR - 2017-12-28 18:49:09 --> Severity: Notice  --> Undefined index: resourceType /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 543
+ERROR - 2017-12-28 18:49:09 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 612
+ERROR - 2017-12-28 18:49:09 --> Severity: Notice  --> Undefined index: resourceType /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 543
+ERROR - 2017-12-28 18:49:09 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 612
+ERROR - 2017-12-28 18:49:09 --> Severity: Notice  --> Undefined index: resourceType /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 543
+ERROR - 2017-12-28 18:49:09 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 612
+ERROR - 2017-12-28 18:49:09 --> Severity: Notice  --> Undefined index: resourceType /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 543
+ERROR - 2017-12-28 18:49:09 --> Severity: Notice  --> Undefined variable: linkclass /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/lta3_itemFLOac.php 612

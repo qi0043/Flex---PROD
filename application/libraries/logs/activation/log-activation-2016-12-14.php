@@ -1,0 +1,13 @@
+2016-12-14 09:19:43: Added course to Flex: COMS1002_2017_S1
+2016-12-14 13:34:06: Added course to Flex: POAD8014_2017_NS1_DE
+2016-12-14 13:35:06: Added course to Flex: POAD9129_2017_NS1_DE
+2016-12-14 13:37:25: Added course to Flex: POAD9057_2017_NS1_DE
+2016-12-14 13:42:06: Added course to Flex: POAD9015_2017_NS1_DE
+2016-12-14 13:43:24: Added course to Flex: POAD8022_2017_NS1_DE
+2016-12-14 14:44:26: Added course to Flex: EDUC9735_2017_S1_DE
+2016-12-14 14:44:41: Added course to Flex: EDUC9736_2017_S1_DE
+2016-12-14 15:47:05: Added course to Flex: SOAD9110_2017_S2_DE
+2016-12-14 15:47:05: Added course to Flex: SOAD9110_2017_S2
+2016-12-14 15:47:05: Added course to Flex: SOAD9110_2017_S1_DE
+2016-12-14 15:47:05: Added course to Flex: SOAD9110_2017_S1
+2016-12-14 16:37:07: Added course to Flex: PHYT8004_2017_NS1_DP

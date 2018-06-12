@@ -1,0 +1,10 @@
+2016-01-13 14:38:07: Added course to Flex: EDUC4723_2016_NS1
+2016-01-13 15:02:35: Added course to Flex: EDUC9301_2016_NS1
+2016-01-13 15:22:42: Added course to Flex: EDUC3531_2016_NS1
+2016-01-13 15:25:41: Added course to Flex: EDUC9128_2016_NS1
+2016-01-13 15:29:41: Added course to Flex: EDUC9311_2016_NS1
+2016-01-13 15:31:01: Added course to Flex: EDUC4726_2016_NS1
+2016-01-13 16:29:00: Added course to Flex: EDUC9971_2016_S2_FLC
+2016-01-13 16:29:00: Added course to Flex: EDUC9971_2016_NS1
+2016-01-13 16:30:32: Added course to Flex: EDUC9951_2016_NS1
+2016-01-13 16:31:53: Added course to Flex: EDUC9953_2016_NS1

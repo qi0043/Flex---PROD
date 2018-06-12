@@ -1,0 +1,876 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+
+class Listmgr_model extends CI_Model {
+    
+    public $error_met, $error_info;
+    
+    function __construct()
+    {
+        // Call the Model constructor
+        parent::__construct();
+        $this->load->database();
+        $this->error_met = false;
+        $this->error_info = '';
+    }
+    
+    function db_get_topicname($topic_code)
+    {
+        $sql_get_topicname = "SELECT topic_name 
+                            FROM  tbl_avails 
+                            WHERE  topic_code = ?
+                            ORDER BY avail_ref DESC
+                            LIMIT 1 OFFSET 0";
+        
+        $query = $this->db->query($sql_get_topicname, array($topic_code));
+
+        if ($query->num_rows() > 0)
+        {
+           $result = $query->result_array();
+           return $result[0]['topic_name'];
+           /*foreach ($query->result() as $row)
+           {
+              echo $row->avail_ref;
+              echo '<br>';
+           }*/
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    function db_get_orgname($topic_code)
+    {
+        $sql_get_orgname =
+                "select tbl_org_areas.org_name
+                 from tbl_org_areas
+                 where tbl_org_areas.org_num =
+                (SELECT DISTINCT tbl_avails.org_num
+                 FROM tbl_avails
+                 WHERE tbl_avails.topic_code = '$topic_code'
+                 LIMIT 1 OFFSET 0)";
+        
+        $query = $this->db->query($sql_get_orgname, array($topic_code));
+
+        if ($query->num_rows() > 0)
+        {
+           $result = $query->result_array();
+           return $result[0]['org_name'];
+           /*foreach ($query->result() as $row)
+           {
+              echo $row->avail_ref;
+              echo '<br>';
+           }*/
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    function db_chk_avails_by_topic($topic_code)
+    {
+        /*
+        $sql_readavail = "SELECT  `avail_ref` 
+                            FROM  `tbl_readings_avails` 
+                            WHERE  `avail_ref` LIKE ? ESCAPE '/'";
+        
+        $sql_2014readavail = "SELECT  `flex_code` 
+                            FROM  `tbl_2014_readings_avails` 
+                            WHERE  `flex_code` LIKE ? ESCAPE '/'";
+        
+        $sql_nsreadavail = "SELECT  `flex_code` 
+                            FROM  `tbl_ns_readings_avails` 
+                            WHERE  `flex_code` LIKE ? ESCAPE '/'";
+        
+        SELECT  tbl_2014_readings_avails.flex_code as availability
+                            FROM  tbl_2014_readings_avails 
+                            WHERE  tbl_2014_readings_avails.flex_code LIKE ? ESCAPE '/'
+                            UNION
+        */
+        /*$sql_allreadavail = "SELECT  `tbl_readings_avails`.`avail_ref` as availability
+                            FROM  `tbl_readings_avails` 
+                            WHERE  `tbl_readings_avails`.`avail_ref` LIKE ? ESCAPE '/'
+                            UNION
+                            SELECT  `tbl_2014_readings_avails`.`flex_code` as availability
+                            FROM  `tbl_2014_readings_avails` 
+                            WHERE  `tbl_2014_readings_avails`.`flex_code` LIKE ? ESCAPE '/'
+                            UNION
+                            SELECT  `tbl_ns_readings_avails`.`flex_code` as availability
+                            FROM  `tbl_ns_readings_avails` 
+                            WHERE  `tbl_ns_readings_avails`.`flex_code` LIKE ? ESCAPE '/'";
+         */
+        
+        $sql_allreadavail = "SELECT  tbl_readings_avails.avail_ref as availability
+                            FROM  tbl_readings_avails 
+                            WHERE  tbl_readings_avails.avail_ref LIKE ? ESCAPE '/'
+                            UNION
+                            SELECT  tbl_ns_readings_avails.flex_code as availability
+                            FROM  tbl_ns_readings_avails 
+                            WHERE  tbl_ns_readings_avails.flex_code LIKE ? ESCAPE '/'
+                            ORDER by 1 DESC";
+        
+        #$this->load->database();
+        
+        $query = $this->db->query($sql_allreadavail, array($topic_code.'/_%', $topic_code.'/_%'));
+        
+        #$query = $this->db->query($sql_readavail, array($topic_code.'/_%'));
+
+        if ($query->num_rows() > 0)
+        {
+           return $query->result_array();
+           /*foreach ($query->result() as $row)
+           {
+              echo $row->avail_ref;
+              echo '<br>';
+           }*/
+        }
+        else
+        {
+            return false;
+        }
+        
+        /*
+        $sql_chkavail = "SELECT * 
+		FROM  `tbl_avails` 
+		WHERE  `topic_code` =  ? and teach_end_date > NOW()
+                ORDER BY `avail_ref`";
+        
+        $sql_chkavailcount = "SELECT count(*) 
+		FROM  `tbl_avails` 
+		WHERE  `topic_code` =  '$topic_code'";
+		
+	$sql_readavail = "SELECT * 
+			FROM  `tbl_readings_avails` 
+			WHERE  `flex_code` = ?";
+        
+        $sql_chk2014plhdavailcount = "SELECT count(*) 
+		FROM  `tbl_2014_readings_avails` 
+		WHERE  `topic_code` =  '$topic_code'";
+        
+        $sql_get_topicname =
+                "SELECT DISTINCT tbl_avails.topic_name
+                 FROM tbl_avails
+                 WHERE tbl_avails.topic_code = '$topic_code'";
+
+        $sql_get_orgname =
+                "select tbl_org_areas.org_name
+                 from tbl_org_areas
+                 where tbl_org_areas.org_num =
+                (SELECT DISTINCT tbl_avails.org_num
+                 FROM tbl_avails
+                 WHERE tbl_avails.topic_code = '$topic_code')";
+        */
+    }
+    
+    function db_get_readings_by_avail($availability)
+    {
+        /*$sql_get_readings = "
+        select tbl_flex_readings.flex_code, tbl_flex_readings.reading_link, 
+        tbl_flex_readings.reading_citation, tbl_flex_readings.reading_description,
+        SUBSTRING(tbl_flex_readings.reading_link, LOCATE('items', tbl_flex_readings.reading_link)+6, 36),
+        SUBSTRING(tbl_flex_readings.reading_link, LOCATE('uuid', tbl_flex_readings.reading_link)+5, 36)
+        from tbl_flex_readings
+        where tbl_flex_readings.flex_code = ?";
+        
+        tbl_flex_readings.usg_total,
+        tbl_flex_readings.usg_unique_users,
+        tbl_flex_readings.usg_other_avails,
+         */
+        
+        /*$sql_get_readings = "
+        select tbl_flex_readings.flex_code, tbl_flex_readings.reading_link, 
+        tbl_flex_readings.reading_citation, tbl_flex_readings.reading_description,
+        SUBSTRING(tbl_flex_readings.reading_link, position('items' in tbl_flex_readings.reading_link)+6, 36),
+        SUBSTRING(tbl_flex_readings.reading_link, position('uuid' in tbl_flex_readings.reading_link)+5, 36),
+        tbl_flex_readings.active_to,
+        tbl_flex_readings.reading_notes,
+        tbl_flex_readings.internal_notes,
+        CASE (active_to > now())
+           WHEN true THEN 'active'
+           WHEN false THEN 'inact'
+        END AS is_active
+        from tbl_flex_readings
+        where tbl_flex_readings.flex_code = ?
+        order by tbl_flex_readings.reading_citation";*/
+        
+        $sql_get_readings = "
+        select tbl_flex_readings.flex_code, tbl_flex_readings.reading_link, 
+        tbl_flex_readings.reading_citation, tbl_flex_readings.reading_description,
+        SUBSTRING(tbl_flex_readings.reading_link, position('items' in tbl_flex_readings.reading_link)+6, 36),
+        SUBSTRING(tbl_flex_readings.reading_link, position('uuid' in tbl_flex_readings.reading_link)+5, 36),
+        tbl_flex_readings.active_to,
+        tbl_flex_readings.reading_notes,
+        tbl_flex_readings.internal_notes,
+        tbl_flex_readings.usg_total,
+        tbl_flex_readings.usg_unique_users,
+        tbl_flex_readings.usg_other_avails,
+        CASE 
+           WHEN (now() > tbl_flex_readings.active_to ) THEN 'Inactive'
+           WHEN (now() < tbl_flex_readings.active_from ) THEN 'Pending'
+           ELSE 'active'
+        END AS status
+        from tbl_flex_readings
+        where tbl_flex_readings.flex_code = ?
+        order by tbl_flex_readings.reading_citation";
+
+        $query = $this->db->query($sql_get_readings, array($availability));
+
+        if ($query->num_rows() > 0)
+        {
+           return $query->result_array();
+           /*foreach ($query->result() as $row)
+           {
+              echo $row->avail_ref;
+              echo '<br>';
+           }*/
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    
+    #Obsoleted
+    function db_get_rollover_readings_by_avail($availability)
+    {
+        /*$sql_get_readings = "
+        select tbl_flex_readings.flex_code, tbl_flex_readings.reading_link, 
+        tbl_flex_readings.reading_citation, tbl_flex_readings.reading_description,
+        SUBSTRING(tbl_flex_readings.reading_link, LOCATE('items', tbl_flex_readings.reading_link)+6, 36),
+        SUBSTRING(tbl_flex_readings.reading_link, LOCATE('uuid', tbl_flex_readings.reading_link)+5, 36)
+        from tbl_flex_readings
+        where tbl_flex_readings.flex_code = ?";
+         */
+        $sql_get_rollover_readings = "
+        select tbl_intm_readings.reading_link
+        from tbl_intm_readings
+        where tbl_intm_readings.flex_code = ? and tbl_intm_readings.date = CURRENT_DATE";
+        
+        $sql_get_readings_details = "
+        select tbl_flex_readings.reading_notes, 
+        tbl_flex_readings.reading_citation, tbl_flex_readings.reading_description
+        from tbl_flex_readings
+        where tbl_flex_readings.reading_link = ?
+        limit 1 offset 0";
+
+        $query = $this->db->query($sql_get_rollover_readings, array($availability));
+
+        if ($query->num_rows() > 0)
+        {
+           #return $query->result_array();
+           $i = 0;
+           foreach ($query->result_array() as $row)
+           {
+              $results[$i]["reading_link"] = $row["reading_link"];
+              $query_detail = $this->db->query($sql_get_readings_details, array($results[$i]["reading_link"]));
+              if ($query_detail->num_rows() > 0)
+              {
+                $res_details = $query_detail->result_array();
+                $results[$i]["reading_citation"] = $res_details[0]["reading_citation"];
+                $results[$i]["reading_notes"] = $res_details[0]["reading_notes"];
+                $results[$i]["reading_description"] = $res_details[0]["reading_description"];
+              }
+              $i++;
+              #echo '<br>';
+           }
+           return $results;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    
+    function db_get_numof_readings_by_avail($avails)
+    {
+        $sql_get_numof_readings = "
+        select count(*) as num_readings
+        from tbl_flex_readings
+        where tbl_flex_readings.flex_code = ?";
+
+        for($i=0;$i<count($avails);$i++)
+        {
+            $query = $this->db->query($sql_get_numof_readings, array($avails[$i]['availability']));
+            $result = $query->result_array();
+            $num_readings[$i] = $result[0];
+        }
+
+
+        return $num_readings;
+        
+    }
+    
+    function db_get_numof_rollover_readings_by_avail($avails)
+    {
+        $sql_get_numof_readings = "
+        select count(*) as num_readings
+        from tbl_intm_readings
+        where tbl_intm_readings.flex_code = ? and tbl_intm_readings.date = CURRENT_DATE";
+
+        for($i=0;$i<count($avails);$i++)
+        {
+            $query = $this->db->query($sql_get_numof_readings, array($avails[$i]['availability']));
+            $result = $query->result_array();
+            $num_readings[$i] = $result[0];
+        }
+
+
+        return $num_readings;
+        
+    }
+    
+    function db_get_rollover_today_reading_for_avail($avail)
+    {
+        $sql_chk_reading = "
+        select distinct(i.flex_code), i.rollover_from, f.reading_description, f.reading_link, f.reading_citation, f.reading_notes, f.internal_notes
+        from tbl_intm_readings as i
+        inner join tbl_flex_readings as f on f.flex_code = i.rollover_from and f.reading_link = i.reading_link
+        where i.flex_code = ? and i.date = CURRENT_DATE order by f.reading_citation";
+
+        $query = $this->db->query($sql_chk_reading, array($avail));
+
+        if ($query->num_rows() > 0)
+        {
+            return $query->result_array();
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    
+    function db_chk_reading_for_avail($reading, $avail)
+    {
+        $sql_chk_reading = "
+        select tbl_flex_readings.flex_code
+        from tbl_flex_readings
+        where tbl_flex_readings.reading_link like ? and tbl_flex_readings.flex_code = ?";
+
+        $query = $this->db->query($sql_chk_reading, array('%'.$reading.'%', $avail));
+
+        if ($query->num_rows() > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    
+    function db_chk_active_reading_for_avail($reading, $avail)
+    {
+        $sql_chk_reading = "
+        select tbl_flex_readings.flex_code
+        from tbl_flex_readings
+        where tbl_flex_readings.reading_link like ? and tbl_flex_readings.flex_code = ?
+        and tbl_flex_readings.active_to > now()";
+
+        $query = $this->db->query($sql_chk_reading, array('%'.$reading.'%', $avail));
+
+        if ($query->num_rows() > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    
+    function db_chk_rollover_reading_for_avail($reading, $avail)
+    {
+        $sql_chk_reading = "
+        select tbl_intm_readings.flex_code
+        from tbl_intm_readings
+        where tbl_intm_readings.date = CURRENT_DATE and tbl_intm_readings.reading_link like ? and tbl_intm_readings.flex_code = ?";
+
+        $query = $this->db->query($sql_chk_reading, array('%'.$reading.'%', $avail));
+
+        if ($query->num_rows() > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    
+    function db_ins_rollover_reading_for_avail($reading_link,$to_avail,$username,$from_avail=null)
+    {
+        $sql_ins_rollover_reading = "
+            INSERT INTO tbl_intm_readings (reading_link, flex_code, date, username, rollover_from)
+            VALUES (?,?,CURRENT_DATE,?,?)";
+
+        $query = $this->db->query($sql_ins_rollover_reading, array($reading_link,$to_avail,$username,$from_avail));
+
+        /*if ($query->num_rows() > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }*/
+        
+    }
+    
+    /**
+     * Get the to availabilities - Obseleted
+     *
+     */
+    /*
+    public function db_chk_to_avails_by_topic($topic_code)
+    {
+		
+	$sql_chkavail = "SELECT * 
+		FROM  tbl_avails 
+		WHERE  topic_code =  ? AND (teach_end_date + INTERVAL '35 days') > NOW()
+                    AND teach_end_date is not null AND study_mode is not null 
+                    AND student_access_date is not null AND deleted_stusys = false
+                ORDER BY avail_ref";
+		
+	$sql_readavail = "SELECT * 
+			FROM  tbl_readings_avails 
+			WHERE  flex_code = ?";
+
+
+        $query = $this->db->query($sql_chkavail, array($topic_code));
+    
+        $row_count = $query->num_rows();
+    
+        $counter = 0;
+    
+        if($row_count > 0)
+        {
+            foreach ($query->result_array() as $row)
+            {
+                $query_readavail = $this->db->query($sql_readavail, array($row['avail_ref']));
+                if($query_readavail->num_rows() > 0)
+                {
+                    $row['in_readavail'] = true;
+                }
+                else
+ 		{
+                    $row['in_readavail'] = false;
+ 		}
+                $result[$counter] = $row;
+ 	        $counter ++;
+            }
+            #$result['row_count'] = $counter;
+        }
+        else
+        {
+            $result = false;
+        }
+
+        
+        return $result;
+
+    }
+    */
+    
+
+    /**
+     * If the availability is not in Flex, generate the course CSV to insert courses to Flex
+     * Needs to improve to use only possiblily one sql query.
+     */
+    function db_chk_to_availabilities($to_avails)
+    {
+        $course_csv = '"Name","Description","Code","Citation","Start","End","Students","Type","DepartmentName"' . "\n";
+        
+        $sql_readavail = "SELECT flex_code 
+			FROM  tbl_readings_avails 
+			WHERE  flex_code = ?";
+
+        #$course_csv = '"Name","Description","Code","Citation","Start","End","Students","Type","DepartmentName"' . "\n";
+		
+	$sql_getavail = "SELECT 
+            ARRAY_TO_STRING(ARRAY[tbl_avails.avail_ref, SUBSTRING(tbl_avails.topic_name, POSITION(' ' IN tbl_avails.topic_name)+1)], ' -- ') AS Name,
+            tbl_avails.avail_ref AS Description,
+            tbl_avails.avail_ref AS Code,
+            'Generic' as Citation,
+            tbl_avails.student_access_date AS Start,
+            tbl_avails.supp_exam_end AS End,
+            tbl_avails.num_students as Students,
+            tbl_avails.study_mode as Type,
+            tbl_org_areas.org_name as DepartmentName 
+            FROM tbl_avails 
+            INNER JOIN tbl_org_areas ON tbl_avails.org_num = tbl_org_areas.org_num 
+            WHERE tbl_avails.avail_ref = ? AND tbl_avails.supp_exam_end > NOW() 
+                  AND tbl_avails.supp_exam_end is not null AND tbl_avails.study_mode is not null 
+                  AND tbl_avails.student_access_date is not null AND tbl_avails.deleted_stusys = false";
+        
+        $course_count = 0;
+        foreach ($to_avails as $avail )
+        {
+            $query = $this->db->query($sql_readavail, array($avail));
+
+            #To availability is already in FLEX.
+            if ($query->num_rows() > 0)
+            {
+                continue;
+            }
+        
+            #Add the new availability to FLEX.
+            $query_getavail = $this->db->query($sql_getavail, array($avail));
+            if ($query_getavail->num_rows() < 1)
+            {
+                return false;
+            }
+            $row = $query_getavail->row_array();
+
+            $thestart=new DateTime($row['start']);
+            $theend=new DateTime($row['end']);
+
+            #date_sub($thestart, date_interval_create_from_date_string('28 days'));
+            #date_add($theend, date_interval_create_from_date_string('35 days'));
+
+            $row['start'] = $thestart->format('Y-m-d H:i:s');
+            $row['end'] = $theend->format('Y-m-d H:i:s');
+
+            $row['eqStart'] = $thestart->format("d/m/Y");
+            $row['eqEnd'] = $theend->format("d/m/Y");
+
+            $course_csv = $course_csv . '"' . $row['name'] . '",' . '"' . $row['description'] . '",' . '"' . $row['code'] . '",'
+                         . '"' . $row['citation'] . '",' . '"' . $row['eqStart'] . '",' . '"' . $row['eqEnd'] . '",' 
+                         .'"' . $row['students'] .'",' . '"' . $row['type'] . '",'. '"' . $row['departmentname'] . '"' . "\n";
+
+            $course["array"][$course_count] = $row;
+            $course_count ++;
+        
+        }
+        
+        $course["csv"] = $course_csv;
+        #log_message('error', $course_csv);
+        $course["count"] = $course_count;
+        return $course;
+    }
+    
+    /**
+     * After adding courses to Flex, insert them into tbl_readings_avails
+     *
+     */
+    public function db_ins_readings_avails($course)
+    {
+
+        $sql_readings_avails = "INSERT INTO tbl_readings_avails 
+                (avail_ref, flex_code, active_from, active_to) 
+                VALUES (?,?,?,?)";
+
+        #$stmt_readings_avails = $this->db->prepare($sql_readings_avails);
+        
+        for($i=0; $i<$course["count"]; $i++)
+        {
+            $onecourse = $course["array"][$i];
+            $param_array = array($onecourse["code"], $onecourse["code"], $onecourse["start"], $onecourse["end"]);
+            $query = $this->db->query($sql_readings_avails, $param_array);
+
+        }
+
+    }
+    
+    function db_get_all_avails_by_topic($topic_code)
+    {
+        /*
+        $sql_allreadavail = "SELECT  tbl_readings_avails.avail_ref as availability, 'existing' as in_equella
+                               FROM  tbl_readings_avails 
+                               WHERE  tbl_readings_avails.avail_ref LIKE ? ESCAPE '/'
+                             UNION
+                             SELECT  tbl_ns_readings_avails.flex_code as availability, 'existing' as in_equella
+                               FROM  tbl_ns_readings_avails 
+                               WHERE  tbl_ns_readings_avails.flex_code LIKE ? ESCAPE '/'
+                             UNION
+                             SELECT tbl_avails.avail_ref as availability, 'new' as in_equella
+		               FROM  tbl_avails 
+		               WHERE  tbl_avails.topic_code = ? AND tbl_avails.supp_exam_end > NOW()
+                               AND tbl_avails.supp_exam_end is not null AND tbl_avails.study_mode is not null 
+                               AND tbl_avails.student_access_date is not null AND tbl_avails.deleted_stusys = false
+                               AND tbl_avails.avail_ref not in ( select tbl_readings_avails.avail_ref from tbl_readings_avails)
+                             ORDER by 1 DESC";
+        */
+        $sql_allreadavail = "SELECT  tbl_readings_avails.avail_ref as availability, 'existing' as in_equella
+                               FROM  tbl_readings_avails 
+                               WHERE  tbl_readings_avails.avail_ref LIKE ? ESCAPE '/'
+                             UNION
+                             SELECT  tbl_ns_readings_avails.flex_code as availability, 'existing' as in_equella
+                               FROM  tbl_ns_readings_avails 
+                               WHERE  tbl_ns_readings_avails.flex_code LIKE ? ESCAPE '/'
+                             UNION  
+                             SELECT tbl_avails.avail_ref as availability, 'new' as in_equella
+		               FROM  tbl_avails 
+		               WHERE  tbl_avails.topic_code = ? AND tbl_avails.supp_exam_end > NOW()
+                               AND tbl_avails.supp_exam_end is not null AND tbl_avails.study_mode is not null 
+                               AND tbl_avails.student_access_date is not null AND tbl_avails.deleted_stusys = false
+                               AND tbl_avails.avail_ref not in ( select tbl_readings_avails.avail_ref from tbl_readings_avails)
+                             ORDER by 1 DESC";
+
+        $query = $this->db->query($sql_allreadavail, array($topic_code.'/_%', $topic_code.'/_%', $topic_code));
+        
+        #$query = $this->db->query($sql_readavail, array($topic_code.'/_%'));
+
+        if ($query->num_rows() > 0)
+        {
+           return $query->result_array();
+           /*foreach ($query->result() as $row)
+           {
+              echo $row->avail_ref;
+              echo '<br>';
+           }*/
+        }
+        else
+        {
+            return false;
+        }
+        
+        
+    }
+    
+    function db_get_active_avails_by_topic($topic_code)
+    {
+        
+        /*$sql_allreadavail = "SELECT  tbl_readings_avails.avail_ref as availability, 'existing' as in_equella
+                               FROM  tbl_readings_avails 
+                               WHERE  tbl_readings_avails.avail_ref LIKE ? ESCAPE '/'
+                             UNION
+                             SELECT  tbl_ns_readings_avails.flex_code as availability, 'existing' as in_equella
+                               FROM  tbl_ns_readings_avails 
+                               WHERE  tbl_ns_readings_avails.flex_code LIKE ? ESCAPE '/'
+                             UNION
+                             SELECT tbl_avails.avail_ref as availability, 'new' as in_equella
+		               FROM  tbl_avails 
+		               WHERE  tbl_avails.topic_code = ? AND tbl_avails.supp_exam_end > NOW()
+                               AND tbl_avails.supp_exam_end is not null AND tbl_avails.study_mode is not null 
+                               AND tbl_avails.student_access_date is not null AND tbl_avails.deleted_stusys = false
+                               AND tbl_avails.avail_ref not in ( select tbl_readings_avails.avail_ref from tbl_readings_avails)
+                             ORDER by 1 DESC";
+        */
+
+        /*$sql_allreadavail = "SELECT tbl_avails.avail_ref as availability,
+                               CASE 
+                                   WHEN (tbl_avails.avail_ref not in ( select tbl_readings_avails.avail_ref from tbl_readings_avails) ) THEN 'new'
+                                   ELSE 'existing'
+                               END AS in_equella
+		               FROM  tbl_avails 
+		               WHERE  tbl_avails.topic_code = ? AND (tbl_avails.teach_end_date + INTERVAL '35 days') > NOW()
+                               AND tbl_avails.teach_end_date is not null AND tbl_avails.study_mode is not null 
+                               AND tbl_avails.student_access_date is not null AND tbl_avails.deleted_stusys = false
+                               ORDER BY tbl_avails.avail_ref desc";*/
+        
+        $sql_allreadavail = "select a.avail_ref availability, count(distinct r.*) count_reading, count(distinct i.*) count_intm_reading,
+                                CASE 
+                                   WHEN (a.avail_ref not in ( select tbl_readings_avails.avail_ref from tbl_readings_avails) ) THEN 'new'
+                                   ELSE 'existing'
+                                END AS in_equella
+                                from tbl_avails a
+                                left outer join tbl_intm_readings i on i.flex_code = a.avail_ref and i.date = CURRENT_DATE
+                                left outer join tbl_flex_readings r on r.flex_code = a.avail_ref
+                                where topic_code = ?  AND a.supp_exam_end > NOW()
+                                AND a.supp_exam_end is not null AND a.study_mode is not null 
+                                AND a.student_access_date is not null AND a.deleted_stusys = false
+                                group by a.avail_ref
+                                ORDER BY a.avail_ref desc";
+
+        $query = $this->db->query($sql_allreadavail, array($topic_code));
+        
+        #$query = $this->db->query($sql_readavail, array($topic_code.'/_%'));
+
+        if ($query->num_rows() > 0)
+        {
+           return $query->result_array();
+           /*foreach ($query->result() as $row)
+           {
+              echo $row->avail_ref;
+              echo '<br>';
+           }*/
+        }
+        else
+        {
+            return false;
+        }
+        
+        
+    }
+    
+    function db_get_ereadings_usg_by_avail($availability)
+    {
+        
+        $sql_get_readings = "select * from f_retrieve_flex_readings_usg(?)";
+
+        $query = $this->db->query($sql_get_readings, array($availability));
+
+        if ($query->num_rows() > 0)
+        {
+           return $query->result_array();
+           /*foreach ($query->result() as $row)
+           {
+              echo $row->avail_ref;
+              echo '<br>';
+           }*/
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    
+    function db_get_availability_info($availability)
+    {
+        
+        $sql_get_readings = "select tbl_avails.num_students, tbl_avails.student_access_date as access_from, 
+                     (tbl_avails.teach_end_date + interval '1 week') as access_to from tbl_avails where tbl_avails.avail_ref = ?";
+
+        $query = $this->db->query($sql_get_readings, array($availability));
+
+        if ($query->num_rows() > 0)
+        {
+           $res_array = $query->result_array();
+           return $res_array[0];
+           /*foreach ($query->result() as $row)
+           {
+              echo $row->avail_ref;
+              echo '<br>';
+           }*/
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+
+    function db_get_avails_ercount_by_topic($topic_code)
+    {
+        $sql_allreadavail = "(select a.avail_ref availability, 'existing' as in_equella, count(distinct r.*) count_reading, count(distinct i.*) count_intm_reading
+                                from tbl_readings_avails a
+                                left outer join tbl_intm_readings i on i.flex_code = a.avail_ref and i.date = CURRENT_DATE
+                                left outer join tbl_flex_readings r on r.flex_code = a.avail_ref
+                                where a.avail_ref like ? ESCAPE '/'
+                                group by a.avail_ref
+                                )
+                             UNION
+                             (select n.flex_code availability, 'existing' as in_equella, count(distinct r.*) count_reading, count(distinct i.*) count_intm_reading
+                                from tbl_ns_readings_avails n
+                                left outer join tbl_intm_readings i on i.flex_code = n.flex_code and i.date = CURRENT_DATE
+                                left outer join tbl_flex_readings r on r.flex_code = n.flex_code
+                                where n.flex_code similar to ? ESCAPE '$'
+                                group by n.flex_code
+                                )
+                             UNION  
+                             (SELECT tbl_avails.avail_ref as availability, 'new' as in_equella, 0 as count_reading, 0 as count_intm_reading
+		               FROM  tbl_avails 
+		               WHERE  tbl_avails.topic_code = ? AND tbl_avails.supp_exam_end > NOW()
+                               AND tbl_avails.supp_exam_end is not null AND tbl_avails.study_mode is not null 
+                               AND tbl_avails.student_access_date is not null AND tbl_avails.deleted_stusys = false
+                               AND tbl_avails.avail_ref not in ( select tbl_readings_avails.avail_ref from tbl_readings_avails))
+                             ORDER by 1 DESC";
+
+        $query = $this->db->query($sql_allreadavail, array($topic_code.'/_%', $topic_code.'[$_|$s|-]%', $topic_code));
+        
+        #$query = $this->db->query($sql_readavail, array($topic_code.'/_%'));
+
+        if ($query->num_rows() > 0)
+        {
+           return $query->result_array();
+           /*foreach ($query->result() as $row)
+           {
+              echo $row->avail_ref;
+              echo '<br>';
+           }*/
+        }
+        else
+        {
+            return false;
+        }
+        
+        
+    }
+    
+    function db_chk_topic_coord($fan)
+    {
+        $sql_get_topic_coord = "SELECT * 
+                            FROM  tbl_avails_topic_coord 
+                            WHERE  LOWER(fan) = LOWER(?) AND deleted_flo = false";
+        
+        $query = $this->db->query($sql_get_topic_coord, array($fan));
+
+        if ($query->num_rows() > 0)
+        {
+           $result = $query->result_array();
+           return $result[0];
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    function db_chk_notice()
+    {
+        $sql_get_notice = "SELECT * from tbl_notices 
+                           WHERE tbl_notices.context = 'listmgr'
+                             AND tbl_notices.start_ts < now() AND tbl_notices.end_ts > now()";
+        
+        $query = $this->db->query($sql_get_notice);
+
+        if ($query->num_rows() > 0)
+        {
+           $result = $query->result_array();
+           return $result[0];
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    function db_get_avail_date($avail)
+    {
+        $sql_chk_avail = "
+        select active_from, active_to from tbl_readings_avails where avail_ref = ?";
+
+        $query = $this->db->query($sql_chk_avail, array($avail));
+
+        if ($query->num_rows() > 0)
+        {
+            $result = $query->result_array();
+            return $result[0];
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    
+    function db_get_activate_today_reading_for_avail($avail)
+    {
+        $sql_chk_reading = "
+        select i.flex_code, i.reading_link
+        from tbl_intm_readings as i
+        where i.flex_code = ? and i.date = CURRENT_DATE and i.rollover_from is null";
+
+        $query = $this->db->query($sql_chk_reading, array($avail));
+
+        if ($query->num_rows() > 0)
+        {
+            return $query->result_array();
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    
+}

@@ -1,0 +1,122 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/**
+ * Controller to show SAM in HTML or PDF format
+ */
+class Test extends CI_Controller 
+{
+    
+    
+    public function index()
+    {
+            
+            $url = "http://linkit.flinders.edu.au/flinders?SID=SFUER:eres&svc.fulltext=yes&rft.genre=article&rft.issn=0140-6736&rft.eissn=1474-547X&rft.pages=1877-1890rft.atitle=Do women with pre-eclampsia, and their babies, benefit from magnesium sulphate? The Magpie Trial: a randomised placebo-controlled trial&rft.volume=359&rft.issue=9321&rft.date=2002";
+            $url_encode = urlencode($url);
+            
+            echo $url;
+            echo "<br><br>";
+            echo $url_encode;
+            return;
+                        // using ldap bind
+            $ldaprdn  = 'uname';     // ldap rdn or dn
+            $ldappass = 'password';  // associated password
+
+            // connect to ldap server
+            $ldapconn = ldap_connect("ldap://ldapauth.flinders.edu.au")
+                or die("Could not connect to LDAP server.");
+
+            if ($ldapconn) {
+
+                // binding to ldap server
+                $ldapbind = ldap_bind($ldapconn, $ldaprdn, $ldappass);
+
+                // verify binding
+                if ($ldapbind) {
+                    echo "LDAP bind successful...";
+                } else {
+                    echo "LDAP bind failed...";
+                }
+
+            }
+            return;##
+        
+            $ci =& get_instance();
+            $ci->load->config('flex');
+            #$loggings = $ci->config->item('rolloverlog');
+            #$this->load->library('logging/logging',$loggings);
+            #$this->logger_rollover = $this->logging->get_logger('rollover');
+            #$this->logger_activation = $this->logging->get_logger('activation');
+            $this->soapusername = $ci->config->item('soap_username');
+            $this->soappassword = $ci->config->item('soap_password');
+            $this->soapparams = array('username'=>$this->soapusername, 'password'=>$this->soappassword);
+            $this->load->helper('url');
+            
+            
+            #$groups = 'EQ contributor'; #### '';
+            $groups = '';
+            
+            
+            if(!isset($_SERVER['REMOTE_USER']))
+            {
+                ####
+                $this->logger_rollover->error("Error: REMOTE_USER not set.");
+                $this->logger_activation->error("Error: REMOTE_USER not set.");
+                $errdata['message'] = 'Unable to get username';
+                $errdata['heading'] = "Internal error";
+                $this->load->view('reading_rollover/showerror_view', $errdata);
+                $this->output->_display();
+                exit();
+            }
+            $userUuid = $_SERVER['REMOTE_USER'];
+            
+            $this->load->library('flexsoap/flexsoap',$this->soapparams);
+            if(!$this->flexsoap->success)
+            {
+                ####
+                #$this->logger_rollover->error($this->flexsoap->error_info);
+                #$this->logger_activation->error($this->flexsoap->error_info);
+                $errdata['message'] = $this->flexsoap->error_info;
+                $errdata['heading'] = "Internal error";
+                $this->load->view('reading_rollover/showerror_view', $errdata);
+                $this->output->_display();
+                exit();
+            }
+            
+            $groups = $this->flexsoap->getGroupsByUser($userUuid);
+            if(!$this->flexsoap->success)
+            {
+                ####
+                #$this->logger_rollover->error($this->flexsoap->error_info);
+                #$this->logger_activation->error($this->flexsoap->error_info);
+                $errdata['message'] = $this->flexsoap->error_info;
+                $errdata['heading'] = "Internal error";
+                $this->load->view('reading_rollover/showerror_view', $errdata);
+                $this->output->_display();
+                exit();
+            }
+            
+            $search_groups = $this->flexsoap->searchGroups('som');
+            if(!$this->flexsoap->success)
+            {
+                ####
+                #$this->logger_rollover->error($this->flexsoap->error_info);
+                #$this->logger_activation->error($this->flexsoap->error_info);
+                $errdata['message'] = $this->flexsoap->error_info;
+                $errdata['heading'] = "Internal error";
+                $this->load->view('reading_rollover/showerror_view', $errdata);
+                $this->output->_display();
+                exit();
+            }
+            
+            log_message('error', 'user groups: ' . $groups);
+            log_message('error', 'search groups: ' . $search_groups);
+            #$this->logger_rollover->info("user group: " . $groups);
+            #must in one of the user groups to proceed.
+            $errdata['message'] = 'Thanks';
+            $errdata['heading'] = 'Web Test';
+            $this->load->view('reading_rollover/showerror_view', $errdata);
+                    
+                    
+        }
+    
+}

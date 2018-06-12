@@ -1,0 +1,57 @@
+2015-11-03 09:15:53: Added course to Flex: NURS2003_2016_NS1_RV
+2015-11-03 09:15:54: Added course to Flex: NURS2003_2016_NS1_3
+2015-11-03 09:15:54: Added course to Flex: NURS2003_2016_NS1_2
+2015-11-03 09:15:54: Added course to Flex: NURS2003_2016_NS1
+2015-11-03 09:16:05: Error: REMOTE_USER not set.
+2015-11-03 09:16:05: Error: REMOTE_USER not set.
+2015-11-03 09:16:05: Error: REMOTE_USER not set.
+2015-11-03 09:16:05: Error: REMOTE_USER not set.
+2015-11-03 09:26:22: Added course to Flex: NURS2002_2016_NS1_RV
+2015-11-03 09:26:22: Added course to Flex: NURS2002_2016_NS1_6
+2015-11-03 09:26:22: Added course to Flex: NURS2002_2016_NS1_5
+2015-11-03 09:26:22: Added course to Flex: NURS2002_2016_NS1_4
+2015-11-03 09:26:22: Added course to Flex: NURS2002_2016_NS1_3
+2015-11-03 09:26:22: Added course to Flex: NURS2002_2016_NS1_2
+2015-11-03 09:26:22: Added course to Flex: NURS2002_2016_NS1
+2015-11-03 09:26:50: Error: REMOTE_USER not set.
+2015-11-03 09:26:51: Error: REMOTE_USER not set.
+2015-11-03 09:26:51: Error: REMOTE_USER not set.
+2015-11-03 09:26:51: Error: REMOTE_USER not set.
+2015-11-03 09:26:51: Error: REMOTE_USER not set.
+2015-11-03 09:26:51: Error: REMOTE_USER not set.
+2015-11-03 09:26:51: Error: REMOTE_USER not set.
+2015-11-03 10:34:00: Added course to Flex: NURS2004_2016_NS1_RV
+2015-11-03 10:34:00: Added course to Flex: NURS2004_2016_NS1_2
+2015-11-03 10:34:01: Added course to Flex: NURS2004_2016_NS1
+2015-11-03 10:34:56: Error: REMOTE_USER not set.
+2015-11-03 10:34:56: Error: REMOTE_USER not set.
+2015-11-03 10:34:57: Error: REMOTE_USER not set.
+2015-11-03 15:19:17: Added course to Flex: NUTD3107_2016_S2_DA
+2015-11-03 15:19:18: Added course to Flex: NUTD3107_2016_S2
+2015-11-03 15:19:38: Added course to Flex: NUTD9167_2016_S2
+2015-11-03 15:19:38: Added course to Flex: NUTD9167_2015_S2
+2015-11-03 15:19:58: Added course to Flex: NUTD9222_2016_NS2_2
+2015-11-03 15:19:59: Added course to Flex: NUTD9222_2016_NS2
+2015-11-03 15:19:59: Added course to Flex: NUTD9222_2016_NS1_2
+2015-11-03 15:19:59: Added course to Flex: NUTD9222_2016_NS1
+2015-11-03 23:01:35: Error: REMOTE_USER not set.
+2015-11-03 23:01:36: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:38: Error: REMOTE_USER not set.
+2015-11-03 23:01:42: Error: REMOTE_USER not set.
+2015-11-03 23:01:42: Error: REMOTE_USER not set.
+2015-11-03 23:01:42: Error: REMOTE_USER not set.

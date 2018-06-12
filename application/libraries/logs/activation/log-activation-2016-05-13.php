@@ -1,0 +1,4 @@
+2016-05-13 09:42:58: Added course to Flex: SOAD3006_2016_S2
+2016-05-13 09:44:24: Added course to Flex: SOAD9226_2016_NS2
+2016-05-13 14:27:42: Added course to Flex: CREA2141_2016_S2
+2016-05-13 14:28:11: Added course to Flex: ENGL2141_2016_S2

@@ -1,0 +1,5 @@
+2016-12-16 11:15:50: Added course to Flex: SOAD9213_2017_NS2_ADL
+2016-12-16 11:15:50: Added course to Flex: SOAD9213_2017_NS1_ADL
+2016-12-16 11:26:53: Added course to Flex: PARA3001_2017_S1_DE
+2016-12-16 11:38:12: Added course to Flex: HLTH1003_2017_S2
+2016-12-16 15:24:08: Added course to Flex: INNO1003_2017_S2_TON

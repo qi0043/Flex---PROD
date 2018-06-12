@@ -1,0 +1,6 @@
+2018-03-02 13:48:02: Added course to Flex: INTR9062_2018_S1_DE
+2018-03-02 13:48:02: Added course to Flex: INTR9062_2018_S1
+2018-03-02 14:42:27: Added course to Flex: WMST7021_2018_S1_DE
+2018-03-02 14:42:27: Added course to Flex: WMST7021_2018_S1
+2018-03-02 14:42:44: Added course to Flex: POLI2027_2018_S1_DE
+2018-03-02 14:42:44: Added course to Flex: POLI2027_2018_S1

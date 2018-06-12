@@ -1,0 +1,2 @@
+2016-07-08 11:33:41: Added course to Flex: WMST7022_2016_NS2
+2016-07-08 15:16:41: Added course to Flex: OCCT8006_2016_NS2_DP

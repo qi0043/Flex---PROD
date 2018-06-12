@@ -1,0 +1,6 @@
+2018-01-19 12:11:17: Added course to Flex: LLAW1211_2018_S2
+2018-01-19 12:11:17: Added course to Flex: LLAW1211_2018_S1
+2018-01-19 14:35:09: Added course to Flex: OCCT8004_2018_NS1_DP
+2018-01-19 15:14:07: Added course to Flex: SOCI1010_2018_S1
+2018-01-19 15:18:15: Added course to Flex: SOCI2022_2018_S1
+2018-01-19 15:32:08: Added course to Flex: SOAD4008_2018_S1

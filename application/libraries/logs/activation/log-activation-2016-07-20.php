@@ -1,0 +1,3 @@
+2016-07-20 09:07:28: Added course to Flex: EDUC9823_2016_S2_DE
+2016-07-20 10:49:33: Added course to Flex: HLPE1531_2016_S2
+2016-07-20 13:28:02: Added course to Flex: BUSN2033_2016_S2

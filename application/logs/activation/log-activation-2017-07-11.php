@@ -1,0 +1,9 @@
+2017-07-11 10:59:04: Added course to Flex: HLTH1306_2017_S2_DE
+2017-07-11 10:59:04: Added course to Flex: HLTH1306_2017_S2
+2017-07-11 11:22:09: Added course to Flex: PSYC9014_2017_S2
+2017-07-11 13:08:51: Added course to Flex: EDUC9609_2017_S2_DE
+2017-07-11 13:08:51: Added course to Flex: EDUC9609_2017_S2
+2017-07-11 13:12:24: Added course to Flex: NUTD1106_2017_S2_DA
+2017-07-11 13:12:24: Added course to Flex: NUTD1106_2017_S2
+2017-07-11 15:31:29: Added course to Flex: EDUC9702_2017_S2_DE_2
+2017-07-11 17:17:09: Added course to Flex: HACM9200_2017_S2_ADL

@@ -1,0 +1,3 @@
+2016-06-30 12:02:03: Added course to Flex: NURS8828_2016_S2_DE
+2016-06-30 14:51:04: Added course to Flex: POLI2005_2016_S2_DE
+2016-06-30 14:51:04: Added course to Flex: POLI2005_2016_NS2

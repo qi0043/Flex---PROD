@@ -1,0 +1,4 @@
+2016-07-25 16:54:28: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
+2016-07-25 16:54:28: Rollover Failed with user: ivan0022, from: DRAM3105_2015_NS2 to DRAM2104_2016_NS2, index: 6, reading link: https://flex.flinders.edu.au/items/a5f90714-cc45-4fe9-8254-6b1b4a8b3606/1/?.vi=file&attachment.uuid=ad47dd5d-2772-4d59-9593-f2cf73b37119
+2016-07-25 16:54:31: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
+2016-07-25 16:54:31: Rollover Failed with user: ivan0022, from: DRAM3105_2015_NS2 to DRAM2104_2016_NS2, index: 13, reading link: https://flex.flinders.edu.au/items/dfdff6b3-f264-44b7-86b4-6e3c6d3aa93c/1/?.vi=file&attachment.uuid=ce6c1bdd-0755-4a1c-867c-5924ff06f4d6

@@ -1,0 +1,7 @@
+2017-06-30 10:12:52: Added course to Flex: ENGL1102_2017_S2
+2017-06-30 10:55:59: Added course to Flex: SOCI3051_2017_S2
+2017-06-30 13:54:51: Added course to Flex: POAD8142_2017_NS2_DE
+2017-06-30 13:55:59: Added course to Flex: LLAW3256_2017_S2
+2017-06-30 14:03:35: Added course to Flex: LING3106_2017_S2
+2017-06-30 14:20:41: Added course to Flex: HLTH3105_2017_S2_2
+2017-06-30 15:12:43: Added course to Flex: AUST1004_2017_S2

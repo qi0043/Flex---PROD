@@ -1,0 +1,1 @@
+2014-12-17 15:08:53: Error: REMOTE_USER not set.

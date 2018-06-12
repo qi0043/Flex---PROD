@@ -1,0 +1,6 @@
+2018-03-15 08:31:04: Added course to Flex: LLAW4042A_2018_S2
+2018-03-15 08:31:04: Added course to Flex: LLAW4042A_2018_S1
+2018-03-15 08:31:30: Added course to Flex: LLAW4042B_2018_S2
+2018-03-15 08:31:30: Added course to Flex: LLAW4042B_2018_S1
+2018-03-15 08:31:45: Added course to Flex: LLAW7100B_2018_S2
+2018-03-15 08:32:03: Added course to Flex: LLAW7100C_2018_S1

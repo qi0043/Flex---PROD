@@ -1,0 +1,5 @@
+2016-01-04 14:00:23: Added course to Flex: POAD9129_2016_NS1_DE
+2016-01-04 14:15:18: Added course to Flex: MHSC8018_2016_S2_DE
+2016-01-04 14:15:18: Added course to Flex: MHSC8018_2016_S2
+2016-01-04 14:15:18: Added course to Flex: MHSC8018_2016_S1_DE
+2016-01-04 14:15:18: Added course to Flex: MHSC8018_2016_S1

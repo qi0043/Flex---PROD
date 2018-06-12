@@ -1,0 +1,11 @@
+2018-01-22 10:25:08: Added course to Flex: NUTD3102_2018_S1_DA
+2018-01-22 10:25:08: Added course to Flex: NUTD3102_2018_S1
+2018-01-22 10:28:30: Added course to Flex: NUTD9111_2018_S1
+2018-01-22 11:01:00: Added course to Flex: PSYC3003_2018_S1
+2018-01-22 12:12:38: Added course to Flex: EDUC3526_2018_S1
+2018-01-22 12:13:03: Added course to Flex: EDUC9133_2018_S1
+2018-01-22 12:58:56: Added course to Flex: EDUC9222_2018_S1
+2018-01-22 13:23:05: Added course to Flex: PARA1000_2018_S1
+2018-01-22 14:03:06: Added course to Flex: AGES2002_2018_NS2_DE
+2018-01-22 14:03:06: Added course to Flex: AGES2002_2018_NS1_DE
+2018-01-22 14:50:22: Added course to Flex: REHB8040_2018_S1_DE

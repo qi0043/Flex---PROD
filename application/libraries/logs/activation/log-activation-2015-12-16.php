@@ -1,0 +1,5 @@
+2015-12-16 09:52:34: Added course to Flex: PALL8441_2016_S1_DP
+2015-12-16 09:52:34: Added course to Flex: PALL8441_2016_S1_DE
+2015-12-16 13:30:36: Added course to Flex: DSRS2236_2016_S2_DE
+2015-12-16 13:30:36: Added course to Flex: DSRS2236_2016_S2
+2015-12-16 13:30:36: Added course to Flex: DSRS2236_2016_S1_DE

@@ -1,0 +1,3 @@
+2017-06-19 09:21:15: Added course to Flex: HLPE3551_2017_NS2
+2017-06-19 09:32:09: Added course to Flex: HLPE2402_2017_S2
+2017-06-19 17:07:45: Added course to Flex: PSYC3004_2017_S2

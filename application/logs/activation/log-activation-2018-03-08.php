@@ -1,0 +1,5 @@
+2018-03-08 08:43:39: Added course to Flex: BUSN1022_2018_SU
+2018-03-08 08:43:39: Added course to Flex: BUSN1022_2018_S1_DE
+2018-03-08 08:43:39: Added course to Flex: BUSN1022_2018_S1
+2018-03-08 14:14:17: Added course to Flex: PALL8432_2018_S2_DE
+2018-03-08 14:14:17: Added course to Flex: PALL8432_2018_S2

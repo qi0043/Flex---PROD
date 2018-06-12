@@ -1,0 +1,8 @@
+2015-08-24 11:01:07: Added course to Flex: EASC2702_2015_S2
+2015-08-24 13:04:39: Added course to Flex: EDUC3624_2015_NS2
+2015-08-24 13:04:55: Error: REMOTE_USER not set.
+2015-08-24 13:32:11: Added course to Flex: EDUC9123_2015_NS2
+2015-08-24 14:55:47: Added course to Flex: EDUC9826_2015_NS2
+2015-08-24 15:34:12: Added course to Flex: BIOL1101_2015_S2
+2015-08-24 23:01:27: Error: REMOTE_USER not set.
+2015-08-24 23:01:27: Error: REMOTE_USER not set.

@@ -1,0 +1,23 @@
+2015-09-30 11:36:14: Added course to Flex: SPTH9220_2015_NS2
+2015-09-30 23:07:51: Error: REMOTE_USER not set.
+2015-09-30 23:07:53: Error: REMOTE_USER not set.
+2015-09-30 23:07:54: Error: REMOTE_USER not set.
+2015-09-30 23:07:55: Error: REMOTE_USER not set.
+2015-09-30 23:08:01: Error: REMOTE_USER not set.
+2015-09-30 23:08:01: Error: REMOTE_USER not set.
+2015-09-30 23:08:01: Error: REMOTE_USER not set.
+2015-09-30 23:08:01: Error: REMOTE_USER not set.
+2015-09-30 23:08:01: Error: REMOTE_USER not set.
+2015-09-30 23:08:01: Error: REMOTE_USER not set.
+2015-09-30 23:08:01: Error: REMOTE_USER not set.
+2015-09-30 23:08:01: Error: REMOTE_USER not set.
+2015-09-30 23:08:01: Error: REMOTE_USER not set.
+2015-09-30 23:08:03: Error: REMOTE_USER not set.
+2015-09-30 23:08:05: Error: REMOTE_USER not set.
+2015-09-30 23:08:06: Error: REMOTE_USER not set.
+2015-09-30 23:08:07: Error: REMOTE_USER not set.
+2015-09-30 23:08:07: Error: REMOTE_USER not set.
+2015-09-30 23:08:07: Error: REMOTE_USER not set.
+2015-09-30 23:08:07: Error: REMOTE_USER not set.
+2015-09-30 23:08:09: Error: REMOTE_USER not set.
+2015-09-30 23:08:09: Error: REMOTE_USER not set.

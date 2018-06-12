@@ -1,0 +1,1 @@
+2017-10-23 10:27:25: Added course to Flex: DISH8006_2018_S2_DE

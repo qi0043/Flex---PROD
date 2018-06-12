@@ -1,0 +1,11 @@
+2016-02-10 09:19:32: Added course to Flex: LLAW2212_2016_S1
+2016-02-10 09:20:19: Added course to Flex: AGES8025_2016_S1_DE
+2016-02-10 09:20:19: Added course to Flex: AGES8025_2016_S1
+2016-02-10 10:21:43: Added course to Flex: SOAD9213_2016_NS1_ADL
+2016-02-10 11:09:26: Added course to Flex: PSYC2020_2016_S1
+2016-02-10 11:27:09: Added course to Flex: LING2103_2016_S1
+2016-02-10 11:32:01: Added course to Flex: EDUC9825_2016_NS1
+2016-02-10 12:11:57: Added course to Flex: EDUC4730_2016_NS1
+2016-02-10 16:07:54: Added course to Flex: WMST7027_2016_S1
+2016-02-10 16:08:25: Added course to Flex: WMST8005_2016_S1
+2016-02-10 17:38:16: Added course to Flex: NURS9017_2016_S1_FLC

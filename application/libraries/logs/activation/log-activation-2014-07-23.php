@@ -1,0 +1,4 @@
+2014-07-23 09:24:13: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Activation would put you in violation of statutory copyright law. Please contact Kylie Jarrett <a href="mailto:kylie.jarrett@flinders.edu.au">kylie.jarrett@flinders.edu.au</a> for assistance.)
+2014-07-23 11:43:43: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Activation would put you in violation of statutory copyright law. Please contact Kylie Jarrett <a href="mailto:kylie.jarrett@flinders.edu.au">kylie.jarrett@flinders.edu.au</a> for assistance.)
+2014-07-23 11:44:13: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Activation would put you in violation of statutory copyright law. Please contact Kylie Jarrett <a href="mailto:kylie.jarrett@flinders.edu.au">kylie.jarrett@flinders.edu.au</a> for assistance.)
+2014-07-23 11:53:03: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Course ITAL2213_2014 not found)

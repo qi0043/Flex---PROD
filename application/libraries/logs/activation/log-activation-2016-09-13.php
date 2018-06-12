@@ -1,0 +1,2 @@
+2016-09-13 13:34:52: Added course to Flex: INTR9069_2016_S2_DE
+2016-09-13 13:34:52: Added course to Flex: INTR9069_2016_NS2_DE

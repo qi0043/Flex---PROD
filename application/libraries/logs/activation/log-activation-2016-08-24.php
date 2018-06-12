@@ -1,0 +1,2 @@
+2016-08-24 08:58:40: Added course to Flex: ENVH7722_2016_S2_DE
+2016-08-24 13:40:35: Added course to Flex: ENVH7742_2016_S2_DE

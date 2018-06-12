@@ -1,0 +1,36 @@
+2018-02-19 08:18:04: Added course to Flex: EDUC9306L_2018_NS1
+2018-02-19 08:19:23: Added course to Flex: EDUC9305L_2018_NS1
+2018-02-19 08:28:02: Added course to Flex: EDUC4730L_2018_NS1
+2018-02-19 08:32:56: Added course to Flex: EDUC4729L_2018_NS1
+2018-02-19 09:11:18: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
+2018-02-19 10:40:17: Added course to Flex: DSRS9057_2018_S1_DE
+2018-02-19 10:40:17: Added course to Flex: DSRS9057_2018_S1
+2018-02-19 10:49:34: Added course to Flex: EDUC4722_2018_NS1
+2018-02-19 10:56:16: Added course to Flex: EDUC9303_2018_NS1
+2018-02-19 10:57:19: Added course to Flex: EDUC4723_2018_NS1
+2018-02-19 11:01:56: Added course to Flex: EDUC9301_2018_NS1
+2018-02-19 11:06:23: Added course to Flex: EDUC2321_2018_S1
+2018-02-19 11:07:48: Added course to Flex: EDUC9126_2018_S1
+2018-02-19 12:27:55: Added course to Flex: REMH8002_2018_S2_DE
+2018-02-19 12:27:55: Added course to Flex: REMH8002_2018_S1_DE
+2018-02-19 12:29:56: Added course to Flex: NURS9219_2018_S2_DE
+2018-02-19 12:29:56: Added course to Flex: NURS9219_2018_S2
+2018-02-19 12:29:57: Added course to Flex: NURS9219_2018_S1_DE
+2018-02-19 12:29:57: Added course to Flex: NURS9219_2018_S1
+2018-02-19 12:47:38: Added course to Flex: EDUC9123_2018_NS2
+2018-02-19 12:50:20: Added course to Flex: INTR9054_2018_NS1_ADL
+2018-02-19 12:50:22: Added course to Flex: NURS2001_2018_NS1_RV
+2018-02-19 12:50:22: Added course to Flex: NURS2001_2018_NS1_2
+2018-02-19 12:50:22: Added course to Flex: NURS2001_2018_NS1
+2018-02-19 12:50:34: Added course to Flex: AMST3013_2018_NS1_ADL
+2018-02-19 14:32:31: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
+2018-02-19 16:05:06: Added course to Flex: REMH8003_2018_S1_DE
+2018-02-19 16:19:34: Added course to Flex: SPTH9126_2018_S1
+2018-02-19 16:28:28: Added course to Flex: SOAD8009_2018_S2_DE
+2018-02-19 16:28:28: Added course to Flex: SOAD8009_2018_S1_DE
+2018-02-19 16:28:28: Added course to Flex: SOAD8009_2018_NS2
+2018-02-19 16:28:28: Added course to Flex: SOAD8009_2018_NS1
+2018-02-19 16:31:45: Added course to Flex: SPTH9123_2018_S1
+2018-02-19 16:35:28: Added course to Flex: SPTH9125_2018_S2
+2018-02-19 18:25:47: Added course to Flex: EDUC9705_2018_S1_DE
+2018-02-19 18:25:47: Added course to Flex: EDUC9705_2018_S1

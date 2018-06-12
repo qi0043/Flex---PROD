@@ -1,0 +1,8 @@
+2016-01-12 10:28:30: Added course to Flex: EDUC9552_2016_S1_FLC
+2016-01-12 10:28:30: Added course to Flex: EDUC9552_2016_S1
+2016-01-12 11:35:15: Added course to Flex: OPTO8001_2016_NS1
+2016-01-12 13:05:39: Added course to Flex: PALL8440_2016_S1_DE
+2016-01-12 15:21:23: Added course to Flex: NUTD3103_2016_S1
+2016-01-12 15:22:10: Added course to Flex: NUTD3106_2016_S2
+2016-01-12 15:22:32: Added course to Flex: NUTD9160_2016_S1
+2016-01-12 15:23:06: Added course to Flex: NUTD9163_2016_S2

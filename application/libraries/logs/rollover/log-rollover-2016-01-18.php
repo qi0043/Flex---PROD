@@ -1,0 +1,2 @@
+2016-01-18 09:35:49: Error: Response status 500 Response: {"code":500,"error":"Internal Server Error","error_description":"There is no Copyright holding for this item: 3f15f074-0dd1-4a0c-97a6-b3313f6b55be/1"}
+2016-01-18 09:35:49: Rollover Failed with user: savi0015, from: LEGL2116_2015_S1 to LEGL2116_2016_S1, index: 8, reading link: https://flex.flinders.edu.au/items/3f15f074-0dd1-4a0c-97a6-b3313f6b55be/1/?.vi=file&attachment.uuid=2b4177c4-ddbe-46df-85d3-ca3cd6049a40

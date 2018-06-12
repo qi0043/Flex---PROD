@@ -1,0 +1,1 @@
+2017-07-04 12:12:17: Added course to Flex: POAD8022_2017_NS2_DE

@@ -1,0 +1,7 @@
+2014-07-22 09:30:19: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Course EDUC9611_2014 not found)
+2014-07-22 09:38:15: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Course EDUC9611_2014 not found)
+2014-07-22 10:11:48: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Course EDUC9611_2014 not found)
+2014-07-22 10:29:00: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Course EDUC9611_2014 not found)
+2014-07-22 10:30:13: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Course EDUC9611_2014 not found)
+2014-07-22 11:06:17: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Course EDUC9611_2014 not found)
+2014-07-22 12:01:48: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Course SOAD4008_2014 not found)

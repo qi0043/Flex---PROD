@@ -1,0 +1,14 @@
+2016-02-16 08:27:29: Added course to Flex: SOAD9060_2016_S2_DE
+2016-02-16 08:27:29: Added course to Flex: SOAD9060_2016_S2
+2016-02-16 08:27:29: Added course to Flex: SOAD9060_2016_S1_DE
+2016-02-16 08:27:29: Added course to Flex: SOAD9060_2016_S1
+2016-02-16 09:17:57: Added course to Flex: SOCI7009_2016_S1
+2016-02-16 09:28:22: Added course to Flex: NURS8707_2016_S1_DE
+2016-02-16 09:30:34: Added course to Flex: POAD8014_2016_S1_ADL
+2016-02-16 09:30:34: Added course to Flex: POAD8014_2016_S1
+2016-02-16 09:44:09: Added course to Flex: HLED9115_2016_S2_DE
+2016-02-16 09:44:09: Added course to Flex: HLED9115_2016_S1_DE
+2016-02-16 10:04:54: Added course to Flex: EDUC9305_2016_NS1
+2016-02-16 10:05:53: Added course to Flex: EDUC9306_2016_NS1
+2016-02-16 12:10:09: Added course to Flex: DVST9031_2016_S1_DE
+2016-02-16 12:10:09: Added course to Flex: DVST9031_2016_S1_ADL

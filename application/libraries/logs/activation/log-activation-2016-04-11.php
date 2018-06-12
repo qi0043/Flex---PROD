@@ -1,0 +1,2 @@
+2016-04-11 08:59:27: Added course to Flex: SOAD8009_2016_S2_DE
+2016-04-11 08:59:28: Added course to Flex: SOAD8009_2016_NS1

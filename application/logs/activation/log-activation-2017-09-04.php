@@ -1,0 +1,1 @@
+2017-09-04 16:00:36: Added course to Flex: EDUC9793_2017_S2_DE

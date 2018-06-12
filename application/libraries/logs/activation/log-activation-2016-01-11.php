@@ -1,0 +1,3 @@
+2016-01-11 09:38:42: Added course to Flex: MIDW1005_2016_S1
+2016-01-11 09:45:03: Added course to Flex: BUSN9236_2016_NS1_DE
+2016-01-11 13:57:31: Added course to Flex: HLED9112_2016_S1_DE

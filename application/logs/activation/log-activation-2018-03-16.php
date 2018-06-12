@@ -1,0 +1,5 @@
+2018-03-16 09:48:21: Added course to Flex: SPTH3907_2018_S1
+2018-03-16 09:48:59: Added course to Flex: SPTH3905_2018_S1
+2018-03-16 09:49:51: Added course to Flex: SPTH3901_2018_S1
+2018-03-16 13:15:30: Added course to Flex: NURS8011_2018_S1_DE
+2018-03-16 13:15:30: Added course to Flex: NURS8011_2018_S1

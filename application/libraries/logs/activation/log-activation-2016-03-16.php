@@ -1,0 +1,4 @@
+2016-03-16 07:56:47: Added course to Flex: INTR3104_2016_NS1_TON
+2016-03-16 07:56:47: Added course to Flex: INTR3104_2016_NS1_DE
+2016-03-16 08:28:37: Added course to Flex: HIST1801_2016_S1
+2016-03-16 11:10:45: Added course to Flex: SCME3013_2016_NS1

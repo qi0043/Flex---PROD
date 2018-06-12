@@ -1,0 +1,11 @@
+2016-02-21 11:33:55: Added course to Flex: POAD8022_2016_S1_ADL
+2016-02-21 11:33:55: Added course to Flex: POAD8022_2016_S1
+2016-02-21 13:46:18: Added course to Flex: EDUC3522_2016_S1
+2016-02-21 14:19:04: Added course to Flex: WMST7021_2016_S1
+2016-02-21 14:19:23: Added course to Flex: WMST8007_2016_S1_DE
+2016-02-21 14:19:23: Added course to Flex: WMST8007_2016_S1
+2016-02-21 14:19:39: Added course to Flex: WMST9020_2016_S2
+2016-02-21 14:19:39: Added course to Flex: WMST9020_2016_S1
+2016-02-21 14:23:02: Added course to Flex: WMST7025_2016_S1
+2016-02-21 14:23:14: Added course to Flex: WMST9010_2016_S2
+2016-02-21 14:23:14: Added course to Flex: WMST9010_2016_S1

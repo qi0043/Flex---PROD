@@ -1,0 +1,34 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2015-05-02 15:20:14 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:20:19 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:26:23 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:26:28 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:30:45 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:30:56 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:35:05 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:35:49 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:36:08 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:37:07 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:38:31 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:39:52 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:41:11 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:45:25 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:58:37 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 15:58:50 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 16:00:03 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 16:00:44 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 16:01:26 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 16:02:28 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 16:05:36 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 16:08:52 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 16:09:28 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 16:09:54 --> Severity: Notice  --> Undefined index: numberApplicable /opt/www/flextra-sites/flextra.flinders/flex/application/views/ocf/activity_item.php 80
+ERROR - 2015-05-02 16:21:39 --> Severity: Notice  --> Undefined offset: 0 /opt/www/flextra-sites/flextra.flinders/flex/application/controllers/ocf/activity.php 680
+ERROR - 2015-05-02 16:21:39 --> Severity: Notice  --> Undefined offset: 0 /opt/www/flextra-sites/flextra.flinders/flex/application/controllers/ocf/activity.php 681
+ERROR - 2015-05-02 16:22:17 --> Severity: Notice  --> Undefined offset: 0 /opt/www/flextra-sites/flextra.flinders/flex/application/controllers/ocf/activity.php 680
+ERROR - 2015-05-02 16:22:17 --> Severity: Notice  --> Undefined offset: 0 /opt/www/flextra-sites/flextra.flinders/flex/application/controllers/ocf/activity.php 681
+ERROR - 2015-05-02 16:24:03 --> Severity: Notice  --> Undefined offset: 0 /opt/www/flextra-sites/flextra.flinders/flex/application/controllers/ocf/activity.php 680
+ERROR - 2015-05-02 16:24:03 --> Severity: Notice  --> Undefined offset: 0 /opt/www/flextra-sites/flextra.flinders/flex/application/controllers/ocf/activity.php 681
+ERROR - 2015-05-02 16:39:17 --> Severity: Notice  --> Undefined offset: 0 /opt/www/flextra-sites/flextra.flinders/flex/application/controllers/ocf/activity.php 680
+ERROR - 2015-05-02 16:39:17 --> Severity: Notice  --> Undefined offset: 0 /opt/www/flextra-sites/flextra.flinders/flex/application/controllers/ocf/activity.php 681

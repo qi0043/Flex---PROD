@@ -1,0 +1,1 @@
+2016-08-23 15:01:30: Added course to Flex: LEGL8303_2016_NS2_DE

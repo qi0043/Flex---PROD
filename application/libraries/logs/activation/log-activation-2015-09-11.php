@@ -1,0 +1,21 @@
+2015-09-11 15:27:05: Error: REMOTE_USER not set.
+2015-09-11 16:51:32: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Error compiling XSLT)
+2015-09-11 23:07:50: Error: REMOTE_USER not set.
+2015-09-11 23:07:50: Error: REMOTE_USER not set.
+2015-09-11 23:07:50: Error: REMOTE_USER not set.
+2015-09-11 23:07:51: Error: REMOTE_USER not set.
+2015-09-11 23:07:51: Error: REMOTE_USER not set.
+2015-09-11 23:07:51: Error: REMOTE_USER not set.
+2015-09-11 23:07:51: Error: REMOTE_USER not set.
+2015-09-11 23:07:51: Error: REMOTE_USER not set.
+2015-09-11 23:07:51: Error: REMOTE_USER not set.
+2015-09-11 23:07:51: Error: REMOTE_USER not set.
+2015-09-11 23:07:51: Error: REMOTE_USER not set.
+2015-09-11 23:07:53: Error: REMOTE_USER not set.
+2015-09-11 23:07:54: Error: REMOTE_USER not set.
+2015-09-11 23:07:54: Error: REMOTE_USER not set.
+2015-09-11 23:07:54: Error: REMOTE_USER not set.
+2015-09-11 23:07:55: Error: REMOTE_USER not set.
+2015-09-11 23:07:55: Error: REMOTE_USER not set.
+2015-09-11 23:07:56: Error: REMOTE_USER not set.
+2015-09-11 23:07:58: Error: REMOTE_USER not set.

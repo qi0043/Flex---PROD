@@ -1,0 +1,2 @@
+2017-05-08 09:54:51: Added course to Flex: LLAW9605_2017_S1_DE
+2017-05-08 10:55:20: Added course to Flex: MDSC3100_2017_S2

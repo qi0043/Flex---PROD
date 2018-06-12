@@ -1,0 +1,15 @@
+2016-12-22 10:08:31: Added course to Flex: NURS2730A_2017_NS1
+2016-12-22 10:14:15: Added course to Flex: NURS2003_2017_NS1_RV
+2016-12-22 10:14:15: Added course to Flex: NURS2003_2017_NS1_3
+2016-12-22 10:14:16: Added course to Flex: NURS2003_2017_NS1_2
+2016-12-22 10:14:16: Added course to Flex: NURS2003_2017_NS1
+2016-12-22 10:17:18: Added course to Flex: NURS3005_2017_NS2_RV
+2016-12-22 10:17:18: Added course to Flex: NURS3005_2017_NS2_4
+2016-12-22 10:17:18: Added course to Flex: NURS3005_2017_NS2_3
+2016-12-22 10:17:18: Added course to Flex: NURS3005_2017_NS2_2
+2016-12-22 10:17:18: Added course to Flex: NURS3005_2017_NS2
+2016-12-22 10:17:18: Added course to Flex: NURS3005_2017_NS1
+2016-12-22 11:06:44: Added course to Flex: AGES8024_2017_S1_DE
+2016-12-22 14:04:09: Added course to Flex: EDUC9792_2017_NS1
+2016-12-22 15:20:35: Added course to Flex: LLIR9501_2017_NS1_DE
+2016-12-22 16:30:02: Added course to Flex: EDUC4820_2017_NS1

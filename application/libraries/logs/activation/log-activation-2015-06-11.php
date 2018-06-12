@@ -1,0 +1,32 @@
+2015-06-11 11:31:58: Error: REMOTE_USER not set.
+2015-06-11 11:31:58: Error: REMOTE_USER not set.
+2015-06-11 11:33:32: Added course to Flex: EDUC9522_2015_S2_FLC
+2015-06-11 11:33:32: Added course to Flex: EDUC9522_2015_NS2
+2015-06-11 11:34:13: Error: REMOTE_USER not set.
+2015-06-11 11:34:13: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:30: Error: REMOTE_USER not set.
+2015-06-11 23:06:31: Error: REMOTE_USER not set.
+2015-06-11 23:06:31: Error: REMOTE_USER not set.

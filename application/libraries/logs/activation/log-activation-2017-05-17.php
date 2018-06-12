@@ -1,0 +1,8 @@
+2017-05-17 08:27:00: Added course to Flex: PHCA9514_2017_NS1_DE
+2017-05-17 08:27:00: Added course to Flex: PHCA9514_2017_NS1
+2017-05-17 08:59:19: Added course to Flex: SCME1002_2017_S2
+2017-05-17 09:34:02: Added course to Flex: POAD8017_2017_NS2_DE
+2017-05-17 10:10:03: Added course to Flex: EDUC8602_2017_NS2_TJ
+2017-05-17 11:43:12: Added course to Flex: EDUC8602_2017_S2_DE
+2017-05-17 11:43:13: Added course to Flex: EDUC8602_2017_NS2_TJ_2
+2017-05-17 11:43:13: Added course to Flex: EDUC8602_2017_NS2

@@ -1,0 +1,5 @@
+2015-12-09 09:16:06: Added course to Flex: AGES9026_2016_S2_DP
+2015-12-09 09:16:06: Added course to Flex: AGES9026_2016_S2_DE
+2015-12-09 09:16:06: Added course to Flex: AGES9026_2016_S1_DP
+2015-12-09 09:16:07: Added course to Flex: AGES9026_2016_S1_DE
+2015-12-09 09:48:04: Added course to Flex: OPTO8005_2016_NS1

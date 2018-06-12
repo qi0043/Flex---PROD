@@ -1,0 +1,4 @@
+2016-10-19 10:24:23: Added course to Flex: EDUC3627_2017_NS2
+2016-10-19 13:39:23: Added course to Flex: PSYC3008_2017_S2
+2016-10-19 16:13:35: Added course to Flex: PSYC1107_2017_S2
+2016-10-19 16:43:54: Added course to Flex: PSYC3236_2017_S2

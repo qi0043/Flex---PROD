@@ -1,0 +1,3 @@
+2016-03-11 15:05:30: Added course to Flex: BUSN9261_2016_S2_ADL
+2016-03-11 15:05:30: Added course to Flex: BUSN9261_2016_NS2_DE
+2016-03-11 15:05:30: Added course to Flex: BUSN9261_2016_NS1_DE

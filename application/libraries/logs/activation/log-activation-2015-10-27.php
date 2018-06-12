@@ -1,0 +1,14 @@
+2015-10-27 10:58:19: Added course to Flex: SCME1071_2016_S2
+2015-10-27 10:58:36: Added course to Flex: SCME1072_2016_S2
+2015-10-27 10:58:36: Added course to Flex: SCME1072_2015_S2
+2015-10-27 10:58:53: Added course to Flex: SCME2051_2016_S2
+2015-10-27 10:58:53: Added course to Flex: SCME2051_2015_S2
+2015-10-27 10:59:15: Added course to Flex: SCME8001_2016_S1
+2015-10-27 11:22:52: Added course to Flex: SOAD2003_2016_S2
+2015-10-27 11:22:52: Added course to Flex: SOAD2003_2015_S2
+2015-10-27 11:29:07: Added course to Flex: TOUR1103_2016_S2
+2015-10-27 11:43:13: Added course to Flex: TOUR2103_2016_NS2
+2015-10-27 11:43:13: Added course to Flex: TOUR2103_2015_NS2
+2015-10-27 23:04:41: Error: REMOTE_USER not set.
+2015-10-27 23:04:41: Error: REMOTE_USER not set.
+2015-10-27 23:04:41: Error: REMOTE_USER not set.

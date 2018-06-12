@@ -1,0 +1,43 @@
+2015-07-14 09:48:15: Added course to Flex: COMS9001_2015_S1
+2015-07-14 09:48:15: Added course to Flex: COMS9001_2015_NS2_3
+2015-07-14 09:48:16: Added course to Flex: COMS9001_2015_NS2_2
+2015-07-14 09:48:16: Added course to Flex: COMS9001_2015_NS2
+2015-07-14 11:05:05: Added course to Flex: SCME2100_2015_S2
+2015-07-14 11:55:29: Added course to Flex: PALL8431_2015_S2_DP
+2015-07-14 11:55:29: Added course to Flex: PALL8431_2015_S2_DE
+2015-07-14 11:56:29: Error: REMOTE_USER not set.
+2015-07-14 11:56:29: Error: REMOTE_USER not set.
+2015-07-14 11:58:23: Error: REMOTE_USER not set.
+2015-07-14 11:58:24: Error: REMOTE_USER not set.
+2015-07-14 12:32:01: Added course to Flex: LEGL1102_2015_S2
+2015-07-14 12:32:03: Error: REMOTE_USER not set.
+2015-07-14 14:47:38: Added course to Flex: DVST9032_2015_S2_DE
+2015-07-14 14:47:38: Added course to Flex: DVST9032_2015_S2
+2015-07-14 14:47:55: Error: REMOTE_USER not set.
+2015-07-14 14:47:55: Error: REMOTE_USER not set.
+2015-07-14 15:31:44: Added course to Flex: GEOG1002_2015_S2
+2015-07-14 16:16:35: Added course to Flex: DSRS1216_2015_S2_DE
+2015-07-14 16:16:35: Added course to Flex: DSRS1216_2015_S2
+2015-07-14 16:16:40: Error: REMOTE_USER not set.
+2015-07-14 16:16:41: Error: REMOTE_USER not set.
+2015-07-14 16:42:25: Added course to Flex: SCME2000_2015_S2
+2015-07-14 19:39:49: Added course to Flex: INTR3008_2015_S2
+2015-07-14 23:12:02: Error: REMOTE_USER not set.
+2015-07-14 23:12:03: Error: REMOTE_USER not set.
+2015-07-14 23:12:09: Error: REMOTE_USER not set.
+2015-07-14 23:12:09: Error: REMOTE_USER not set.
+2015-07-14 23:12:09: Error: REMOTE_USER not set.
+2015-07-14 23:12:09: Error: REMOTE_USER not set.
+2015-07-14 23:12:09: Error: REMOTE_USER not set.
+2015-07-14 23:12:09: Error: REMOTE_USER not set.
+2015-07-14 23:12:09: Error: REMOTE_USER not set.
+2015-07-14 23:12:09: Error: REMOTE_USER not set.
+2015-07-14 23:12:09: Error: REMOTE_USER not set.
+2015-07-14 23:12:10: Error: REMOTE_USER not set.
+2015-07-14 23:12:10: Error: REMOTE_USER not set.
+2015-07-14 23:12:10: Error: REMOTE_USER not set.
+2015-07-14 23:12:10: Error: REMOTE_USER not set.
+2015-07-14 23:12:11: Error: REMOTE_USER not set.
+2015-07-14 23:12:12: Error: REMOTE_USER not set.
+2015-07-14 23:12:13: Error: REMOTE_USER not set.
+2015-07-14 23:12:15: Error: REMOTE_USER not set.

@@ -1,0 +1,26 @@
+2015-07-31 08:52:53: Added course to Flex: WMST2017_2015_S2
+2015-07-31 08:53:58: Error: REMOTE_USER not set.
+2015-07-31 09:06:51: Added course to Flex: WMST8003_2015_S2_DE
+2015-07-31 09:06:51: Added course to Flex: WMST8003_2015_S2
+2015-07-31 09:09:01: Error: REMOTE_USER not set.
+2015-07-31 09:09:01: Error: REMOTE_USER not set.
+2015-07-31 09:25:40: Error: REMOTE_USER not set.
+2015-07-31 09:25:40: Error: REMOTE_USER not set.
+2015-07-31 10:47:40: Added course to Flex: WMST7022_2015_NS2
+2015-07-31 10:47:42: Error: REMOTE_USER not set.
+2015-07-31 10:55:01: Added course to Flex: EDUC3527_2015_NS2
+2015-07-31 10:55:21: Added course to Flex: EDUC9234_2015_NS2
+2015-07-31 23:12:24: Error: REMOTE_USER not set.
+2015-07-31 23:12:25: Error: REMOTE_USER not set.
+2015-07-31 23:12:25: Error: REMOTE_USER not set.
+2015-07-31 23:12:26: Error: REMOTE_USER not set.
+2015-07-31 23:12:35: Error: REMOTE_USER not set.
+2015-07-31 23:12:35: Error: REMOTE_USER not set.
+2015-07-31 23:12:35: Error: REMOTE_USER not set.
+2015-07-31 23:12:35: Error: REMOTE_USER not set.
+2015-07-31 23:12:35: Error: REMOTE_USER not set.
+2015-07-31 23:12:35: Error: REMOTE_USER not set.
+2015-07-31 23:12:35: Error: REMOTE_USER not set.
+2015-07-31 23:12:35: Error: REMOTE_USER not set.
+2015-07-31 23:12:36: Error: REMOTE_USER not set.
+2015-07-31 23:12:40: Error: REMOTE_USER not set.

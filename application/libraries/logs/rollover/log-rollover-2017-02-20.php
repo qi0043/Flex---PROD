@@ -1,0 +1,4 @@
+2017-02-20 14:41:32: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
+2017-02-20 14:41:32: Rollover Failed with user: schu0127, from: EDUC9120_2015_NS1 to EDUC9120_2017_S1, index: 7, reading link: https://flex.flinders.edu.au/items/ea514694-433f-499a-95de-ea4e95f73111/1/?.vi=file&attachment.uuid=6c42fc09-d579-4382-9f03-bc8e4af3e7c3
+2017-02-20 14:41:44: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
+2017-02-20 14:41:44: Rollover Failed with user: schu0127, from: EDUC9120_2015_NS1 to EDUC9120_2017_S1, index: 44, reading link: https://flex.flinders.edu.au/items/35c11cd5-97c6-4668-b56f-3229f6df892f/1/?.vi=file&attachment.uuid=275238ba-ea67-414c-bf18-42d36c9de7c3

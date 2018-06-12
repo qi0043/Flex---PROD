@@ -1,0 +1,9 @@
+2017-07-24 11:17:59: Added course to Flex: SCME1001_2017_S2
+2017-07-24 11:58:06: Added course to Flex: REMH8014_2017_S2_DE
+2017-07-24 11:59:53: Added course to Flex: PHCA9504_2017_S2_DE
+2017-07-24 11:59:53: Added course to Flex: PHCA9504_2017_S2
+2017-07-24 13:07:59: Added course to Flex: INTR9051_2017_S2
+2017-07-24 14:09:23: Added course to Flex: SCME2100_2017_S2
+2017-07-24 14:39:11: Added course to Flex: POLI3010_2017_S2_DE
+2017-07-24 14:39:11: Added course to Flex: POLI3010_2017_S2_ADL
+2017-07-24 15:40:12: Added course to Flex: NUTD2101_2017_S2_DE

@@ -1,0 +1,3 @@
+2016-08-17 08:42:04: Added course to Flex: EDUC9405_2016_NS2
+2016-08-17 09:33:20: Added course to Flex: EDUC9226_2016_NS2
+2016-08-17 14:29:18: Added course to Flex: DRAM2102_2016_NS2

@@ -1,0 +1,3 @@
+2014-07-07 09:56:21: Error: SOAP Fault: (faultcode: soap:Server, faultstring: fromuntil: 'Until' date must be after today.)
+2014-07-07 12:10:39: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Activation would put you in violation of statutory copyright law. Please contact Kylie Jarrett <a href="mailto:kylie.jarrett@flinders.edu.au">kylie.jarrett@flinders.edu.au</a> for assistance.)
+2014-07-07 16:22:57: Error: SOAP Fault: (faultcode: soap:Server, faultstring: Activation would put you in violation of statutory copyright law. Please contact Kylie Jarrett <a href="mailto:kylie.jarrett@flinders.edu.au">kylie.jarrett@flinders.edu.au</a> for assistance.)

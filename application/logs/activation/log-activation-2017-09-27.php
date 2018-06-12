@@ -1,0 +1,1 @@
+2017-09-27 10:02:03: Added course to Flex: LLAW9609_2017_S2_DE

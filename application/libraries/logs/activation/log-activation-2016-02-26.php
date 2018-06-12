@@ -1,0 +1,23 @@
+2016-02-26 08:01:39: Added course to Flex: ENGL2134_2016_S1
+2016-02-26 09:23:30: Added course to Flex: SOCI3008_2016_S1
+2016-02-26 09:31:35: Added course to Flex: SOCI7012_2016_S1
+2016-02-26 09:44:21: Error: Response status 500 Response: {"code":500,"error":"Internal Server Error","error_description":"Activation would put you in violation of statutory copyright law. Please contact the eReadings Coordinator <a href=\"mailto:ereserve@flinders.edu.au\">ereserve@flinders.edu.au</a> for assistance."}
+2016-02-26 10:14:35: Added course to Flex: ENVS7711_2016_S1
+2016-02-26 10:19:02: Added course to Flex: EDUC9761_2016_S1_BEL
+2016-02-26 11:01:25: Added course to Flex: ESOL1001_2016_S2
+2016-02-26 11:01:25: Added course to Flex: ESOL1001_2016_S1
+2016-02-26 11:02:21: Added course to Flex: ESOL8001_2016_S2_DE
+2016-02-26 11:02:21: Added course to Flex: ESOL8001_2016_S2
+2016-02-26 11:02:21: Added course to Flex: ESOL8001_2016_S1_DE
+2016-02-26 11:02:21: Added course to Flex: ESOL8001_2016_S1
+2016-02-26 11:41:24: Added course to Flex: ENGR7707_2016_S1_TON
+2016-02-26 11:46:59: Added course to Flex: ENGR7702_2016_S2_TON
+2016-02-26 12:11:04: Added course to Flex: ESOL9005_2016_S2_FLC
+2016-02-26 12:11:05: Added course to Flex: ESOL9005_2016_S2
+2016-02-26 12:11:05: Added course to Flex: ESOL9005_2016_S1_FLC
+2016-02-26 12:11:05: Added course to Flex: ESOL9005_2016_S1
+2016-02-26 12:16:40: Added course to Flex: SOAD7031_2016_S1
+2016-02-26 12:16:49: Added course to Flex: SOCI7031_2016_S1
+2016-02-26 12:17:00: Added course to Flex: POLI7031_2016_S1
+2016-02-26 12:17:08: Added course to Flex: WMST7031_2016_S1
+2016-02-26 16:06:40: Added course to Flex: POAD8130_2016_S1

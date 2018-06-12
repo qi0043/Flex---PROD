@@ -1,0 +1,5 @@
+2015-05-15 11:40:11: Added course to Flex: ENGL3211_2015_S2
+2015-05-15 14:16:03: Added course to Flex: PHIL7701_2015_S1
+2015-05-15 23:04:07: Error: REMOTE_USER not set.
+2015-05-15 23:04:10: Error: REMOTE_USER not set.
+2015-05-15 23:04:10: Error: REMOTE_USER not set.

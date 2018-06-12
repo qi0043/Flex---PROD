@@ -1,0 +1,28 @@
+2015-06-15 12:35:51: Added course to Flex: ARCH2203_2015_S2
+2015-06-15 12:36:00: Error: REMOTE_USER not set.
+2015-06-15 13:46:36: Added course to Flex: GEOG2722_2015_S2
+2015-06-15 13:46:46: Error: REMOTE_USER not set.
+2015-06-15 23:17:16: Error: REMOTE_USER not set.
+2015-06-15 23:17:16: Error: REMOTE_USER not set.
+2015-06-15 23:17:16: Error: REMOTE_USER not set.
+2015-06-15 23:17:18: Error: REMOTE_USER not set.
+2015-06-15 23:17:18: Error: REMOTE_USER not set.
+2015-06-15 23:17:18: Error: REMOTE_USER not set.
+2015-06-15 23:17:18: Error: REMOTE_USER not set.
+2015-06-15 23:17:18: Error: REMOTE_USER not set.
+2015-06-15 23:17:18: Error: REMOTE_USER not set.
+2015-06-15 23:17:18: Error: REMOTE_USER not set.
+2015-06-15 23:17:18: Error: REMOTE_USER not set.
+2015-06-15 23:17:18: Error: REMOTE_USER not set.
+2015-06-15 23:17:18: Error: REMOTE_USER not set.
+2015-06-15 23:17:19: Error: REMOTE_USER not set.
+2015-06-15 23:17:19: Error: REMOTE_USER not set.
+2015-06-15 23:17:19: Error: REMOTE_USER not set.
+2015-06-15 23:17:19: Error: REMOTE_USER not set.
+2015-06-15 23:17:19: Error: REMOTE_USER not set.
+2015-06-15 23:17:19: Error: REMOTE_USER not set.
+2015-06-15 23:17:19: Error: REMOTE_USER not set.
+2015-06-15 23:17:19: Error: REMOTE_USER not set.
+2015-06-15 23:17:19: Error: REMOTE_USER not set.
+2015-06-15 23:17:21: Error: REMOTE_USER not set.
+2015-06-15 23:17:22: Error: REMOTE_USER not set.

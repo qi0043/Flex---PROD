@@ -1,0 +1,3 @@
+2016-02-01 09:49:10: Added course to Flex: EDUC9406_2016_S2_FLC
+2016-02-01 09:49:10: Added course to Flex: EDUC9406_2016_S2_2
+2016-02-01 09:49:10: Added course to Flex: EDUC9406_2016_S2

@@ -1,0 +1,3 @@
+2017-05-19 14:27:15: Added course to Flex: HIST1803_2017_S2
+2017-05-19 14:53:22: Added course to Flex: HACM9101_2017_S2_DE
+2017-05-19 14:53:22: Added course to Flex: HACM9101_2017_S2_ADL

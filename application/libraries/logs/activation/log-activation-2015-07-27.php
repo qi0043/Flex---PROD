@@ -1,0 +1,15 @@
+2015-07-27 09:29:14: Added course to Flex: PSYC1102_2015_S2
+2015-07-27 09:29:29: Error: REMOTE_USER not set.
+2015-07-27 23:06:12: Error: REMOTE_USER not set.
+2015-07-27 23:06:12: Error: REMOTE_USER not set.
+2015-07-27 23:06:12: Error: REMOTE_USER not set.
+2015-07-27 23:06:12: Error: REMOTE_USER not set.
+2015-07-27 23:06:12: Error: REMOTE_USER not set.
+2015-07-27 23:06:12: Error: REMOTE_USER not set.
+2015-07-27 23:06:12: Error: REMOTE_USER not set.
+2015-07-27 23:06:13: Error: REMOTE_USER not set.
+2015-07-27 23:06:13: Error: REMOTE_USER not set.
+2015-07-27 23:06:14: Error: REMOTE_USER not set.
+2015-07-27 23:06:14: Error: REMOTE_USER not set.
+2015-07-27 23:06:15: Error: REMOTE_USER not set.
+2015-07-27 23:06:22: Error: REMOTE_USER not set.

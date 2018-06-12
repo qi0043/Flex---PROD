@@ -1,0 +1,1 @@
+2016-08-30 16:25:50: Added course to Flex: SOAD9106_2016_NS2

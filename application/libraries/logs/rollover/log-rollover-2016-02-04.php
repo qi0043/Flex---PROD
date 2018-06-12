@@ -1,0 +1,2 @@
+2016-02-04 14:22:45: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
+2016-02-04 14:22:45: Rollover Failed with user: eale0003, from: SOCI2002_2015_S2 to SOCI2002_2016_S1, index: 1, reading link: https://flex.flinders.edu.au/items/c58af842-dfe3-4675-b190-747c280429f3/1/?.vi=file&attachment.uuid=64f16e55-5ebb-4064-83a6-d39731f5f51f

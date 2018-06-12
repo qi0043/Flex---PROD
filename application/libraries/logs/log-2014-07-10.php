@@ -1,0 +1,13 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2014-07-10 09:16:39 --> 404 Page Not Found --> readings
+ERROR - 2014-07-10 14:38:08 --> SOAP Fault: (faultcode: soap:Server, faultstring: Activation would put you in violation of statutory copyright law. Please contact Kylie Jarrett <a href="mailto:kylie.jarrett@flinders.edu.au">kylie.jarrett@flinders.edu.au</a> for assistance.)
+ERROR - 2014-07-10 14:38:08 --> <?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://service.web.cal.tle.com"><SOAP-ENV:Body><ns1:activateItemAttachments><ns1:in0>a231c528-f585-4eed-b5b3-1e0b4ebc8f14</ns1:in0><ns1:in1>1</ns1:in1><ns1:in2>DRAM3105_2014_NS2</ns1:in2><ns1:in3><ns1:string>65e1a13a-fa5a-4f24-b8ff-f59cbb4cf640</ns1:string></ns1:in3></ns1:activateItemAttachments></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+ERROR - 2014-07-10 14:38:08 --> <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>Activation would put you in violation of statutory copyright law. Please contact Kylie Jarrett &lt;a href="mailto:kylie.jarrett@flinders.edu.au"&gt;kylie.jarrett@flinders.edu.au&lt;/a&gt; for assistance.</faultstring><detail><ns1:Exception xmlns:ns1="http://service.web.cal.tle.com"></ns1:Exception></detail></soap:Fault></soap:Body></soap:Envelope>
+ERROR - 2014-07-10 14:38:19 --> SOAP Fault: (faultcode: soap:Server, faultstring: Activation would put you in violation of statutory copyright law. Please contact Kylie Jarrett <a href="mailto:kylie.jarrett@flinders.edu.au">kylie.jarrett@flinders.edu.au</a> for assistance.)
+ERROR - 2014-07-10 14:38:19 --> <?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://service.web.cal.tle.com"><SOAP-ENV:Body><ns1:activateItemAttachments><ns1:in0>a231c528-f585-4eed-b5b3-1e0b4ebc8f14</ns1:in0><ns1:in1>1</ns1:in1><ns1:in2>DRAM7307_2014_NS2</ns1:in2><ns1:in3><ns1:string>65e1a13a-fa5a-4f24-b8ff-f59cbb4cf640</ns1:string></ns1:in3></ns1:activateItemAttachments></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+ERROR - 2014-07-10 14:38:19 --> <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>Activation would put you in violation of statutory copyright law. Please contact Kylie Jarrett &lt;a href="mailto:kylie.jarrett@flinders.edu.au"&gt;kylie.jarrett@flinders.edu.au&lt;/a&gt; for assistance.</faultstring><detail><ns1:Exception xmlns:ns1="http://service.web.cal.tle.com"></ns1:Exception></detail></soap:Fault></soap:Body></soap:Envelope>

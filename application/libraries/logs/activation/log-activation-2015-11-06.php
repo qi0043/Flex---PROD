@@ -1,0 +1,27 @@
+2015-11-06 17:35:42: Added course to Flex: POAD9057_2016_NS1_DE
+2015-11-06 17:36:00: Error: REMOTE_USER not set.
+2015-11-06 23:09:07: Error: REMOTE_USER not set.
+2015-11-06 23:09:07: Error: REMOTE_USER not set.
+2015-11-06 23:09:08: Error: REMOTE_USER not set.
+2015-11-06 23:09:08: Error: REMOTE_USER not set.
+2015-11-06 23:09:08: Error: REMOTE_USER not set.
+2015-11-06 23:09:08: Error: REMOTE_USER not set.
+2015-11-06 23:09:08: Error: REMOTE_USER not set.
+2015-11-06 23:09:09: Error: REMOTE_USER not set.
+2015-11-06 23:09:09: Error: REMOTE_USER not set.
+2015-11-06 23:09:11: Error: REMOTE_USER not set.
+2015-11-06 23:09:11: Error: REMOTE_USER not set.
+2015-11-06 23:09:12: Error: REMOTE_USER not set.
+2015-11-06 23:09:12: Error: REMOTE_USER not set.
+2015-11-06 23:09:15: Error: REMOTE_USER not set.
+2015-11-06 23:09:15: Error: REMOTE_USER not set.
+2015-11-06 23:09:15: Error: REMOTE_USER not set.
+2015-11-06 23:09:18: Error: REMOTE_USER not set.
+2015-11-06 23:09:18: Error: REMOTE_USER not set.
+2015-11-06 23:09:20: Error: REMOTE_USER not set.
+2015-11-06 23:09:20: Error: REMOTE_USER not set.
+2015-11-06 23:09:20: Error: REMOTE_USER not set.
+2015-11-06 23:09:20: Error: REMOTE_USER not set.
+2015-11-06 23:09:20: Error: REMOTE_USER not set.
+2015-11-06 23:09:20: Error: REMOTE_USER not set.
+2015-11-06 23:09:20: Error: REMOTE_USER not set.

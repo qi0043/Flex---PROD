@@ -1,0 +1,5 @@
+2017-05-03 12:02:29: Added course to Flex: NURS8821_2017_S2_DE
+2017-05-03 12:02:29: Added course to Flex: NURS8821_2017_S2
+2017-05-03 12:06:23: Added course to Flex: NURS8823_2017_S2_DE
+2017-05-03 12:09:02: Added course to Flex: NURS8827_2017_S2_DE
+2017-05-03 12:09:02: Added course to Flex: NURS8827_2017_S2

@@ -1,0 +1,3 @@
+2014-01-29 14:52:47: Activation Successful with user: pris0005, availability: MIDW1004A_2014_S1, reading link: https://flex.flinders.edu.au/items/27f1aa81-4eae-4b92-87d2-921c3e3fc6e8/1/?.vi=file&attachment.uuid=ea3b79b0-cbb0-4778-8584-ce11185091a8
+2014-01-29 14:52:47: Activation Successful with user: pris0005, availability: MIDW1004A_2014, reading link: https://flex.flinders.edu.au/items/27f1aa81-4eae-4b92-87d2-921c3e3fc6e8/1/?.vi=file&attachment.uuid=ea3b79b0-cbb0-4778-8584-ce11185091a8
+2014-01-29 15:22:50: Activation Successful with user: perr0123, availability: EDUC2323_2014_S1, reading link: https://flex.flinders.edu.au/items/53a91e09-6d1a-4214-9d43-3e8c98d22d2c/1/?.vi=file&attachment.uuid=e92eb670-a403-4fba-bbba-189d64cc7eb7

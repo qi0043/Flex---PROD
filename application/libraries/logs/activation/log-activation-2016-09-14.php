@@ -1,0 +1,1 @@
+2016-09-14 15:05:04: Added course to Flex: LLAW7003_2016_S2_ADL

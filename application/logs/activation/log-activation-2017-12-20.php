@@ -1,0 +1,7 @@
+2017-12-20 07:57:35: Added course to Flex: POAD8022_2018_NS1_DE
+2017-12-20 11:13:49: Added course to Flex: NURS9017_2018_S1_DE
+2017-12-20 11:14:50: Added course to Flex: NURS9028_2018_S2_DE
+2017-12-20 11:14:51: Added course to Flex: NURS9028_2018_S1_DE
+2017-12-20 12:39:00: Added course to Flex: NUTD3101_2018_S1_DE
+2017-12-20 12:41:46: Added course to Flex: NUTD1101_2018_S1_DE
+2017-12-20 15:27:39: Added course to Flex: EDUC4721_2018_NS1

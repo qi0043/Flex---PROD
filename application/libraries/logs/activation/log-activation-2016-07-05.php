@@ -1,0 +1,8 @@
+2016-07-05 13:13:01: Added course to Flex: SOAD8006_2016_S2_DE
+2016-07-05 13:13:01: Added course to Flex: SOAD8006_2016_S2
+2016-07-05 13:40:32: Added course to Flex: EDUC9921_2016_NS2_BJ
+2016-07-05 13:41:06: Added course to Flex: EDUC9922_2016_NS2_BJ
+2016-07-05 13:41:50: Added course to Flex: EDUC9401_2016_S2
+2016-07-05 13:47:41: Added course to Flex: EDUC9408_2016_S2
+2016-07-05 16:24:14: Added course to Flex: MIDW2003_2016_S2_FLC
+2016-07-05 16:24:14: Added course to Flex: MIDW2003_2016_S2

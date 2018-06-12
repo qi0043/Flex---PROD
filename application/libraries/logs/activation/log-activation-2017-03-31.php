@@ -1,0 +1,3 @@
+2017-03-31 14:06:25: Added course to Flex: BIOD2701_2017_S1
+2017-03-31 16:00:27: Added course to Flex: SOAD9106_2017_NS2_ADL
+2017-03-31 16:00:28: Added course to Flex: SOAD9106_2017_NS1_ADL

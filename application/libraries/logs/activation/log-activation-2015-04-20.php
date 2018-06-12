@@ -1,0 +1,9 @@
+2015-04-20 09:41:27: Added course to Flex: MMED8201_2015_HY1_DA
+2015-04-20 09:41:28: Added course to Flex: MMED8201_2015_HY1
+2015-04-20 23:00:39: Error: REMOTE_USER not set.
+2015-04-20 23:00:39: Error: REMOTE_USER not set.
+2015-04-20 23:00:39: Error: REMOTE_USER not set.
+2015-04-20 23:00:39: Error: REMOTE_USER not set.
+2015-04-20 23:00:39: Error: REMOTE_USER not set.
+2015-04-20 23:00:39: Error: REMOTE_USER not set.
+2015-04-20 23:00:40: Error: REMOTE_USER not set.

@@ -1,0 +1,629 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/*
+|--------------------------------------------------------------------------
+| Institute URL
+|--------------------------------------------------------------------------
+|
+| Must be HTTPS
+|
+*/
+$config['institute_url'] = 'https://flex.flinders.edu.au/';
+
+/*
+|--------------------------------------------------------------------------
+| Access Token URL
+|--------------------------------------------------------------------------
+|
+| URL to get OAuth Token
+|
+*/
+$config['access_token_url'] = $config['institute_url'] . 'oauth/access_token';
+
+/*
+|--------------------------------------------------------------------------
+| OAuth client identifier
+|--------------------------------------------------------------------------
+|
+| OAuth client identifier configured in Equella
+|
+*/
+$config['client_id'] = '80416726-a0bb-44f5-917e-a913dd6eeeea';
+
+/*
+|--------------------------------------------------------------------------
+| OAuth client secret
+|--------------------------------------------------------------------------
+|
+| OAuth client secret configured in Equella
+|
+*/
+$config['client_secret'] = 'ef8b8ffc-4d8c-4bbd-9a8e-b74fcfefecd5';
+
+/*
+|--------------------------------------------------------------------------
+| OAuth client ids and secrets
+|--------------------------------------------------------------------------
+|
+| OAuth client ids and secrets configured in Equella for Flextra PHP REST
+|
+*/
+$config['oauth_clients'] = array(
+    'default' => array(
+        'client_flex_user' => 'flex.webservice',
+        'client_id' => '80416726-a0bb-44f5-917e-a913dd6eeeea',
+        'client_secret' => 'ef8b8ffc-4d8c-4bbd-9a8e-b74fcfefecd5'
+    ),
+    'rhd' => array(
+        'client_flex_user' => 'rhd.webservice',
+        'client_id' => '94b8a51b-bcc8-442e-9ff6-c0ea954681e6',
+        'client_secret' => '8de295c0-b114-481b-b7c6-5899bebbaaca'
+    ),
+	'ovp' => array(
+        'client_flex_user' => 'ovp.webservice',
+        'client_id' => 'cc9dfe02-8b1c-4933-9ab0-0886224e5a50',
+        'client_secret' => 'c24fc00a-690c-4f70-99dd-5038dce39e85'
+    )
+);
+
+/*
+|--------------------------------------------------------------------------
+| REST debug log
+|--------------------------------------------------------------------------
+|
+| Whether to turn on REST debug log, log messages are printing to Apache PHP log
+|
+*/
+$config['rest_debug'] = false;
+
+/*
+|--------------------------------------------------------------------------
+| REST HTTP debug log
+|--------------------------------------------------------------------------
+|
+| Whether to turn on REST HTTP debug log, log messages are printing to Apache PHP log
+|
+*/
+$config['rest_debug_http'] = false;
+
+/*
+|--------------------------------------------------------------------------
+| Prefer CURL library
+|--------------------------------------------------------------------------
+|
+| Whether to ure OPENSSL or CURL for REST HTTPS connection
+| 0 - OPENSSL, 1 - CURL
+|
+*/
+$config['prefer_curl'] = 0;
+
+
+#$config['dialog_url'] = $config['institute_url'] . 'oauth/access_token';
+#$config['redirect_uri'] = 'https://'.$_SERVER['HTTP_HOST'].
+#		dirname(strtok($_SERVER['REQUEST_URI'],'?')).'/test_oauth_client.php';
+
+
+/*
+|--------------------------------------------------------------------------
+| Soap interfaces
+|--------------------------------------------------------------------------
+|
+| Standard, Taxonomy, Course, Activation
+|
+|
+*/
+$config['soap_standard_intf'] = 'services/SoapService51';
+$config['soap_taxonomy_intf'] = 'services/taxonomyTerm.service';
+$config['soap_course_intf'] = 'services/calcourses.service';
+$config['soap_activation_intf'] = 'services/calactivation.service';
+
+/*
+|--------------------------------------------------------------------------
+| Soap institute url, login username and password
+|--------------------------------------------------------------------------
+|
+| Soap institute url, login username and password
+|
+|
+*/
+$config['institute_url_soap'] = $config['institute_url'];
+#$config['institute_url_soap'] = 'https://flex-dev.flinders.edu.au/';
+
+$config['soap_username'] = 'flex.designer';
+$config['soap_password'] = 'QiuDouble8';
+
+#for ereadings activation only:
+$config['soap_activation_username'] = 'lib.activate';
+$config['soap_activation_password'] = 'sunshine14coast';
+
+#for ereadings course management:
+$config['soap_coursemgt_username'] = 'lib.sys';
+$config['soap_coursemgt_password'] = 'gold13coast';
+
+/* Obsoleted
+|--------------------------------------------------------------------------
+| User group requierd for the eReading rollover and activation function
+|--------------------------------------------------------------------------
+|
+| Equella User group requierd for the eReading rollover and activation function
+|
+|
+*/
+#$config['usergrp1_activation'] = 'EQ contributor';
+$config['usergrp1_activation'] = 'LIB-eReadings adv-contributor';
+$config['usergrp2_activation'] = 'LIB Flextra eReadings';
+
+/*
+|--------------------------------------------------------------------------
+| Rollover/activation Logging
+|--------------------------------------------------------------------------
+|
+| Separate logging path/files for reading rollover/activation
+|
+| Log levels: CRITICAL, ERROR, WARNING, INFO, DEBUG.
+*/
+
+$config['rolloverlog'] = array(
+    'activation' => array(
+        'level' => 'ERROR',
+        'type' => 'file',
+        'format' => "{date}: {message}",
+        'file_path' => 'activation' // Will save log files to application/logs/activation
+    ),
+    'rollover' => array(
+        'level' => 'ERROR',
+        'type' => 'file',
+        'format' => "{date}: {message}",
+        'file_path' => 'rollover' // Will save log files to application/logs/rollover
+    )
+);
+
+/*
+|--------------------------------------------------------------------------
+| Taxonomy Logging
+|--------------------------------------------------------------------------
+|
+| Separate logging path/files for taxonomy topics/avails
+|
+| Log levels: CRITICAL, ERROR, WARNING, INFO, DEBUG.
+*/
+$config['taxonomyLog'] = array(
+	'taxonomies' => array(
+        'level' => 'INFO',
+        'type' => 'file',
+        'format' => "{date}: {message}",
+        'file_path' => 'taxonomies' // Will save log files to application/logs/rollover
+    )
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| SOM Logging
+|--------------------------------------------------------------------------
+|
+| Separate logging path/files for SOM
+|
+| Log levels: CRITICAL, ERROR, WARNING, INFO, DEBUG.
+*/
+$config['somLog'] = array(
+	'som' => array(
+        'level' => 'INFO',
+        'type' => 'file',
+        'format' => "{date}: {message}",
+        'file_path' => 'som' // Will save log files to application/logs/rollover
+    )
+);
+/*
+|--------------------------------------------------------------------------
+| RHD Logging
+|--------------------------------------------------------------------------
+|
+| Separate logging path/files for SOM
+|
+| Log levels: CRITICAL, ERROR, WARNING, INFO, DEBUG.
+*/
+$config['rhdLog'] = array(
+	'rhd' => array(
+        'level' => 'INFO',
+        'type' => 'file',
+        'format' => "{date}: {message}",
+        'file_path' => 'rhd'
+    )
+);
+
+/*
+|--------------------------------------------------------------------------
+| Shared Secret for SAM
+|--------------------------------------------------------------------------
+|
+| Used to view SAM PDF
+|
+*/
+#$config['sam_shared_secret_username'] = 'flex.webservice';
+$config['sam_shared_secret_id'] = 'SAMWeb';
+$config['sam_shared_secret_value'] = 'MetGq3Resu';
+
+/*
+|--------------------------------------------------------------------------
+| Shared Secret for RHD
+|--------------------------------------------------------------------------
+|
+| Used to get the signature picture in SAM PDF
+|
+*/
+$config['rhd_shared_secret_id'] = 'RHDWeb';
+$config['rhd_shared_secret_value'] = 'R1hD3wEbsFlex';
+
+
+/*
+|--------------------------------------------------------------------------
+| Shared Secret for OCF
+|--------------------------------------------------------------------------
+|
+|
+|
+*/
+$config['ocf_shared_secret_id'] = 'OCFWeb';
+$config['ocf_shared_secret_value'] = 'OcedictC154F';
+
+
+/*
+|--------------------------------------------------------------------------
+| Shared Secret for OVP
+|--------------------------------------------------------------------------
+|
+|
+|
+*/
+$config['ovp_shared_secret_username'] = 'ovp.webservice';
+$config['ovp_shared_secret_id'] = 'OVPWeb';
+$config['ovp_shared_secret_value'] = 'CiltOvpProject2017';
+
+/*
+|--------------------------------------------------------------------------
+| Shared Secret for eReadings
+|--------------------------------------------------------------------------
+|
+| Used by FLO eReadings ingtegration
+|
+*/
+$config['ereadings_shared_secret_id'] = 'eReadingsWeb';
+$config['ereadings_shared_secret_value'] = 'Ijl8lshi2qTsEb';
+
+/*
+|--------------------------------------------------------------------------
+| SAM Collection ID || TAA Collection ID || others
+|--------------------------------------------------------------------------
+|
+*/
+$config['sam_collection'] = '2fcc59e4-7fbc-4a87-9c84-a94ca4a850e1';
+$config['taa_collection'] = '5194ef90-32e1-4d8c-ba14-27dd489c5bf5';
+$config['topic_information_collection'] = '6704afea-e88c-4230-b277-6d9d413bfbff';
+$config['md_activities_collection'] = '8b7164b2-76a3-490f-b436-c561886ad739';
+$config['ocf_groups_collection'] = '1c5fd968-d181-428b-a0db-13ceb7f72bc3';
+$config['past_exam_collection'] = '5b836ea2-a865-46ff-9c05-d0e25c56cd8d';
+$config['pbl_collection'] = '560de6fe-a61f-41b7-aaa0-52e9959bf6ad';
+/*
+|--------------------------------------------------------------------------
+| The Flex user groups for application user authentication
+|--------------------------------------------------------------------------
+|
+| If the user is in either of the user groups then authentication is successful.
+| Application name should be unique, only contain letter, digits, underscore
+*/
+
+$config['flex_usrgrp_auth'] = array(
+    'map_md' => array(
+        0 => 'SOM-MD viewer grp',
+        1 => 'EQ viewer grp'
+    ),
+    'application_x' => array(
+        0 => 'xyz grp',
+        1 => 'abc grp'
+    )
+);
+
+/*
+|--------------------------------------------------------------------------
+| SAM Taxonomy IDs
+|--------------------------------------------------------------------------
+|
+| SAM Taxonomy IDs
+|
+*/
+
+//$config['taxonID'] = '50e8410e-f0ab-44c6-b687-17b686f73dbd';
+$config['topics_taxonomy'] = '53ff320d-c227-4224-862a-bfdba4176bc0';
+$config['avails_taxonomy'] = '7a06cb02-9bde-4d32-a8e3-c82d623f3b86';
+
+/*
+|--------------------------------------------------------------------------
+| eReadings list management Collection ID
+|--------------------------------------------------------------------------
+|
+| eReadings list management Collection ID
+|
+*/
+$config['erlistmgt_collection'] = '593c170d-cd62-44d8-9924-7e34c551ab52';
+
+/*
+|--------------------------------------------------------------------------
+| Shared Secret for eReadings list management
+|--------------------------------------------------------------------------
+|
+| Used by topic coordinators to view eReadings (including inactive ones)
+| when they are using the list management rollover application.
+|
+*/
+$config['erlistmgr_shared_secret_username'] = 'eReadings.management';
+$config['erlistmgr_shared_secret_id'] = 'eReadingsListManager';
+$config['erlistmgr_shared_secret_value'] = 'O35mekfe86Ut3';
+
+/*
+|--------------------------------------------------------------------------
+| Subject Areas Collection ID
+|--------------------------------------------------------------------------
+|
+| Subject Areas Collection ID, The Learning Access Team for disciplines defined
+|
+*/
+$config['subject_areas_collection'] = '7aefcfad-778a-4d15-8378-39a95bcb7e8e';
+
+/*
+|--------------------------------------------------------------------------
+| User group requierd for the eReading list management tool
+|--------------------------------------------------------------------------
+|
+| Equella User group requierd for the eReading list management tool
+|
+|
+*/
+$config['usergrp_listmgr_advcontributor'] = 'LIB-eReadings adv-contributor';
+$config['usergrp_listmgr_libviewer'] = 'LIB-eReadings viewer';
+
+/*
+|--------------------------------------------------------------------------
+| eReadings list management email settings
+|--------------------------------------------------------------------------
+|
+| eReadings list management email settings
+|
+*/
+$config['listmgr_email_from_addr'] = 'DoNotReply@flinders.edu.au';
+$config['listmgr_email_from_title'] = 'eReadings list management system';
+$config['listmgr_email_notification_subject'] = 'eReadings list management - Notification only: successful eReadings rollover';
+$config['listmgr_email_error_subject'] = 'eReadings list management - For Library follow up: error in eReadings rollover';
+$config['listmgr_email_request_subject'] = 'eReadings list management - Request from topic coordinator';
+
+/*
+|--------------------------------------------------------------------------
+| OCF group IDs
+|--------------------------------------------------------------------------
+*/
+$config['TAA contributor grp'] = '887d971e-27ce-4c2f-bf3d-b1f9f6149d31';
+$config['TAA moderation grp'] = '17265863-035d-4117-a611-8072b2b3c3be';
+
+$config['EQ admin grp'] = 'df9d474c-a792-441a-802b-1925dda09cee';
+
+/*
+|--------------------------------------------------------------------------
+| RHD Theses group IDs
+|--------------------------------------------------------------------------
+*/
+$config['rhd_moderator_group'] = '86097db0-b597-4fcd-9153-1ff9f72a639d';
+
+	$config['rhd_FAC_moderator_group'] = '5c4c808c-703f-4cb0-830d-da5d4b8ccd2e';
+		$config['rhd_EHL_approver_group'] = '9bfe613b-f046-4027-85c2-42c2e59c6602';
+		$config['rhd_FSE_approver_group'] = 'caee9e7f-e509-4867-b21d-031d8316db79';
+		$config['rhd_MNHS_approver_group'] = 'a3e45eaf-c3d1-43f0-9a1d-a6bd642afc93';
+		$config['rhd_SABS_approver_group'] = '153edcb1-1978-4533-b3f0-50ff710b20fe';
+	$config['rhd_ogr_approver_group'] = '20a690ef-3c2a-4f88-b9d4-5704d601ced9';
+	$config['rhd_LIB_checker_group'] = 'fa71cf5e-2bc8-452f-9c9d-91fe075cec48';
+		$config['rhd_LIB_approver_group'] = '759bbe66-19dd-4d8f-a4e1-97ae445ef5a1';
+
+	$config['rhd_thesis_viewer_group'] = '30c27a1d-9e45-4ddc-a127-9dc3a4926d6e';
+		$config['rhd_thesis_contributor_group'] = '2c87c07b-9e3e-4bf2-ade7-5a9f44c05205';
+			$config['rhd_thesis_adv_contributor_group'] = '5a2d4644-5a93-489d-a50c-de28989978ea';
+
+
+/*
+|--------------------------------------------------------------------------
+| SAM Report group IDs
+|--------------------------------------------------------------------------
+*/
+$config['sam_contributor_grp'] = '0bc756e3-d233-4acd-8d76-405dc26a5353';
+$config['sam_moderation_grp'] = 'e4bad4db-35a7-45dd-bae2-e148f07f7241';
+$config['sam_report_viewer_grp'] = '922e0833-d16d-41c1-bb8e-5cf3530b9236';
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| RHD Collection ID
+|--------------------------------------------------------------------------
+|
+| RHD Collection ID
+|
+*/
+$config['rhd_collection'] = '1bb07d74-be3c-41b9-8467-3096c2d21f25';
+$config['rhd_oddball_collection'] = 'df52b5be-5d18-4b48-9b56-77de40586d18';
+$config['coursework_thesis_collection'] = 'c097379c-8611-4449-8b1a-47b70b0de2da';
+
+$config['rhd_schools_taxonomy_uuid'] = 'c5331878-7bc2-434b-b37b-47204079342d';
+
+/*
+|--------------------------------------------------------------------------
+| OCF MD STAFF
+|--------------------------------------------------------------------------
+|
+| OCF MD STAFF Collection ID and group
+|
+*/
+$config['ocf_md_staff_collection'] = '30935ef7-72ab-43b0-a47d-51e9f81194fe';
+$config['ocf_md_staff_grp'] = 'OCF MD STAFF';
+
+/*
+|--------------------------------------------------------------------------
+| LDAP common DN
+|--------------------------------------------------------------------------
+|
+| LDAP common read only DN and password
+|
+*/
+$config['ldap_server'] = 'ldapauth.flinders.edu.au';
+$config['ldap_dn'] = 'cn=cedict_ro,ou=isd,o=flinders';
+$config['ldap_pwd'] = 'sit-yYxF8';
+/*
+|--------------------------------------------------------------------------
+| LDAP group access
+|--------------------------------------------------------------------------
+|
+| LDAP derived groups for access control
+|
+*/
+$config['ocf_ldap_groups'] = array(
+
+	"som-staff" => array(
+		0 => "md",
+		1 => "md2017",
+		2 => "md2018"
+	),
+	"nursing-staff" => array(
+		0 => "bmid"
+	),
+	"sohs-staff" => array(
+		0 => "mspp",
+		1 => "baud",
+		2 => "bspp"
+	),
+	"flextra" => array(
+		0 => "mspp",
+		1 => "baud",
+		2 => "md",
+		3 => "bmid",
+		4 => "bspp",
+		5 => "md2017",
+		6 => "md2018"
+	)
+
+);
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| OCF FLEX group access
+|--------------------------------------------------------------------------
+|
+| OCF FLEX derived groups for access control
+|
+*/
+
+
+#$config['ocf_chk_flex_groups'] = false;
+
+$config['ocf_chk_flex_groups'] = true;
+$config['ocf_flex_groups'] = array(
+
+	"SOM-MD viewer" => array(
+		//0 => "md"
+	),
+	"OCF-MD viewer grp" => array(
+		0 => "md",
+		1 => "md2017",
+		2 => "md2018"
+	),
+	"OCF-MD staff grp" => array(
+		0 => "md",
+		1 => "md2017",
+		2 => "md2018"
+	),
+
+	"TAA MD2017 mod grp" => array(
+		0 => "md2017"
+	),
+
+	"TAA MD mod grp" => array(
+		0 => "md2018"
+	),
+
+	"TAA MD2018 mod grp" => array(
+		0 => "md2018"
+	),
+
+	"EQ designer" => array(
+		0 => "mspp",
+		1 => "baud",
+		2 => "md",
+		3 => "bmid",
+		4 => "bspp",
+		5 => "md2017",
+		6 => "md2018"
+	),
+	"MD-internal LTU grp" => array(
+		0 => "mspp",
+		1 => "baud",
+		2 => "md",
+		3 => "bmid",
+		4 => "bspp",
+		5 => "md2017",
+		6 => "md2017"
+	)
+
+
+);
+
+/*
+|--------------------------------------------------------------------------
+| Google Youtube API
+|--------------------------------------------------------------------------
+|
+*/
+$config['google_oauth2_client_id'] = '643418898119-30eda321onv1fs2lss9vmue1397pe9p9.apps.googleusercontent.com';
+$config['google_oauth2_client_secret'] = 'cK5x1YKO9ajtPnrF-4Kk47aL';
+$config['google_oauth2_client_key'] = '{"access_token":"ya29.iQJrLMGmI8ewRjTRfkEKT0I4rWy06wGtBrvAbrvpB7eMtGSs5NLoqUp7Q1Q7JNgT77iO","token_type":"Bearer","expires_in":3600,"refresh_token":"1\/AKgky-8YY1bvALIzA00MWJ2cadIQKzYq_Dq9j_YzxiJIgOrJDtdun6zK6XiATCKT","created":1455499284}';
+
+/*
+|--------------------------------------------------------------------------
+| OVP Help Documents
+|--------------------------------------------------------------------------
+|
+*/
+$config['OVP_Purpose_of_Media_Vault_uuid'] = '65c7f477-7be3-4aa1-9dcf-70f334885536';
+$config['OVP_Purpose_of_Media_Vault_version'] = '1';
+$config['OVP_Edit_Media_uuid'] = '92448048-e113-462c-b6a4-2e6fdb7c6efb';
+$config['OVP_Edit_Media_version'] = '1';
+$config['OVP_Submit_Video_Assignment_uuid'] = '27cab559-9c75-4a74-9d83-619fb3f75d4c';
+$config['OVP_Submit_Video_Assignment_version'] = '1';
+$config['OVP_Publish_to_FLO_uuid'] = '0b318749-f096-4fc4-b1f8-7cd260721c31';
+$config['OVP_Publish_to_FLO_version'] = '1';
+$config['OVP_Setup_Video_Assignment_uuid'] = 'ea040730-3733-4c79-984d-6acb5d86a28d';
+$config['OVP_Setup_Video_Assignment_version'] = '1';
+$config['OVP_FAQ_uuid'] = '275912be-e4c2-4ca1-9ca9-98425d708c90';
+$config['OVP_FAQ_version'] = '1';
+$config['OVP_Creating_and_preparing_video_uuid'] = 'ed0b6361-811c-41dc-a2a1-0c8bf2ffe4bb';
+$config['OVP_Creating_and_preparing_video_version'] = '1';
+$config['OVP_File_Types_explained_uuid'] = '7b32fac1-5947-4a77-80a3-6b05b364db91';
+$config['OVP_File_Types_explained_version'] = '1';
+$config['OVP_Slides_uuid'] = '2558de96-f076-4518-afe3-061ba4616d98';
+$config['OVP_Slides_version'] = '1';
+$config['OVP_Upload_to_My_Media_uuid'] = 'bc167488-f0b2-4d70-8ac3-596e650ed700';
+$config['OVP_Upload_to_My_Media_version'] = '1';
+$config['OVP_Media_Vault_uuid'] = '8caa1389-b26d-4a0f-bfe7-5f0da6e26cb9';
+$config['OVP_Media_Vault_version'] = '1';
+$config['OVP_Video_Help_Dashboard_uuid'] = 'ad725625-af6e-4634-bdba-3fdeae879387';
+$config['OVP_Video_Help_Dashboard_version'] = '1';
+$config['OVP_Video_Player_uuid'] = 'e3df7c40-5b42-46b7-a730-acfcfdbac988';
+$config['OVP_Video_Player_version'] = '1';
+
+
+/*
+|--------------------------------------------------------------------------
+| Mail configuration
+|--------------------------------------------------------------------------
+|
+*/
+$config['mailtype'] = 'text';

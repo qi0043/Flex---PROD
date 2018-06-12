@@ -1,0 +1,2 @@
+2017-06-27 08:59:30: Added course to Flex: EDUC9703_2017_NS2_BJ
+2017-06-27 11:19:31: Added course to Flex: PSYC7007_2017_S2

@@ -1,0 +1,37 @@
+2015-10-29 13:42:29: Added course to Flex: NURS3002_2016_NS1_RV
+2015-10-29 13:42:29: Added course to Flex: NURS3002_2016_NS1_3
+2015-10-29 13:42:29: Added course to Flex: NURS3002_2016_NS1_2
+2015-10-29 13:42:29: Added course to Flex: NURS3002_2016_NS1
+2015-10-29 13:42:38: Error: REMOTE_USER not set.
+2015-10-29 13:42:39: Error: REMOTE_USER not set.
+2015-10-29 13:42:39: Error: REMOTE_USER not set.
+2015-10-29 13:42:39: Error: REMOTE_USER not set.
+2015-10-29 23:11:18: Error: REMOTE_USER not set.
+2015-10-29 23:11:19: Error: REMOTE_USER not set.
+2015-10-29 23:11:19: Error: REMOTE_USER not set.
+2015-10-29 23:11:19: Error: REMOTE_USER not set.
+2015-10-29 23:11:19: Error: REMOTE_USER not set.
+2015-10-29 23:11:19: Error: REMOTE_USER not set.
+2015-10-29 23:11:21: Error: REMOTE_USER not set.
+2015-10-29 23:11:21: Error: REMOTE_USER not set.
+2015-10-29 23:11:21: Error: REMOTE_USER not set.
+2015-10-29 23:11:22: Error: REMOTE_USER not set.
+2015-10-29 23:11:23: Error: REMOTE_USER not set.
+2015-10-29 23:11:23: Error: REMOTE_USER not set.
+2015-10-29 23:11:23: Error: REMOTE_USER not set.
+2015-10-29 23:11:23: Error: REMOTE_USER not set.
+2015-10-29 23:11:23: Error: REMOTE_USER not set.
+2015-10-29 23:11:23: Error: REMOTE_USER not set.
+2015-10-29 23:11:44: Error: REMOTE_USER not set.
+2015-10-29 23:11:44: Error: REMOTE_USER not set.
+2015-10-29 23:11:44: Error: REMOTE_USER not set.
+2015-10-29 23:11:44: Error: REMOTE_USER not set.
+2015-10-29 23:11:44: Error: REMOTE_USER not set.
+2015-10-29 23:11:44: Error: REMOTE_USER not set.
+2015-10-29 23:11:44: Error: REMOTE_USER not set.
+2015-10-29 23:11:44: Error: REMOTE_USER not set.
+2015-10-29 23:11:45: Error: REMOTE_USER not set.
+2015-10-29 23:11:45: Error: REMOTE_USER not set.
+2015-10-29 23:11:45: Error: REMOTE_USER not set.
+2015-10-29 23:11:45: Error: REMOTE_USER not set.
+2015-10-29 23:11:45: Error: REMOTE_USER not set.

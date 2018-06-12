@@ -1,0 +1,2 @@
+2016-02-14 17:25:56: Added course to Flex: HLTH2101_2016_S1_DE
+2016-02-14 17:25:56: Added course to Flex: HLTH2101_2016_S1

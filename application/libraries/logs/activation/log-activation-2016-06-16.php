@@ -1,0 +1,3 @@
+2016-06-16 11:37:51: Added course to Flex: MMED8102_2016_HY2_DA
+2016-06-16 11:37:51: Added course to Flex: MMED8102_2016_HY2
+2016-06-16 11:58:14: Added course to Flex: SPTH4720_2016_NS2

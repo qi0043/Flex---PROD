@@ -1,0 +1,2 @@
+2017-05-04 14:36:07: Added course to Flex: POAD8022_2017_S1_ADL
+2017-05-04 14:36:07: Added course to Flex: POAD8022_2017_S1

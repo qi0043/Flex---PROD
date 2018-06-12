@@ -1,0 +1,3 @@
+2015-03-23 23:04:50: Error: REMOTE_USER not set.
+2015-03-23 23:04:53: Error: REMOTE_USER not set.
+2015-03-23 23:04:56: Error: REMOTE_USER not set.

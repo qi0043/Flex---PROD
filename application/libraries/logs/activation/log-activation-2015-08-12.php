@@ -1,0 +1,21 @@
+2015-08-12 10:58:43: Added course to Flex: EDUC3627_2015_NS2
+2015-08-12 10:58:52: Error: REMOTE_USER not set.
+2015-08-12 23:04:08: Error: REMOTE_USER not set.
+2015-08-12 23:04:08: Error: REMOTE_USER not set.
+2015-08-12 23:04:08: Error: REMOTE_USER not set.
+2015-08-12 23:04:08: Error: REMOTE_USER not set.
+2015-08-12 23:04:08: Error: REMOTE_USER not set.
+2015-08-12 23:04:08: Error: REMOTE_USER not set.
+2015-08-12 23:04:08: Error: REMOTE_USER not set.
+2015-08-12 23:04:09: Error: REMOTE_USER not set.
+2015-08-12 23:04:09: Error: REMOTE_USER not set.
+2015-08-12 23:04:09: Error: REMOTE_USER not set.
+2015-08-12 23:04:09: Error: REMOTE_USER not set.
+2015-08-12 23:04:09: Error: REMOTE_USER not set.
+2015-08-12 23:04:11: Error: REMOTE_USER not set.
+2015-08-12 23:04:12: Error: REMOTE_USER not set.
+2015-08-12 23:04:12: Error: REMOTE_USER not set.
+2015-08-12 23:04:12: Error: REMOTE_USER not set.
+2015-08-12 23:04:12: Error: REMOTE_USER not set.
+2015-08-12 23:04:14: Error: REMOTE_USER not set.
+2015-08-12 23:04:14: Error: REMOTE_USER not set.

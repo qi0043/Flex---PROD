@@ -1,0 +1,15 @@
+2015-06-12 17:09:04: Added course to Flex: DISH8001_2015_S2_DE
+2015-06-12 23:13:28: Error: REMOTE_USER not set.
+2015-06-12 23:13:28: Error: REMOTE_USER not set.
+2015-06-12 23:13:28: Error: REMOTE_USER not set.
+2015-06-12 23:13:29: Error: REMOTE_USER not set.
+2015-06-12 23:13:29: Error: REMOTE_USER not set.
+2015-06-12 23:13:30: Error: REMOTE_USER not set.
+2015-06-12 23:13:30: Error: REMOTE_USER not set.
+2015-06-12 23:13:30: Error: REMOTE_USER not set.
+2015-06-12 23:13:31: Error: REMOTE_USER not set.
+2015-06-12 23:13:31: Error: REMOTE_USER not set.
+2015-06-12 23:13:32: Error: REMOTE_USER not set.
+2015-06-12 23:13:33: Error: REMOTE_USER not set.
+2015-06-12 23:13:34: Error: REMOTE_USER not set.
+2015-06-12 23:13:36: Error: REMOTE_USER not set.

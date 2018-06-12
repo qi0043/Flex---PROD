@@ -1,0 +1,10 @@
+2015-12-22 11:46:50: Added course to Flex: EDUC9603_2016_S1
+2015-12-22 11:47:59: Added course to Flex: EDUC9605_2016_S1_DE
+2015-12-22 11:47:59: Added course to Flex: EDUC9605_2016_NS2
+2015-12-22 11:51:01: Added course to Flex: EDUC9611_2016_S2
+2015-12-22 11:51:01: Added course to Flex: EDUC9611_2016_S1_DE
+2015-12-22 11:51:01: Added course to Flex: EDUC9611_2015_NS2_TJ_2
+2015-12-22 11:52:17: Added course to Flex: EDUC9610_2016_S2_DE
+2015-12-22 11:52:17: Added course to Flex: EDUC9610_2016_NS2
+2015-12-22 11:52:18: Added course to Flex: EDUC9610_2015_NS2_TJ_3
+2015-12-22 12:55:48: Added course to Flex: EDUC9888_2016_S1_FLC

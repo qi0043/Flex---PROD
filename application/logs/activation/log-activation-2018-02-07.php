@@ -1,0 +1,3 @@
+2018-02-07 09:24:31: Added course to Flex: MIDW1005_2018_S1
+2018-02-07 10:47:46: Added course to Flex: LLAW9601_2018_S2_DE
+2018-02-07 10:47:46: Added course to Flex: LLAW9601_2018_S1_DE

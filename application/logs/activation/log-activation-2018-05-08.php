@@ -1,0 +1,2 @@
+2018-05-08 09:36:06: Added course to Flex: NURS9708_2018_S2_DE
+2018-05-08 09:36:07: Added course to Flex: NURS9708_2018_S2

@@ -1,0 +1,5 @@
+2016-06-03 10:34:57: Added course to Flex: HLTH3108_2016_NS2
+2016-06-03 10:40:07: Added course to Flex: OPTO8004_2016_NS2
+2016-06-03 10:41:09: Added course to Flex: PHYT8003_2016_NS2_DP
+2016-06-03 10:41:55: Added course to Flex: PHYT8007_2016_NS2_DP
+2016-06-03 10:43:32: Added course to Flex: PHYT9006_2016_NS2_DP

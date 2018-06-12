@@ -1,0 +1,3 @@
+2016-12-12 09:06:48: Added course to Flex: POAD9129_2017_S1
+2016-12-12 09:08:10: Added course to Flex: POAD9057_2017_S2_ADL
+2016-12-12 09:08:10: Added course to Flex: POAD9057_2017_S1_ADL

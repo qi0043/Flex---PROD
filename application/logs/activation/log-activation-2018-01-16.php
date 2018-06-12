@@ -1,0 +1,9 @@
+2018-01-16 13:37:01: Added course to Flex: BUSN9229_2018_S1_ADL
+2018-01-16 13:37:01: Added course to Flex: BUSN9229_2018_NS2_DE
+2018-01-16 13:37:01: Added course to Flex: BUSN9229_2018_NS1_DE
+2018-01-16 13:50:16: Added course to Flex: INNO1001_2018_S2_TON
+2018-01-16 13:50:16: Added course to Flex: INNO1001_2018_S2_DE
+2018-01-16 13:50:16: Added course to Flex: INNO1001_2018_S1_TON
+2018-01-16 13:50:16: Added course to Flex: INNO1001_2018_S1_DE
+2018-01-16 13:50:16: Added course to Flex: INNO1001_2018_NS2_DE
+2018-01-16 13:50:16: Added course to Flex: INNO1001_2018_NS1_DE

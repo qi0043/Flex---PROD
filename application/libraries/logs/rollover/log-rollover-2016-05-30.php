@@ -1,0 +1,4 @@
+2016-05-30 14:43:49: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
+2016-05-30 14:43:49: Rollover Failed with user: bowd0058, from: SOAD9201_2015_S2_DE to SOAD8008_2016_S2_DE, index: 87, reading link: https://flex.flinders.edu.au/items/3b7a75bb-5422-4a3e-91d2-ca16acc07ccf/1/?.vi=file&attachment.uuid=68c30ea6-ad4f-415e-bb40-23ec7a03a852
+2016-05-30 15:41:08: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
+2016-05-30 15:41:08: Rollover Failed with user: jarr0049, from: SOAD9201_2015_NS2 to SOAD8008_2016_S2, index: 87, reading link: https://flex.flinders.edu.au/items/3b7a75bb-5422-4a3e-91d2-ca16acc07ccf/1/?.vi=file&attachment.uuid=68c30ea6-ad4f-415e-bb40-23ec7a03a852

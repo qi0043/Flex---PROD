@@ -1,0 +1,9 @@
+2016-01-20 16:22:07: Added course to Flex: NURS8824_2016_S2_FLC
+2016-01-20 16:22:07: Added course to Flex: NURS8824_2016_S2
+2016-01-20 16:22:07: Added course to Flex: NURS8824_2016_S1_FLC
+2016-01-20 16:22:07: Added course to Flex: NURS8824_2016_S1
+2016-01-20 17:20:06: Added course to Flex: NURS8821_2016_S2_FLC
+2016-01-20 17:20:06: Added course to Flex: NURS8821_2016_S2
+2016-01-20 17:24:33: Added course to Flex: NURS8823_2016_S2_FLC
+2016-01-20 17:26:15: Added course to Flex: NURS8827_2016_S2_FLC
+2016-01-20 17:26:15: Added course to Flex: NURS8827_2016_S2

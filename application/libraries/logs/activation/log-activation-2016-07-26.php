@@ -1,0 +1,5 @@
+2016-07-26 09:25:33: Added course to Flex: EDUC3643_2016_NS2
+2016-07-26 09:25:44: Added course to Flex: EDUC9227_2016_NS2
+2016-07-26 11:28:37: Added course to Flex: NURS8752_2016_S2_FLC
+2016-07-26 14:17:40: Added course to Flex: ARCH2213_2016_S2
+2016-07-26 17:45:36: Added course to Flex: POAD8017_2016_S2

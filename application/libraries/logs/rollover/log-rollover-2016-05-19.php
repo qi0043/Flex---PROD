@@ -1,0 +1,2 @@
+2016-05-19 17:37:35: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
+2016-05-19 17:37:35: Rollover Failed with user: brad0221, from: MDSC8002_2015_S2_DE to MDSC8002_2016_S2_DE, index: 128, reading link: https://flex.flinders.edu.au/items/2209155e-d21c-4833-899e-b41d7f42dda2/1/?.vi=file&attachment.uuid=9c997b73-eb5b-48e1-b2fa-2231c9dadbc7

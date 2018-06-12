@@ -1,0 +1,2 @@
+2015-12-17 13:23:19: Added course to Flex: MHSC8112_2016_S2_DE
+2015-12-17 13:23:19: Added course to Flex: MHSC8112_2016_S1_DE

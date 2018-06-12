@@ -1,0 +1,4 @@
+2015-11-02 13:59:41: Added course to Flex: POAD8138_2016_NS1_DE
+2015-11-02 14:00:25: Error: REMOTE_USER not set.
+2015-11-02 16:37:07: Added course to Flex: EDUC9222_2016_S1
+2015-11-02 16:37:26: Error: REMOTE_USER not set.

@@ -1,0 +1,3 @@
+2016-01-05 08:54:05: Added course to Flex: LLIR9502_2016_NS1_DE
+2016-01-05 14:07:41: Added course to Flex: SCME2000_2016_SU
+2016-01-05 14:45:26: Added course to Flex: HLED9101_2016_S2_DE_2

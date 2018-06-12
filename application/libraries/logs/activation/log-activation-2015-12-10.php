@@ -1,0 +1,4 @@
+2015-12-10 16:12:04: Added course to Flex: HLED9103_2016_S2_DE
+2015-12-10 16:12:05: Added course to Flex: HLED9103_2016_S1_DE
+2015-12-10 16:25:39: Added course to Flex: DSRS1206_2016_S1_DE
+2015-12-10 16:25:39: Added course to Flex: DSRS1206_2016_S1

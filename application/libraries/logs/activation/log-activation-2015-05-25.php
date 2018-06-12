@@ -1,0 +1,6 @@
+2015-05-25 10:55:47: Added course to Flex: PALL8438_2015_S2_DP
+2015-05-25 10:55:47: Added course to Flex: PALL8438_2015_S2_DE
+2015-05-25 11:04:16: Added course to Flex: NURS3004_2015_S2_RV
+2015-05-25 11:04:16: Added course to Flex: NURS3004_2015_S2
+2015-05-25 11:04:34: Added course to Flex: NURS3004A_2015_S2_RV
+2015-05-25 11:04:34: Added course to Flex: NURS3004A_2015_S2

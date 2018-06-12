@@ -1,0 +1,3 @@
+2017-08-11 14:51:18: Added course to Flex: EDUC3624_2017_NS2
+2017-08-11 14:52:05: Added course to Flex: EDUC9228_2017_NS2
+2017-08-11 16:40:19: Added course to Flex: REMH8012_2017_S2_DE

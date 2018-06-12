@@ -1,0 +1,1 @@
+2017-09-05 09:28:07: Added course to Flex: EDUC9617_2017_NS2_TJ

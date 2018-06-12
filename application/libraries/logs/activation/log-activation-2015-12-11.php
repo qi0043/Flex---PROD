@@ -1,0 +1,13 @@
+2015-12-11 09:32:18: Added course to Flex: DSRS3222_2016_S1_DE
+2015-12-11 09:32:18: Added course to Flex: DSRS3222_2016_S1
+2015-12-11 11:25:21: Added course to Flex: HLTH3107_2016_S2
+2015-12-11 11:25:22: Added course to Flex: HLTH3107_2016_S1
+2015-12-11 12:23:14: Added course to Flex: DSRS9067_2016_S1_DE
+2015-12-11 12:23:14: Added course to Flex: DSRS9067_2016_S1
+2015-12-11 12:25:59: Added course to Flex: DSRS9065_2016_S1_DE
+2015-12-11 12:25:59: Added course to Flex: DSRS9065_2016_S1
+2015-12-11 12:27:51: Added course to Flex: DSRS4101_2016_S1_DE
+2015-12-11 12:27:51: Added course to Flex: DSRS4101_2016_S1
+2015-12-11 12:31:57: Added course to Flex: DSRS1209_2016_S1_DE
+2015-12-11 12:31:57: Added course to Flex: DSRS1209_2016_S1
+2015-12-11 13:52:51: Added course to Flex: EDUC9512_2016_NS1_DE

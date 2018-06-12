@@ -1,0 +1,3 @@
+2016-08-05 10:07:47: Added course to Flex: POAD9026_2016_S2_DE
+2016-08-05 10:07:47: Added course to Flex: POAD9026_2016_S2
+2016-08-05 13:40:53: Added course to Flex: EDUC3623_2016_NS2

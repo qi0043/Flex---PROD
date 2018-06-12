@@ -1,0 +1,3 @@
+2018-02-01 14:42:25: Added course to Flex: HIST1703_2018_S1
+2018-02-01 16:11:06: Added course to Flex: DSRS2220_2018_S1_DE
+2018-02-01 16:11:06: Added course to Flex: DSRS2220_2018_S1

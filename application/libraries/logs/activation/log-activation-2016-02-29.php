@@ -1,0 +1,9 @@
+2016-02-29 10:22:21: Added course to Flex: SCME2102_2016_S1
+2016-02-29 11:49:18: Added course to Flex: INDO2001_2016_S1_ADL
+2016-02-29 13:02:19: Added course to Flex: NURS8721_2016_S1_DE
+2016-02-29 13:02:19: Added course to Flex: NURS8721_2016_S1
+2016-02-29 15:27:24: Added course to Flex: BUSN9230_2016_S1_ADL
+2016-02-29 16:04:46: Added course to Flex: DISH8004_2016_S1_DE
+2016-02-29 16:12:31: Added course to Flex: ESOL3005_2016_S2
+2016-02-29 16:12:31: Added course to Flex: ESOL3005_2016_S1
+2016-02-29 16:31:53: Added course to Flex: REMH8013_2016_S1_FLC

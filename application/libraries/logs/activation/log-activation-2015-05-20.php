@@ -1,0 +1,16 @@
+2015-05-20 13:51:49: Added course to Flex: NURS9125_2015_S2_FLC
+2015-05-20 13:51:49: Added course to Flex: NURS9125_2015_S2
+2015-05-20 13:51:50: Added course to Flex: NURS9125_2015_S1_FLC
+2015-05-20 13:51:50: Added course to Flex: NURS9125_2015_S1
+2015-05-20 13:57:23: Error: REMOTE_USER not set.
+2015-05-20 13:57:23: Error: REMOTE_USER not set.
+2015-05-20 13:57:24: Error: REMOTE_USER not set.
+2015-05-20 13:57:24: Error: REMOTE_USER not set.
+2015-05-20 16:33:59: Added course to Flex: PHYT8003_2015_NS2_DP
+2015-05-20 23:11:18: Error: REMOTE_USER not set.
+2015-05-20 23:11:18: Error: REMOTE_USER not set.
+2015-05-20 23:11:18: Error: REMOTE_USER not set.
+2015-05-20 23:11:18: Error: REMOTE_USER not set.
+2015-05-20 23:11:19: Error: REMOTE_USER not set.
+2015-05-20 23:11:20: Error: REMOTE_USER not set.
+2015-05-20 23:11:20: Error: REMOTE_USER not set.

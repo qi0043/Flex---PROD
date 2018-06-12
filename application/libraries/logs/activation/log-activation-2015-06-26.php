@@ -1,0 +1,3 @@
+2015-06-26 15:22:32: Added course to Flex: TOUR8210_2015_S2
+2015-06-26 16:48:44: Added course to Flex: TOUR8211_2015_S2
+2015-06-26 23:13:34: Error: REMOTE_USER not set.

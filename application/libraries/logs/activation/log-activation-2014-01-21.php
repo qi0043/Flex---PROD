@@ -1,0 +1,1 @@
+2014-01-21 12:43:28: Activation Successful with user: pris0005, availability: REMH8016_2014, reading link: https://flex.flinders.edu.au/items/49fd6ea3-6ba7-4177-837d-75264b19ef91/1/?.vi=file&attachment.uuid=90edd403-618e-4dcb-8c8d-bc35366fcf44

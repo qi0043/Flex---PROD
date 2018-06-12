@@ -1,0 +1,2 @@
+2017-09-11 08:49:42: Added course to Flex: POAD9037_2017_NS2_DE
+2017-09-11 08:50:52: Added course to Flex: POAD9058_2017_NS2_DE

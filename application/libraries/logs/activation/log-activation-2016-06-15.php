@@ -1,0 +1,2 @@
+2016-06-15 09:22:07: Added course to Flex: PHCA9518_2016_S2_DE
+2016-06-15 09:22:07: Added course to Flex: PHCA9518_2016_S2

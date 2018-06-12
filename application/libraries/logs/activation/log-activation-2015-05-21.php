@@ -1,0 +1,8 @@
+2015-05-21 13:08:27: Added course to Flex: ESOL2004_2015_S2
+2015-05-21 13:08:27: Added course to Flex: ESOL2004_2015_S1
+2015-05-21 13:08:59: Error: REMOTE_USER not set.
+2015-05-21 13:08:59: Error: REMOTE_USER not set.
+2015-05-21 13:41:47: Added course to Flex: NURS3005A_2015_NS2_RV
+2015-05-21 13:41:47: Added course to Flex: NURS3005A_2015_NS2_3
+2015-05-21 13:41:47: Added course to Flex: NURS3005A_2015_NS2_2
+2015-05-21 13:41:47: Added course to Flex: NURS3005A_2015_NS2

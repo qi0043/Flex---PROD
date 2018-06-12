@@ -1,0 +1,4 @@
+2015-04-22 10:44:40: Added course to Flex: EDUC9617_2015_S2_FLC
+2015-04-22 23:14:09: Error: REMOTE_USER not set.
+2015-04-22 23:14:10: Error: REMOTE_USER not set.
+2015-04-22 23:14:11: Error: REMOTE_USER not set.

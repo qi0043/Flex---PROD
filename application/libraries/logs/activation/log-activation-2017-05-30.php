@@ -1,0 +1,10 @@
+2017-05-30 10:15:36: Added course to Flex: EDUC9401_2017_S2
+2017-05-30 10:16:01: Added course to Flex: EDUC9408_2017_S2
+2017-05-30 10:51:31: Added course to Flex: EDUC1221_2017_S2
+2017-05-30 11:38:31: Added course to Flex: PHCA9518_2017_S2_DE
+2017-05-30 11:38:31: Added course to Flex: PHCA9518_2017_S2
+2017-05-30 14:46:59: Added course to Flex: NURS9708_2017_S2_DE
+2017-05-30 14:46:59: Added course to Flex: NURS9708_2017_S2
+2017-05-30 14:58:01: Added course to Flex: PHYT8007_2017_NS2_DP
+2017-05-30 15:36:17: Added course to Flex: DSRS1201_2017_S2_DE
+2017-05-30 15:36:17: Added course to Flex: DSRS1201_2017_S2
