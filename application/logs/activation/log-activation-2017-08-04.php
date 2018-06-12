@@ -1,6 +1,0 @@
-2017-08-04 15:56:13: Added course to Flex: HACM9301_2017_S2_DE
-2017-08-04 15:56:13: Added course to Flex: HACM9301_2017_S2_ADL
-2017-08-04 15:56:13: Added course to Flex: HACM9301_2017_NS2_SG
-2017-08-04 15:56:52: Added course to Flex: HACM9303_2017_S2_DE
-2017-08-04 15:56:52: Added course to Flex: HACM9303_2017_S2_ADL
-2017-08-04 17:04:59: Added course to Flex: LLAW2223_2017_S2

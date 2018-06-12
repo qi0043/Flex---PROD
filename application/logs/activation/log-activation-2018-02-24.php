@@ -1,1 +1,0 @@
-2018-02-24 11:51:10: Added course to Flex: ARCH8019_2018_S1_DE

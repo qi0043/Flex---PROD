@@ -1,3 +1,0 @@
-2017-07-25 13:07:22: Added course to Flex: NURS9541_2017_S2_DE
-2017-07-25 13:07:22: Added course to Flex: NURS9541_2017_S2
-2017-07-25 22:37:56: Added course to Flex: MMED3933_2017_S2

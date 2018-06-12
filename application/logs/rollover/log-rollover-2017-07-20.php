@@ -1,4 +1,0 @@
-2017-07-20 11:59:56: Error: Response status 500 Response: {"code":500,"error":"Internal Server Error","error_description":"There is no Copyright holding for this item: 4b3bbb71-afb2-4148-a92f-c8313b880ce0/1"}
-2017-07-20 11:59:56: Rollover Failed with user: pris0005, from: HLTH2105_2016_S2 to HLTH2105_2017_S2_2, index: 4, reading link: https://flex.flinders.edu.au/items/4b3bbb71-afb2-4148-a92f-c8313b880ce0/1/?.vi=file&attachment.uuid=4aafb7b3-8140-492c-86bc-d5365e701c13
-2017-07-20 12:00:20: Error: Response status 500 Response: {"code":500,"error":"Internal Server Error","error_description":"There is no Copyright holding for this item: 4b3bbb71-afb2-4148-a92f-c8313b880ce0/1"}
-2017-07-20 12:00:20: Rollover Failed with user: pris0005, from: HLTH2105_2016_S2 to HLTH2105_2017_S2, index: 4, reading link: https://flex.flinders.edu.au/items/4b3bbb71-afb2-4148-a92f-c8313b880ce0/1/?.vi=file&attachment.uuid=4aafb7b3-8140-492c-86bc-d5365e701c13

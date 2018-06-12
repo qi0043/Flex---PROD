@@ -1,7 +1,0 @@
-2017-12-12 09:07:04: Added course to Flex: NURS3001_2018_NS1_RV
-2017-12-12 09:07:04: Added course to Flex: NURS3001_2018_NS1_3
-2017-12-12 09:07:04: Added course to Flex: NURS3001_2018_NS1_2
-2017-12-12 09:07:04: Added course to Flex: NURS3001_2018_NS1
-2017-12-12 12:27:27: Added course to Flex: HLED9108_2018_S2_DE
-2017-12-12 12:27:27: Added course to Flex: HLED9108_2018_S1_DE
-2017-12-12 12:27:50: Added course to Flex: HLED9111_2018_S1_DE

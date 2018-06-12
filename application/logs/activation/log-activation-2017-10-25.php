@@ -1,5 +1,0 @@
-2017-10-25 09:42:49: Added course to Flex: NURS3002_2018_NS1_RV
-2017-10-25 09:42:49: Added course to Flex: NURS3002_2018_NS1_4
-2017-10-25 09:42:49: Added course to Flex: NURS3002_2018_NS1_3
-2017-10-25 09:42:49: Added course to Flex: NURS3002_2018_NS1_2
-2017-10-25 09:42:49: Added course to Flex: NURS3002_2018_NS1

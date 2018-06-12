@@ -1,9 +1,0 @@
-2017-06-01 08:32:54: Added course to Flex: PHYS2712_2017_S2
-2017-06-01 09:14:37: Added course to Flex: SOAD3017_2017_S2
-2017-06-01 09:36:08: Added course to Flex: EDUC9522_2017_S2_DE
-2017-06-01 09:36:09: Added course to Flex: EDUC9522_2017_NS2
-2017-06-01 11:12:12: Added course to Flex: ARCH8019_2017_S2_DE
-2017-06-01 12:40:23: Added course to Flex: POAD8017_2017_S2_ADL
-2017-06-01 12:40:23: Added course to Flex: POAD8017_2017_S2
-2017-06-01 12:44:23: Added course to Flex: POAD9135_2017_S2
-2017-06-01 12:45:50: Added course to Flex: CRIM2304_2017_S2

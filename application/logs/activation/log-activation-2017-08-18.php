@@ -1,4 +1,0 @@
-2017-08-18 09:58:25: Added course to Flex: EDUC9221_2017_NS2
-2017-08-18 12:25:24: Added course to Flex: NUTD3107_2017_S2_DA
-2017-08-18 12:25:24: Added course to Flex: NUTD3107_2017_S2
-2017-08-18 12:25:42: Added course to Flex: NUTD9226_2017_S2

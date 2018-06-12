@@ -1,7 +1,0 @@
-2017-07-26 09:21:30: Added course to Flex: NUTD3203_2017_S2
-2017-07-26 10:40:49: Added course to Flex: ENVH9732_2017_S2_DE
-2017-07-26 11:16:19: Added course to Flex: ENVS3732_2017_S2
-2017-07-26 11:18:46: Added course to Flex: ENVS8732_2017_S2
-2017-07-26 11:25:58: Added course to Flex: SPTH2902_2017_S2
-2017-07-26 11:27:19: Added course to Flex: SPTH2904_2017_S2
-2017-07-26 16:38:38: Added course to Flex: EDUC8905_2017_S2_DE

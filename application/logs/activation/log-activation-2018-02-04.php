@@ -1,3 +1,0 @@
-2018-02-04 11:03:25: Added course to Flex: HLPE2532_2018_S2
-2018-02-04 11:03:25: Added course to Flex: HLPE2532_2018_NS1
-2018-02-04 11:06:43: Added course to Flex: HLPE2530_2018_S1

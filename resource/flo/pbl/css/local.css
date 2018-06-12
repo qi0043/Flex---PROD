@@ -1,0 +1,947 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+/*	
+	Flinders Univeristy
+	by Christopher Carapetis
+	
+	Based on the 1KB grid framework
+	http://www.1kbgrid.com/
+	by Tyler Tate
+	http://www.1kbgrid.com/
+	http://www.tylertate.com/
+	http://www.gnu.org/licenses/gpl.html
+	
+	CSS reset based on the Less Framework 4
+	http://lessframework.com
+	by Joni Korpi
+	License: http://creativecommons.org/licenses/MIT/	*/
+	
+	
+/*
+
+Stle sheet to enable background images when 
+not hosted on main Uni web server
+
+All images referenced to http://www.flinders.edu.au
+
+*/
+	
+	
+
+
+
+
+
+
+/* General Styles */
+	
+	body {
+	padding:0px 0px 25px 0px;
+	background-attachment: fixed;
+	background-image: url(https://www.flinders.edu.au/flinders/flinders-top-level-page-files//backgroundimages/school_medicine.jpg);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	}
+	
+	body.noImg {
+	background-image: none;
+	padding: 0px;
+	}
+#screencontent {
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	overflow: visible;
+}
+	
+
+	
+	.home_navigation li, nav h3 a {
+		list-style:none;
+		background:url(https://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/bullet_black.png) top left no-repeat;
+		padding: 0px 0px 0px 20px;
+	}
+	
+
+	
+	#events li{
+		list-style:none;
+		background:url(https://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/calendar_icon.png) top left no-repeat;
+		margin:0px 0px 0px 10px;
+		padding: 0px 0px 10px 25px;
+	}
+	
+
+	
+/*********** info graphics and icons ****************/
+
+
+	.seminar {
+		background:url(https://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/info_graphics/seminar.png) center right no-repeat;
+	}
+	
+	.notices {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/info_graphics/notes.png) center right no-repeat;
+	}
+	
+	.grad_cap {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/info_graphics/cap.png) center right no-repeat;
+	}
+	
+	.certificate{
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/info_graphics/certificate.png) center right no-repeat;
+	}
+	
+	.search {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/info_graphics/search.png) center right no-repeat;
+	}
+	
+	.abroad {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/info_graphics/jet.png) center right no-repeat;
+	}
+	
+	.info {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/info_graphics/info.png) center right no-repeat;
+	}
+	
+	.question {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/info_graphics/question.png) center right no-repeat;
+	}
+	
+	.navigate {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/info_graphics/navigate.png) center right no-repeat;	
+	}
+	
+	.chat {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/info_graphics/chat.png) center right no-repeat;	
+	}
+	
+	.openday {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/info_graphics/openday.png) center right no-repeat;	
+	}
+	
+
+/*********** end info graphics and icons ****************/
+	
+/****** main_header styles *******/ 
+
+	
+	.main_header{
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/header_bg.jpg) #fce66d no-repeat top left;
+	}
+
+	
+
+
+
+
+/****** Section navigation styles *******/
+	
+
+	
+	.section_nav .section a {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/section_nav_expand.jpg) no-repeat top left;
+	}
+	
+	.section_nav .section a:hover {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/section_nav_expand.jpg) #fff6cc no-repeat top left;
+	}
+	
+	.section_nav li a.sec_selected {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/section_nav_contract.jpg) #fff6cc no-repeat top left;
+	}
+	
+
+	
+
+	.row {
+	width: 1060px;
+	margin: 0 auto;
+	overflow: visible;!important
+	}
+	
+	
+	.row	.row {
+	width: 1060px;
+	margin: 0 auto;
+	overflow: visible !important ;
+	}
+	
+	.column {
+		margin: 0 0px 0px 10px;
+		overflow: visible;!important
+		float: left;
+		display: block;
+	}
+
+
+/****** Footer styles *******/
+
+	 footer {
+		 background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/footer_bg.jpg) #fce66d no-repeat top;
+		 Padding: 10px 0px 10px 0px;
+	 }
+	 
+
+									
+	#prevBtn a, #nextBtn a,
+	#slider1next a, #slider1prev a{  
+		display:block;
+		position:relative;
+		width:30px;
+		height:77px;
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/btn_prev.gif) no-repeat 0 0;	
+		}	
+	#nextBtn a, #slider1next a{ 
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/btn_next.gif) no-repeat 0 0;	
+		}	
+		
+	/* controls */	
+
+	
+	ol#controls li a{
+		background: url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/slider_nav_bg.png) no-repeat 0 0;
+		color:#fff;
+		padding:3px 5px 0px 5px;
+		text-decoration:none;
+		}
+	ol#controls li.current a{
+		background: url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/slider_nav_bg_current.png) no-repeat 0 0;
+		color:#ffd300;
+		cursor:default;
+		}
+	
+
+
+/*********** Gradients  *************/
+
+
+	
+	.container_gradient {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/grey_gradient.jpg) #eee repeat-x bottom center;
+	}
+	
+	.blue_gradient {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/light_blue_gradient.jpg) #62a4d3 repeat-x bottom center;
+	}
+	
+	.navy_gradient {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/navy_gradient.jpg) #62a4d3 repeat-x bottom center;
+	}
+	
+	.charcoal_gradient {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/dark_grey_gradient.jpg) #a0a5a9 repeat-x bottom center;
+		color:#fff;
+	}
+	
+
+	
+	.red_gradient {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/red_gradient.jpg) #f8caa8 repeat-x bottom center;
+	}
+	
+
+	
+	.green_gradient {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/green_gradient.jpg) #d4e0d8 repeat-x bottom center;
+		color:#000;
+	}
+	
+
+	
+	.gold_gradient {
+		background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/gold_gradient.jpg) #fce66d repeat-x bottom center;
+		color:#000;
+	}
+	
+
+
+	
+
+
+
+/*********** Style for selection in tinyMCE  *************/
+
+
+
+h3.headerCoffeeArrowRight {margin: 0pt; padding: 0.4em 20pt; background-image: url('http://www.flinders.edu.au/app_templates/flinderstemplates/nav_arrow.jpg'); background-repeat: no-repeat; background-position: left center;}
+
+
+
+
+
+/*** New classes ***/
+
+
+
+.info_graphic {background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/infographics/info_graphic_plain.jpg) center right no-repeat;}
+
+.info_graphic_seminar {background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/infographics/info_graphic_seminar.jpg) center right no-repeat;}	
+.info_graphic_notices {background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/infographics/info_graphic_note.jpg) center right no-repeat;}
+.info_graphic_grad_cap {background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/infographics/info_graphic_grad_cap.jpg) center right no-repeat;}
+.info_graphic_certificate{background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/infographics/info_graphic_certificate.jpg) center right no-repeat;}
+.info_graphic_search {background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/infographics/info_graphic_search.jpg) center right no-repeat;}
+.info_graphic_abroad {background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/infographics/info_graphic_abroad.jpg) center right no-repeat;}
+.info_graphic_info {background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/infographics/info_graphic_info.jpg) center right no-repeat;}
+.info_graphic_question {background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/infographics/info_graphic_question.jpg) center right no-repeat;}
+.info_graphic_navigate {background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/infographics/info_graphic_navigate.jpg) center right no-repeat;	}
+.info_graphic_chat {background:url(http://www.flinders.edu.au/flinders/app_templates/flinderstemplates/images/infographics/info_graphic_chat.jpg) center right no-repeat;	}
+
+
+
+
+
+/*********** End TInyMCE Styles *************/
+
+
+
+
+/*********** Form styles **********/
+
+
+
+#login form {
+	margin-top: 30px;
+	margin-right: 10px;
+	margin-bottom: 30px;
+	margin-left: 10px;
+}
+
+
+#login fieldset {
+	border: 1px solid #000;
+	padding: 5px 15px 10px;
+	background-color: #FFF;
+	margin-bottom: 30px;
+	margin-right: 30px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius:5px;
+	border-radius: 5px;
+}
+
+#login fieldset legend {
+	padding: 5px;
+	
+	background-color:#FFF;
+	font-weight:bold;
+}
+
+#login label {
+	margin: 0 0 0 5px;
+	font-weight:bold;
+	width: 6em;
+	float: left;
+}
+#login input{
+	margin: 0 2px 5px 0 ;
+	font-weight:bold;
+	float:left;
+}
+
+#login select {
+	margin: 0 2px 5px 0 ;
+	font-weight:bold;
+	float:left;
+}
+
+#login #login_submit {
+	line-height:1;
+	margin:0px 0px 0px 5px;
+	padding:4px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius:5px;
+	border-radius: 5px;
+	cursor:pointer;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	}
+	
+#login #login_submit:hover {
+		
+		color: #ffd300;
+	}
+
+
+
+#dataform fieldset {
+	border: 1px solid #000;
+	padding: 5px 15px 10px;
+	background-color: #FFF;
+	margin-bottom: 30px;
+	margin-right: 30px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius:5px;
+	border-radius: 5px;
+}
+
+#dataform fieldset legend {
+	padding: 5px;
+	
+	background-color:#FFF;
+	font-weight:bold;
+}
+
+#dataform label {
+	margin: 0 0 0 5px;
+	font-weight:bold;
+	width: 12em;
+	float: left;
+}
+#dataform input{
+	margin: 0 2px 5px 0 ;
+	font-weight:bold;
+	float:left;
+}
+
+#dataform select {
+	margin: 0 2px 5px 0 ;
+	font-weight:bold;
+	float:left;
+}
+
+#dataform #login_submit {
+	line-height:1.2;
+	margin:0px 0px 10px 5px;
+	padding:4px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius:5px;
+	border-radius: 5px;
+	cursor:pointer;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	}
+	
+#dataform #login_submit:hover {
+		
+		color: #ffd300;
+	}
+
+
+select {
+	background-color:#333;
+	color:#FFF
+	
+	
+}
+
+
+.submit {
+	line-height:1.2;
+	margin:0px 0px 0px 5px;
+	padding:4px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius:5px;
+	border-radius: 5px;
+	cursor:pointer;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	}
+
+.submit:hover {
+	
+	
+		
+		color: #ffd300;
+	}
+
+
+	.updated {
+	font-size: 0.8em;
+	font-style: italic;
+	text-align:right;
+}
+	
+.info_graphic_accept { }
+.info_graphic_withdraw { }
+
+.info_graphic_accept a:link,
+.info_graphic_accept a:visited {
+	color:#FFF;
+	
+font-size:16px;
+text-decoration:none;
+}
+
+
+.info_graphic_withdraw a:link,
+.info_graphic_withdraw a:visited {
+	
+	
+		color:#FFF;
+	
+font-size:16px;
+text-decoration:none;}
+
+.info_graphic_accept a:hover,
+.info_graphic_withdraw a:hover {
+	color:#000;
+
+}
+
+
+.keyword {
+	
+	color:#C00;
+	
+}
+
+
+
+
+#pvimg img {
+	position: fixed;
+	z-index: -100;
+}
+
+
+.alphaSelect {
+	color:#666;
+	background-color: #666;
+	background-image: url(../../yui/build/assets/skins/sam/sprite_flinders.png);
+	background-repeat: repeat-x;
+	background-position: left -1501px;
+}
+
+
+a.action:link {
+  font-size: 100%;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  background: url(../../cssimages/button2_fade.jpg);
+  font-weight:bold;
+  padding: 2px 10px 2px 10px;
+  margin-top: 4px;
+  margin-right: 4px;
+  border: 1px solid #999999;
+}
+
+a.action:visited {
+  font-size: 100%;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  background: url(../../cssimages/button2_fade.jpg);
+  font-weight:bold;
+  padding: 2px 10px 2px 10px;
+  margin-top: 4px;
+  margin-right: 4px;
+  border: 1px solid #999999;
+}
+
+a.action:hover {
+	font-size: 100%;
+	color: #FFF;
+	text-decoration: none;
+	text-align: center;
+	font-weight:bold;
+	padding: 2px 10px 2px 10px;
+	margin-top: 4px;
+	margin-right: 4px;
+	border: 1px solid #999999;
+	background-color: #03C;
+	background-image: none;
+}
+
+a.actionRed:link {
+	font-size: 100%;
+	color: #C00;
+	text-decoration: none;
+	text-align: center;
+	background: url(../../cssimages/button2_fade.jpg);
+	font-weight:bold;
+	padding: 2px 10px 2px 10px;
+	margin-top: 4px;
+	margin-right: 4px;
+	border: 1px solid #999999;
+}
+
+a.actionRed:visited {
+	font-size: 100%;
+	color: #C00;
+	text-decoration: none;
+	text-align: center;
+	background: url(../../cssimages/button2_fade.jpg);
+	font-weight:bold;
+	padding: 2px 10px 2px 10px;
+	margin-top: 4px;
+	margin-right: 4px;
+	border: 1px solid #999999;
+}
+
+a.actionRed:hover {
+	font-size: 100%;
+	color: #FFF;
+	text-decoration: none;
+	text-align: center;
+	font-weight:bold;
+	padding: 2px 10px 2px 10px;
+	margin-top: 4px;
+	margin-right: 4px;
+	border: 1px solid #999999;
+	background-color: #C00;
+	background-image: none;
+}
+
+
+a.action_small:link {
+	font-size: 12px;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	margin-right: 6px;
+	padding-top: 4px;
+	padding-right: 5px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	background-color: #666;
+	background-image: url(../../yui/build/assets/skins/sam/sprite_flinders.png);
+	background-repeat: repeat-x;
+	background-position: left -1400px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius:3px;
+	border-radius: 3px;	
+}
+
+a.action_small:visited {
+	font-size: 12px;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	margin-right: 6px;
+
+	padding-top: 4px;
+	padding-right: 5px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	background-color: #CCC;
+	background-image: url(../../yui/build/assets/skins/sam/sprite_flinders.png);
+	background-repeat: repeat-x;
+	background-position: left -1400px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius:3px;
+	border-radius: 3px;
+}
+
+a.action_small:hover {
+	font-size: 12px;
+	color: #ffd300;
+	text-decoration: none;
+	text-align: center;
+	margin-right: 6px;
+	
+	padding-top: 4px;
+	padding-right: 5px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	background-color: #CCC;
+	background-image: url(../../yui/build/assets/skins/sam/sprite_flinders.png);
+	background-repeat: repeat-x;
+	background-position: 0px -1400px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius:3px;
+	border-radius: 3px;
+}
+span.action_small {
+  font-size: 12px;
+  color: #CCCCCC;
+  text-decoration: none;
+  text-align: center;
+  background: url(../../cssimages/button2_fade.jpg);
+  padding: 2px 10px 2px 10px;
+  margin-right: 6px;
+  border: 1px solid #999999;
+}
+
+span.actionRedInactive {
+	font-size: 100%;
+	color: #CFA5A5;
+	text-decoration: none;
+	text-align: center;
+	background: url(../../cssimages/button2_fade.jpg);
+	font-weight:bold;
+	padding: 2px 10px 2px 10px;
+	margin-top: 4px;
+	margin-right: 6px;
+	border: 1px solid #999999;
+}
+
+
+
+
+.listTable2 {
+	width: 100%;
+	border: 1px solid #808080;
+	border-collapse:collapse;
+}
+
+.listTable2 th {
+	background-color: #333;
+	padding: 5px;
+	border-bottom-style: solid;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #808080;
+	background-image: url(../../yui/build/assets/skins/sam/sprite_flinders.png);
+	background-repeat: repeat-x;
+	background-position: left -1400px;
+	color: #FFF;	
+}
+
+.listTable2 tr.2row {
+	
+	
+}
+
+.listTable2 td{
+	padding: 5px;
+	border-top-width: thin;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-top-color: #808080;
+	border-right-color: #808080;
+	border-bottom-color: #808080;
+	border-left-color: #808080;
+}
+
+.listTable2eighty {
+	width: 80%;
+	border: 1px solid #808080;
+	border-collapse:collapse;
+}
+
+.listTable2eighty th {
+	background-color: #bfdaff;
+	padding: 5px;
+	border-bottom-style: solid;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #808080;
+	background-image: url(../../tabview/assets/skins/sam/sprite.png);
+	background-repeat: repeat-x;
+	background-position: left -1700px;
+	
+}
+
+.listTable2eighty tr.2row {
+	
+	
+}
+
+.listTable2eighty td{
+	padding: 5px;
+	border-top-width: thin;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-top-color: #808080;
+	border-right-color: #808080;
+	border-bottom-color: #808080;
+	border-left-color: #808080;
+}
+
+.listTableNoBorder {
+	width: 100%;
+	border: 1px dotted #808080;
+	border-collapse:collapse;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+.listTableNoBorder th {
+	background-color: #FFFFF6;
+	padding: 5px;
+	border-bottom-style: dotted;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #C7B37F;
+}
+
+.listTableNoBorder td{
+	padding: 5px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-right-color: #808080;
+	border-bottom-color: #808080;
+}
+
+.listTable {
+	width: 80%;
+	border: thin solid #C7B37F;
+	border-collapse:collapse;
+}
+
+.listTable th {
+	background-color: #E6D5A9;
+	padding: 5px;
+}
+
+.listTable td{
+	padding: 5px;
+	border-top-width: thin;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-top-color: #C7B37F;
+	border-right-color: #C7B37F;
+	border-bottom-color: #C7B37F;
+	border-left-color: #C7B37F;
+}
+
+.inlineForm {
+	
+	display:inline;
+	
+}
+
+
+.important {
+	
+	color:#C00;
+	
+}.width_12em {
+	width: 12em;
+}
+.floatleft {
+	float: left;
+}
+ select .disabled {
+	background-color: #CCC;
+}
+.updatedHilite {
+	font-weight: bold;
+	color: #FFF;
+	background-color: #C00;
+	font-style: italic;
+}
+.updatedHilite td {
+	text-align: center;
+}
+
+#header {
+	background-attachment: fixed;
+	background-color: #FC3;
+	background-image: url(../../cssimages/header_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 80px;
+}
+#header h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: left;
+	line-height: normal;
+	padding-top: 20px;
+	padding-left: 10px;
+}
+
+
+/* prev / next links */
+.cycle-prev, .cycle-next { position: absolute; top: 0; width: 30%; opacity: 0; filter: alpha(opacity=0); z-index: 800; height: 100%; cursor: pointer; }
+/*.cycle-prev { left: 0;  background: url(http://malsup.github.com/images/left.png) 50% 50% no-repeat;}
+.cycle-next { right: 0; background: url(http://malsup.github.com/images/right.png) 50% 50% no-repeat;}
+.cycle-prev:hover, .cycle-next:hover { opacity: .7; filter: alpha(opacity=70) }*/
+
+.disabled { opacity: .5; filter:alpha(opacity=50); }
+
+
+.navbar-default {
+    background-image: none;
+
+	background-color: #fc3;
+    border-color: #E7Efc37E7;
+    box-shadow:none;
+}
+
+
+
+.btn-black { 
+  color: #ffffff; 
+  background-color: #0E0E0F; 
+  border-color: #000000; 
+} 
+ 
+.btn-black:hover, 
+.btn-black:focus, 
+.btn-black:active, 
+.btn-black.active, 
+.open .dropdown-toggle.btn-black { 
+  color: #ffffff; 
+  background-color: #2B2B2B; 
+  border-color: #000000; 
+} 
+ 
+.btn-black:active, 
+.btn-black.active, 
+.open .dropdown-toggle.btn-black { 
+  background-image: none; 
+} 
+ 
+.btn-black.disabled, 
+.btn-black[disabled], 
+fieldset[disabled] .btn-black, 
+.btn-black.disabled:hover, 
+.btn-black[disabled]:hover, 
+fieldset[disabled] .btn-black:hover, 
+.btn-black.disabled:focus, 
+.btn-black[disabled]:focus, 
+fieldset[disabled] .btn-black:focus, 
+.btn-black.disabled:active, 
+.btn-black[disabled]:active, 
+fieldset[disabled] .btn-black:active, 
+.btn-black.disabled.active, 
+.btn-black[disabled].active, 
+fieldset[disabled] .btn-black.active { 
+  background-color: #0E0E0F; 
+  border-color: #000000; 
+} 
+ 
+.btn-black .badge { 
+  color: #0E0E0F; 
+  background-color: #ffffff; 
+}

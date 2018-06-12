@@ -1,2 +1,0 @@
-2017-07-09 22:49:47: Added course to Flex: SOAD0000_2017_NS2_DE
-2017-07-09 22:49:47: Added course to Flex: SOAD0000_2017_NS2

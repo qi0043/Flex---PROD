@@ -1,0 +1,113 @@
+body {
+	margin: 5px;
+}
+
+table, td, th {
+	border: 1px solid #dddddd;
+	border-collapse: collapse;
+	padding: 5px 10px;
+	text-align: left;
+	vertical-align: top;
+}
+
+th {
+	background-color: #eeeeee;
+}
+
+small {
+	font-style: italic;
+	font-size: 0.8em;
+}
+
+.badge-danger {
+	background-color: #d9534f;
+}
+
+table.sortable {
+	border-collapse: collapse;
+
+}
+
+table.sortable td, table.sortable th {
+	padding: 0.5em;
+	border: 1px solid #CCC;
+}
+
+table.sortable tr {
+	background-color: #FFFFFF;
+}
+
+table.sortable tr.odd {
+	background-color: #F2F2F2;
+}
+
+table.sortable thead, table.sortable tfoot {
+	background-color: #DDD;
+	cursor: hand;
+}
+
+table.sortable thead th {
+	background-color: #DDD;
+}
+
+table.sortable .sortcol {
+	cursor: pointer;
+	padding-right: 20px;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+table.sortable .headerSortUp {
+	background-color: #DDFFAC;
+	background-image: url(/assign/images/up.gif);
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+
+table.sortable .headerSortDown {
+	background-color: #B9DDFF;
+	background-image: url(/assign/images/down.gif);
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+
+table.sortable .nosort {
+	cursor: default;
+}
+
+table.sortable .urg1, table.sortable .urg2, table.sortable .urg3, table.sortable .urg4, table.sortable .urg5 {
+	padding: 3px;
+	text-align: center;
+	border: 1px solid #333;
+	width: 3em;
+}
+
+table.sortable .urg1 {
+	background-color: #FFFACD;
+}
+table.sortable .urg2 {
+	background-color: #FFD700;
+}
+table.sortable .urg3 {
+	background-color: Orange;
+}
+table.sortable .urg4 {
+	background-color: #FF6347;
+}
+table.sortable .urg5 {
+	background-color: Red;
+}
+
+table.sortable .scroll-table-head {
+    width: 800px;
+}
+
+table.sortable .scroll-table-body {
+    width: 800px;
+    height: 400px;
+}
+
+table.sortable .scroll-table-body td {
+	padding-right: 20px;
+	overflow: hidden;
+}

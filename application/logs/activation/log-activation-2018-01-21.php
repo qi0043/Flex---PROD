@@ -1,3 +1,0 @@
-2018-01-21 11:52:09: Added course to Flex: DVST9032_2018_S2_DE
-2018-01-21 11:52:09: Added course to Flex: DVST9032_2018_S2_ADL
-2018-01-21 22:14:16: Added course to Flex: SPTH1201_2018_S1

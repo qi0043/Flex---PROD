@@ -1,7 +1,0 @@
-2017-08-01 08:15:51: Added course to Flex: ARCH8018_2017_S2_DE
-2017-08-01 11:02:20: Added course to Flex: SCME8016_2017_S2
-2017-08-01 12:13:35: Added course to Flex: INTR2100_2017_S2_DE
-2017-08-01 12:13:35: Added course to Flex: INTR2100_2017_S2
-2017-08-01 12:50:05: Added course to Flex: LLAW9611_2017_S2_DE
-2017-08-01 14:15:44: Added course to Flex: GEOG1002_2017_S2
-2017-08-01 16:14:40: Added course to Flex: EDUC3626_2017_NS2

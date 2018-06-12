@@ -1,0 +1,287 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.jumbotron {
+	margin-bottom: 5px;
+	color: inherit;
+	background-color: #F7C645;
+	background-attachment: fixed;
+	background-image: url(../images/header_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+	padding: 0px;
+}
+.jumbotron h1,
+.jumbotron .h1 {
+  color: inherit;
+}
+.jumbotron p {
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+}
+.container .jumbotron {
+  border-radius: 6px;
+}
+.jumbotron .container {
+  max-width: 100%;
+}
+
+.flo {
+	
+	background:#FBF9D2;
+	
+}
+
+.banner-text {
+	
+	float:left;
+	margin-left: 25px;
+	
+}
+
+
+.banner-text h2 {
+	
+	font-size: 24px;
+	margin-top: 5px;
+	font-weight:normal;
+	
+}
+.banner-text p {
+	
+	font-size: 14px;
+	margin-top: 2px;
+	font-weight:normal;
+	
+}
+
+/*
+ * Row with equal height columns
+ * --------------------------------------------------
+ */
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+@media screen and (min-width: 768px) {
+  .jumbotron {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .container .jumbotron {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .jumbotron h1,
+  .jumbotron .h1 {
+    font-size: 63px;
+  }
+    .equal, .equal > div[class*='col-'] {  
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex:1 0 auto;
+  }
+  
+}
+
+
+@media screen and (max-width: 767px) {
+  .jumbotron {
+    padding-top: 10px;
+    padding-bottom: 10px;
+	background-image:none;
+  }
+  .container .jumbotron {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .jumbotron h1,
+  .jumbotron .h1 {
+    font-size: 63px;
+  }
+  
+   .jumbotron img {
+	   display:none;
+	   visibility:hidden;
+
+  }
+  
+  .banner-text {
+	
+	float:left;
+	margin-left: 0;
+	
+}
+  
+  .banner-text h2 {
+	
+	font-size: 18px;
+	margin-top: 2px;
+	font-weight:normal;
+	
+}
+.banner-text p {
+	
+	font-size: 12px;
+	margin-top: 1px;
+	font-weight:normal;
+	
+}
+
+.course-select {
+	
+	float: right;
+	margin-top:10px;
+}
+
+.col-xs-12 {
+	padding-left:2px;
+	padding-right:2px;
+}
+
+.panel-body {
+	
+	font-size:13px;
+	line-height: 1.4;
+}
+}
+
+@media screen and (max-width: 380px) {
+  .jumbotron {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .container .jumbotron {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .jumbotron h1,
+  .jumbotron .h1 {
+    font-size: 63px;
+  }
+  
+  .banner-text h2 {
+	
+	font-size: 12px;
+	margin-top: 2px;
+	font-weight:normal;
+	
+}
+.banner-text p {
+	
+	font-size: 10px;
+	margin-top: 2px;
+	font-weight:normal;
+	
+}
+
+.col-xs-12 {
+	padding-left:2px;
+	padding-right:2px;
+}
+
+.panel-body {
+	
+	font-size:13px;
+	line-height: 1.4;
+}
+
+
+}
+/* Flinders text styles */
+
+	a.standard {
+		color:#a94807;
+	}
+	
+	a:visited.standard {
+		color:#a94807;
+	}
+
+	a:hover.standard {
+		color:#002f60;
+		text-decoration:none;
+	}
+
+
+/* Flinders text styles */
+
+	.btn-link.standard {
+		color:#a94807;
+	}
+	
+	.btn-link:visited.standard {
+		color:#a94807;
+	}
+
+	.btn-link:hover.standard {
+		color:#002f60;
+		text-decoration:none;
+	}
+
+
+/* Custom definition list css */
+
+.dl-horizontal dd {
+	margin-left:80px;
+	margin-bottom: 0.5em;	
+}
+
+.dl-horizontal dt {
+	width:50px;
+	
+}
+
+.related {
+background: #ddf2ff; /* Old browsers */
+
+background: -moz-linear-gradient(top,  #ddf2ff 0%, #eaf7ff 100%); /* FF3.6+ */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ddf2ff), color-stop(100%,#eaf7ff)); /* Chrome,Safari4+ */
+
+background: -webkit-linear-gradient(top,  #ddf2ff 0%,#eaf7ff 100%); /* Chrome10+,Safari5.1+ */
+
+background: -o-linear-gradient(top,  #ddf2ff 0%,#eaf7ff 100%); /* Opera 11.10+ */
+
+background: -ms-linear-gradient(top,  #ddf2ff 0%,#eaf7ff 100%); /* IE10+ */
+
+background: linear-gradient(to bottom,  #ddf2ff 0%,#eaf7ff 100%); /* W3C */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ddf2ff', endColorstr='#eaf7ff',GradientType=0 ); /* IE6-9 */
+
+
+
+
+}
+	
+.badge-danger {
+	background-color:#d9534f;
+	
+}
+
+
+ul li, ol li {
+	margin-bottom: 0.2em;
+}
+
+
+.panel-title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    color: inherit;
+}
+
+.panel-body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #333;
+}

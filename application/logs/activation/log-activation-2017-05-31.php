@@ -1,7 +1,0 @@
-2017-05-31 14:52:35: Added course to Flex: POLI9004_2017_S2_DE
-2017-05-31 16:01:16: Added course to Flex: ARCH3109_2017_S2
-2017-05-31 16:03:29: Added course to Flex: ARCH2106_2017_NS2
-2017-05-31 16:43:42: Added course to Flex: EDUC2424_2017_NS2
-2017-05-31 16:44:15: Added course to Flex: EDUC2421_2017_S2
-2017-05-31 16:45:30: Added course to Flex: EDUC4882_2017_NS2
-2017-05-31 16:47:10: Added course to Flex: EDUC9223_2017_NS2

@@ -1,2 +1,0 @@
-2017-08-25 11:33:07: Added course to Flex: INTR2006_2017_S2
-2017-08-25 13:14:39: Added course to Flex: DRAM2104_2017_NS2

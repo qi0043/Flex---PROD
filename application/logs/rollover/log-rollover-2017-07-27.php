@@ -1,6 +1,0 @@
-2017-07-27 14:11:22: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
-2017-07-27 14:11:22: Rollover Failed with user: perr0123, from: SOCI2002_2016_S1 to SOCI2002_2017_S2, index: 1, reading link: https://flex.flinders.edu.au/items/c58af842-dfe3-4675-b190-747c280429f3/1/?.vi=file&attachment.uuid=64f16e55-5ebb-4064-83a6-d39731f5f51f
-2017-07-27 14:48:49: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
-2017-07-27 14:48:49: Rollover Failed with user: sche0042, from: DVST9022_2014_S2 to DVST9022_2017_S2_DE, index: 16, reading link: https://flex.flinders.edu.au/items/e4fe63ed-0d02-445a-a4e9-0a05510c4144/1/?.vi=file&attachment.uuid=2f8a50fe-8ca1-4fa2-8858-a852d59c6fe1
-2017-07-27 14:49:05: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
-2017-07-27 14:49:05: Rollover Failed with user: sche0042, from: DVST9022_2014_S2 to DVST9022_2017_S2, index: 16, reading link: https://flex.flinders.edu.au/items/e4fe63ed-0d02-445a-a4e9-0a05510c4144/1/?.vi=file&attachment.uuid=2f8a50fe-8ca1-4fa2-8858-a852d59c6fe1

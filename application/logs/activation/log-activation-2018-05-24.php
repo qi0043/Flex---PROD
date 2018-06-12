@@ -1,4 +1,0 @@
-2018-05-24 12:22:07: Added course to Flex: HLPE2541_2018_S2
-2018-05-24 15:38:24: Added course to Flex: ENGL2141_2018_S2
-2018-05-24 16:46:17: Added course to Flex: WMST3009_2018_NS2
-2018-05-24 16:50:42: Added course to Flex: WMST1002_2018_S2

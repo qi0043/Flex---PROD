@@ -1,1 +1,0 @@
-2017-11-15 17:44:01: Added course to Flex: NURS2005_2017_NS2_6

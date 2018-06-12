@@ -1,8 +1,0 @@
-2017-07-05 08:56:34: Added course to Flex: AGES1001_2017_NS2_DE_2
-2017-07-05 08:56:34: Added course to Flex: AGES1001_2017_NS2_DE
-2017-07-05 09:22:31: Added course to Flex: EDUC9704_2017_S1_DE
-2017-07-05 09:22:31: Added course to Flex: EDUC9704_2017_S1
-2017-07-05 12:14:03: Added course to Flex: POLI2019_2017_S2_DE
-2017-07-05 12:14:03: Added course to Flex: POLI2019_2017_S2
-2017-07-05 18:25:35: Added course to Flex: EDUC9921_2017_NS2_BJ
-2017-07-05 18:27:22: Added course to Flex: EDUC9922_2017_NS2_BJ

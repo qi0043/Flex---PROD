@@ -1,9 +1,0 @@
-2018-02-12 08:49:22: Added course to Flex: SOAD8008_2018_S1_DE
-2018-02-12 08:49:22: Added course to Flex: SOAD8008_2018_NS1
-2018-02-12 09:24:41: Added course to Flex: POLI3011_2018_S1
-2018-02-12 12:39:24: Added course to Flex: HLED9102_2018_S2_DE
-2018-02-12 12:39:24: Added course to Flex: HLED9102_2018_S1_DE
-2018-02-12 15:57:46: Added course to Flex: SOAD1010_2018_S1
-2018-02-12 16:18:15: Added course to Flex: INDO2001_2018_S1_ADL
-2018-02-12 16:21:41: Added course to Flex: EDUC4730E_2018_NS1
-2018-02-12 16:22:07: Added course to Flex: EDUC4729E_2018_NS1

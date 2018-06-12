@@ -1,6 +1,0 @@
-2018-02-11 12:38:51: Added course to Flex: EDUC9822_2018_S1_DE
-2018-02-11 12:52:13: Added course to Flex: EDUC9605_2018_S1_DE
-2018-02-11 12:52:13: Added course to Flex: EDUC9605_2018_NS2
-2018-02-11 16:31:28: Added course to Flex: SOAD0000_2018_NS1_DE
-2018-02-11 16:31:28: Added course to Flex: SOAD0000_2018_NS1
-2018-02-11 18:10:44: Added course to Flex: LLAW2211_2018_S1

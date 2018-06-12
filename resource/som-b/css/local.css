@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.jumbotron {
+	margin-bottom: 5px;
+	color: inherit;
+	background-color: #F7C645;
+	background-attachment: fixed;
+	background-image: url(../images/header_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+	padding: 0px;
+}
+.jumbotron h1,
+.jumbotron .h1 {
+  color: inherit;
+}
+.jumbotron p {
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+}
+.container .jumbotron {
+  border-radius: 6px;
+}
+.jumbotron .container {
+  max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .jumbotron {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .container .jumbotron {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .jumbotron h1,
+  .jumbotron .h1 {
+    font-size: 63px;
+  }
+}
+
+
+/* Flinders text styles */
+
+	a.standard {
+		color:#a94807;
+	}
+	
+	a:visited.standard {
+		color:#a94807;
+	}
+
+	a:hover.standard {
+		color:#002f60;
+		text-decoration:none;
+	}
+
+
+/* Flinders text styles */
+
+	.btn-link.standard {
+		color:#a94807;
+	}
+	
+	.btn-link:visited.standard {
+		color:#a94807;
+	}
+
+	.btn-link:hover.standard {
+		color:#002f60;
+		text-decoration:none;
+	}
+
+
+/* Custom definition list css */
+
+.dl-horizontal dd {
+	margin-left:80px;
+	margin-bottom: 0.5em;	
+}
+
+.dl-horizontal dt {
+	width:50px;
+	
+}
+
+.related {
+background: #ddf2ff; /* Old browsers */
+
+background: -moz-linear-gradient(top,  #ddf2ff 0%, #eaf7ff 100%); /* FF3.6+ */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ddf2ff), color-stop(100%,#eaf7ff)); /* Chrome,Safari4+ */
+
+background: -webkit-linear-gradient(top,  #ddf2ff 0%,#eaf7ff 100%); /* Chrome10+,Safari5.1+ */
+
+background: -o-linear-gradient(top,  #ddf2ff 0%,#eaf7ff 100%); /* Opera 11.10+ */
+
+background: -ms-linear-gradient(top,  #ddf2ff 0%,#eaf7ff 100%); /* IE10+ */
+
+background: linear-gradient(to bottom,  #ddf2ff 0%,#eaf7ff 100%); /* W3C */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ddf2ff', endColorstr='#eaf7ff',GradientType=0 ); /* IE6-9 */
+
+
+
+
+}
+	
+.badge-danger {
+	background-color:#d9534f;
+	
+}
+
+
+ul li, ol li {
+	margin-bottom: 0.2em;
+}
+
+
+.panel-title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    color: inherit;
+}
+
+.panel-body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #333;
+}

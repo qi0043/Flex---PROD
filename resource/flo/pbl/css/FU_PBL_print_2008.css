@@ -1,0 +1,537 @@
+/* CSS Document */
+
+/* makes the content take up the whole page*/
+body {
+	width: 16cm;
+	height: 26.5cm;
+	margin-top: 1.5cm;
+	margin-bottom: 1.5cm;
+	padding-right: 2em;
+	font-family:"Times New Roman", Times, serif;
+	font-size: 12pt;
+	background-color: #FFFFFF;	
+	}
+
+
+.hilite4change {
+	border: medium dotted #CC0000;
+}
+
+.hilite4change h2 {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #CC0000;
+}
+/* makes the headings all uppercase and bold when printed*/
+DIV.scr_heading {
+	font-size: 12pt;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 5px;
+	}
+
+
+a {
+		text-decoration: none;
+	}
+DIV.SOMRMS_SCREEN TABLE,
+DIV.SOMRMS_SCREEN TABLE TD
+	 {
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FFFFFF;
+	color: #000;
+	font-size: 11pt;
+	padding-top: 2px;
+	padding-right: 4px;
+	padding-bottom: 1px;
+	padding-left: 4px;
+	}
+
+DIV.SOMRMS_SCREEN TABLE TH {
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #f5f5f5;
+	color: #000;
+	font-size: 11pt;
+	padding-top: 2px;
+	padding-right: 4px;
+	padding-bottom: 3px;
+	padding-left: 4px;
+	}
+
+DIV.SOMRMS_SCREEN TABLE {
+		width: 95%;
+	}
+	DIV.hint {
+		padding: 5px;
+		text-align: left;
+		border: thin solid #000000;
+	}
+.footnote {
+	font-size: 80%;
+}
+DIV.tutorNotes {
+	background-color: #FFFFFF;
+	padding: 3px;
+	border: thin none #000000;
+	text-align: left;
+	font-size: 11pt;
+	margin-bottom: 5px;
+	line-height: 1.15em;	
+	}
+	
+DIV.tutorNotesLO {
+	background-color: #FFFFFF;
+	text-align: left;
+	font-size: 8pt;
+	margin-bottom: 2px;
+	padding-top: 4px;
+	padding-right: 4px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	}
+	
+.tutorNotesTable  {
+	font-size: 90%;
+	border: none;
+	}
+.tutorNotesTable td  {
+
+	border: none;	
+	}
+.tutorNotesTable th  {
+
+	border: none;	
+	}
+		
+	
+.pageBreak {
+	page-break-before:always;
+	margin-top: 30px;
+	padding-top: 10px;
+	}
+	
+.endTutorNote {
+	margin-bottom: 20px;
+	padding-bottom: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #999999;
+}
+	
+.studentPage {
+	font-size: 0.8em;
+	font-weight: bold;
+	text-align: right;
+	margin-bottom: 1em;
+	color: #000000;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-right: 4px;
+	}
+	
+.process {
+	border: 1px dotted #666666;
+	padding: 0.8em;
+	margin: 1.2em;
+}
+
+.media {
+	display: none;
+	visibility: hidden;
+}
+
+DIV.caseWriters table,
+DIV.caseWriters table td {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	font-size: 11pt;
+}
+
+.tutor_notes_heading{
+	font-size: 14pt;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.roman {
+	list-style-type: lower-roman;
+}
+
+.studentData {
+	page-break-inside: avoid;
+}
+
+.dataTable {
+	margin-bottom: 10px;
+	margin-top: 8px;
+	border-top-width: thin;
+	border-left-width: thin;
+	border-top-style: dotted;
+	border-left-style: dotted;
+	border-top-color: #333333;
+	border-left-color: #333333;
+	page-break-inside: avoid;
+}
+
+.dataTable td {
+	border-bottom-color: #333333;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-right-color: #333333;
+	page-break-inside: avoid;
+}
+
+.dataTable th {
+	border-bottom-color: #333333;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-right-color: #333333;
+	page-break-inside: avoid;
+}
+
+ DIV.studentBox {
+	font-size: 8pt;
+	border: thin solid #333333;
+	width: 12cm;
+	margin-right: 2cm;
+	margin-left: 2cm;
+	margin-bottom:15px;
+	page-break-inside: avoid;
+	min-height: 7cm;
+	font-family:Arial, Helvetica, sans-serif;
+	padding: 2px;
+ }
+ 
+ 
+DIV.SOMRMS_SCREEN TABLE.contentTable TD
+ {
+	font-size: 8pt;
+	font-family:Arial, Helvetica, sans-serif;
+	padding: 2px;
+ }
+
+DIV.studentBox table.screenHeading {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	font-weight: bold;
+
+	
+}
+
+
+DIV.studentBox table.screenHeading td {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	color: #000;
+
+}
+
+
+DIV.studentBox .tutorNotesTable  {
+	font-size: 0.8em;
+	border: none;	
+	}
+	
+DIV.studentBox table.tutorNotesTable td  {
+
+	border: none;	
+	}
+	
+DIV.studentBox table.tutorNotesTable th  {
+
+	border: none;	
+	}
+	
+DIV.studentBox table.tutorNotesTable li  {
+	font-size: 0.8em;
+		
+	}
+
+DIV.SOMRMS_SCREEN table.PBL_Cover {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+DIV.SOMRMS_SCREEN table.PBL_Cover td {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+DIV.SOMRMS_SCREEN table.PBL_Cover th {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+/************************************************************************************************/
+
+/* List styles    */
+
+ul li {
+	padding-bottom: 1px;
+	list-style-type: disc;
+	margin-top: 0px;
+}
+
+.lowerAlpha {
+
+}
+
+ol.lowerAlpha {
+list-style-type: lower-alpha;
+
+}
+
+li.lowerAlpha {
+	list-style-type: lower-alpha;
+}
+.lowerRoman{
+
+}
+
+ol.lowerRoman {
+list-style-type: lower-roman;
+
+}
+
+li.lowerRoman {
+	list-style-type: lower-roman;
+	padding-bottom: 4px;
+}
+
+.roman {
+	list-style-type: lower-roman;
+}
+
+.squareDisc {
+
+}
+
+
+ul.squareDisc {
+	list-style-image: url(/som/cases/icons/square_disc.gif);
+}
+
+li.squareDisc {
+	list-style-image: url(/som/cases/icons/square_disc.gif);
+}
+
+.nodisc {
+	list-style-type: none;
+}
+
+li.qMark {
+	list-style-image: url(/som/cases/icons/qmark.gif);
+}
+
+/**************************************************************************************************************/
+/* miscellaneous styled divs */
+.pathReport {
+	font-size: 0.8em;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	border: thin dotted #666666;
+	margin: 5px;
+	line-height: 0.9em;
+}
+
+.pathReport h2 {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+ .noBorder {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	font-size:1em;
+ 
+ }
+ 
+ DIV.student {
+ 
+ page-break-inside: avoid;
+ 
+ }
+ 
+ 
+ DIV.studentBox {
+	font-size: 8pt;
+	border: thin solid #333333;
+	width: 12cm;
+	margin-right: 2cm;
+	margin-left: 2cm;
+	page-break-inside: avoid;
+	min-height: 7cm;
+	font-family:Arial, Helvetica, sans-serif;
+	padding: 2px;
+ }
+ 
+
+ div.pageBreak p {
+	 
+	 
+	 font: "Times New Roman", Times, serif;
+	 font-size:  11pt;
+	 
+	 
+ }
+ 
+DIV.studentBox .scr_heading img {
+	display: none;
+	visibility: visible; 
+ }
+ 
+DIV.studentBox .scr_heading {
+	
+	font-size: 0.65em;	
+	font-weight: bold;
+ }
+ 
+ 
+ DIV.studentBox .pg_heading {
+	
+	font-size: 100%;	
+	font-weight: bold;
+	text-transform:uppercase;
+	margin-left: 0.5em;
+	margin-top: 1em;
+ }
+ 
+ .hideFromStudent {
+ 	display: none;
+	visibility: hidden; 
+
+}
+
+.screenDetail {
+	font-size: 70%;
+}
+.footnote {
+	font-size: 80%;
+}
+.symbol {
+	font-size: 12pt;
+}
+
+.dottedLine {
+	border-top-width: thin;
+	border-top-style: dotted;
+	border-top-color: #333333;
+	width: 90%;
+	margin-bottom: 20px;
+}
+.tutorFootnote {
+	font-size: 70%;
+	margin-top: 6px;
+	padding-top: 4px;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #999999;
+}
+.resourceBorder {
+	border: 1px dotted #000000;
+	padding: 4px;
+}
+
+div.deakinNote {
+	display: none;
+	visibility: hidden;
+}
+#deakinonly, #flindersnormal {
+	display: none;
+	visibility: hidden;
+}
+
+#flindersonly a {
+	color: #000000;
+}
+
+.weeklyTheme {
+	text-transform: uppercase;
+}
+
+sup,
+sub {
+    height: 0;
+    line-height: 1;
+    vertical-align: baseline;
+    _vertical-align: bottom;
+    position: relative;
+}
+
+sup {
+bottom: 1ex;
+}
+
+
+
+sub {
+top: .5ex;
+}
+.noPrint {
+	display: none;
+	visibility: hidden;
+}
+}
+.fauxTab2 {
+	/*margin-left: 40px;*/
+	float:left;
+	width: 2em;
+}
+
+.fauxTab4 {
+	/*margin-left: 40px;*/
+	float:left;
+	width: 4em;
+}
+.fauxTab6 {
+	/*margin-left: 40px;*/
+	float:left;
+	width: 10em;
+}
+.fauxTab8 {
+	/*margin-left: 40px;*/
+	float:left;
+	width: 8em;
+}
+
+.fauxTab10 {
+	/*margin-left: 40px;*/
+	float:left;
+	width: 10em;
+}
+
+.clrlft {
+	
+	clear:left;
+	
+}
+
+.handoutonly {
+	display: none;
+	visibility: hidden;
+}

@@ -1,8 +1,0 @@
-2017-11-08 14:20:18: Added course to Flex: NURS8017_2018_S1_DE
-2017-11-08 14:20:19: Added course to Flex: NURS8017_2018_S1
-2017-11-08 14:23:54: Added course to Flex: MIDW2203_2018_NS1_DE
-2017-11-08 14:23:55: Added course to Flex: MIDW2203_2018_NS1
-2017-11-08 14:32:24: Added course to Flex: SOAD9213_2018_NS2_ADL_2
-2017-11-08 14:32:24: Added course to Flex: SOAD9213_2018_NS2_ADL
-2017-11-08 14:32:24: Added course to Flex: SOAD9213_2018_NS1_ADL_2
-2017-11-08 14:32:24: Added course to Flex: SOAD9213_2018_NS1_ADL

@@ -1,3 +1,0 @@
-2018-01-02 10:35:10: Added course to Flex: EDUC1120_2018_S2
-2018-01-02 10:35:10: Added course to Flex: EDUC1120_2018_S1
-2018-01-02 11:47:27: Added course to Flex: LLAW9615_2018_S1_DE

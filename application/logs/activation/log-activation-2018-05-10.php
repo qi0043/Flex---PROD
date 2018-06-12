@@ -1,3 +1,0 @@
-2018-05-10 09:35:43: Added course to Flex: POAD8022_2018_S1
-2018-05-10 09:35:44: Added course to Flex: POAD8022_2018_NS2_DE
-2018-05-10 11:03:26: Added course to Flex: OCCT8010_2018_NS2_DP

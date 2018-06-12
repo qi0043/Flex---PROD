@@ -1,3 +1,0 @@
-2017-11-10 08:57:56: Added course to Flex: ARCH2202_2018_S1
-2017-11-10 09:02:03: Added course to Flex: ARCH8410_2018_S1_DE
-2017-11-10 09:07:17: Added course to Flex: ARCH1002_2018_S2

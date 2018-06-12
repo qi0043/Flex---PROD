@@ -1,8 +1,0 @@
-2018-05-31 08:43:29: Added course to Flex: NURS2005_2018_NS2_RV
-2018-05-31 08:43:29: Added course to Flex: NURS2005_2018_NS2_6
-2018-05-31 08:43:29: Added course to Flex: NURS2005_2018_NS2_5
-2018-05-31 08:43:29: Added course to Flex: NURS2005_2018_NS2_4
-2018-05-31 08:43:30: Added course to Flex: NURS2005_2018_NS2_3
-2018-05-31 08:43:30: Added course to Flex: NURS2005_2018_NS2_2
-2018-05-31 08:43:30: Added course to Flex: NURS2005_2018_NS2
-2018-05-31 12:58:57: Added course to Flex: SOAD3017_2018_S2

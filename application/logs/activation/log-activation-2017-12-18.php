@@ -1,7 +1,0 @@
-2017-12-18 11:25:49: Added course to Flex: WMST2016_2018_S1
-2017-12-18 11:26:48: Added course to Flex: WMST7027_2018_S1
-2017-12-18 11:27:35: Added course to Flex: WMST8005_2018_S1
-2017-12-18 20:44:13: Added course to Flex: SOAD9102_2018_S2
-2017-12-18 20:44:13: Added course to Flex: SOAD9102_2018_S1
-2017-12-18 20:49:44: Added course to Flex: SOAD9102_2018_S2_DE
-2017-12-18 20:49:44: Added course to Flex: SOAD9102_2018_S1_DE

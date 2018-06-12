@@ -1,2 +1,0 @@
-2017-08-30 23:05:21: Added course to Flex: EDUC9706_2017_S2_DE
-2017-08-30 23:05:21: Added course to Flex: EDUC9706_2017_S2

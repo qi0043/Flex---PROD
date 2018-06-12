@@ -1,2 +1,0 @@
-2017-10-05 12:26:15: Added course to Flex: LLIR9505_2017_NS2_DE
-2017-10-05 13:16:18: Added course to Flex: ENVS3711_2017_S2

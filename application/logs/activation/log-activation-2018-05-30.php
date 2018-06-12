@@ -1,6 +1,0 @@
-2018-05-30 09:06:02: Added course to Flex: NURS2006_2018_NS2_RV
-2018-05-30 09:06:02: Added course to Flex: NURS2006_2018_NS2_3
-2018-05-30 09:06:02: Added course to Flex: NURS2006_2018_NS2_2
-2018-05-30 09:06:02: Added course to Flex: NURS2006_2018_NS2
-2018-05-30 14:00:39: Added course to Flex: BUSN1015_2018_S1
-2018-05-30 17:04:04: Added course to Flex: EDUC9406_2018_S2

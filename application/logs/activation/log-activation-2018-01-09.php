@@ -1,5 +1,0 @@
-2018-01-09 08:30:26: Added course to Flex: MMED8903_2018_S1_DE
-2018-01-09 08:31:36: Added course to Flex: MMED8904_2018_S1_DE
-2018-01-09 13:25:05: Added course to Flex: AGES8024_2018_S1_DE
-2018-01-09 13:36:00: Added course to Flex: NURS9710_2018_S1_DE
-2018-01-09 13:36:00: Added course to Flex: NURS9710_2018_S1

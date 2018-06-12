@@ -1,5 +1,0 @@
-2018-05-25 08:37:07: Added course to Flex: EDUC8602_2018_NS2_XA
-2018-05-25 08:37:07: Added course to Flex: EDUC8602_2018_NS2_BJ
-2018-05-25 08:37:07: Added course to Flex: EDUC8602_2018_NS1_KM
-2018-05-25 09:24:58: Added course to Flex: PSYC9004_2018_S2
-2018-05-25 09:28:28: Added course to Flex: NURS8751_2018_S2_DE

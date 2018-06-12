@@ -1,2 +1,0 @@
-2018-03-16 09:48:28: Error: Response status 403 Response: {"code":403,"error":"Forbidden","error_description":"You must have the COPYRIGHT_OVERRIDE privilege to activate more than 10%"}
-2018-03-16 09:48:28: Rollover Failed with user: eale0003, from: SPTH3907_2017_S1 to SPTH3907_2018_S1, index: 13, reading link: https://flex.flinders.edu.au/items/4308d660-8d8a-4cf3-b82a-e3e5c209469b/1/?.vi=file&attachment.uuid=880cf557-8315-487f-b3af-417b085bd26b

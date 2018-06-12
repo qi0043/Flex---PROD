@@ -1,5 +1,0 @@
-2017-08-02 08:16:52: Added course to Flex: SPTH9125_2017_S2
-2017-08-02 10:19:07: Added course to Flex: EDUC3620_2017_NS2
-2017-08-02 10:48:54: Added course to Flex: ENVS2742_2017_S2
-2017-08-02 16:32:58: Added course to Flex: POAD8137_2017_S2
-2017-08-02 16:32:58: Added course to Flex: POAD8137_2017_NS2_DE

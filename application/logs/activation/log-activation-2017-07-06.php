@@ -1,3 +1,0 @@
-2017-07-06 09:10:59: Added course to Flex: POLI2002_2017_S2_DE
-2017-07-06 09:10:59: Added course to Flex: POLI2002_2017_S2
-2017-07-06 09:28:05: Added course to Flex: ENGL2145_2017_S2

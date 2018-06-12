@@ -1,2 +1,0 @@
-2018-02-10 13:25:28: Added course to Flex: AGES2014_2018_NS2_DE
-2018-02-10 13:25:29: Added course to Flex: AGES2014_2018_NS1_DE

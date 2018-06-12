@@ -1,5 +1,0 @@
-2017-08-16 11:47:40: Added course to Flex: ARCH1005_2017_S2
-2017-08-16 12:10:12: Added course to Flex: SCME8015_2017_S2
-2017-08-16 15:43:23: Added course to Flex: SOAD8006_2017_S2_DE
-2017-08-16 15:43:23: Added course to Flex: SOAD8006_2017_S2
-2017-08-16 15:45:53: Added course to Flex: SOAD4224_2017_S2

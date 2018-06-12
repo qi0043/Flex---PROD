@@ -1,2 +1,0 @@
-2017-09-08 14:44:29: Added course to Flex: DRAM3103_2017_NS2
-2017-09-08 14:48:23: Added course to Flex: DRAM7305_2017_NS2

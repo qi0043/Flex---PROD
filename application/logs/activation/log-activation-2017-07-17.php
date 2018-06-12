@@ -1,9 +1,0 @@
-2017-07-17 10:51:48: Added course to Flex: HIST7055_2017_S2
-2017-07-17 10:57:46: Added course to Flex: DISH8006_2017_S2_DE
-2017-07-17 11:43:20: Added course to Flex: PHCA9502_2017_S2_DE
-2017-07-17 11:43:20: Added course to Flex: PHCA9502_2017_S2
-2017-07-17 15:59:28: Added course to Flex: SOAD2003_2017_S2
-2017-07-17 16:13:43: Added course to Flex: AGES8023_2017_S2_DE
-2017-07-17 16:13:43: Added course to Flex: AGES8023_2017_S2
-2017-07-17 17:26:44: Added course to Flex: HIST2015_2017_S2
-2017-07-17 21:07:11: Added course to Flex: HLPE3533_2017_S2

@@ -1,4 +1,0 @@
-2018-01-08 15:16:08: Added course to Flex: SPTH1104_2018_S1
-2018-01-08 15:19:10: Added course to Flex: SPTH9127_2018_S1
-2018-01-08 15:27:23: Added course to Flex: PHCA9507_2018_S1_DE
-2018-01-08 15:27:23: Added course to Flex: PHCA9507_2018_S1

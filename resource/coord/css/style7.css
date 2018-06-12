@@ -1,0 +1,41 @@
+
+
+#top_banner1 {
+	background: url("../images/header_bg.jpg") no-repeat scroll center top white !important;
+	background-size:100% 100% !important;
+	height:39px;
+	border:none;
+	z-index:1;
+	border-bottom:1px solid #fff;
+}
+
+#topbar {
+	background:none;
+	position:absolute;
+	left:50%;
+	margin-left:-490px;
+	text-align:right;
+	z-index:2;
+}
+
+#top_banner2 {
+	height:95px;
+	/*background: url("../images/xx.png") no-repeat scroll 0 3px transparent*/
+}
+
+#top_banner5 .banner5 {
+	color:#000;
+	font-size:20px;
+	font-weight:normal;
+	padding-top:6px;
+        padding-left:20px;
+        float: left; /*flextra*/
+}
+
+#top_banner2 .banner {
+	color:#000;
+	font-size:24px;
+	font-weight:normal;
+	padding-top:65px;
+        float: right; /*flextra*/
+}

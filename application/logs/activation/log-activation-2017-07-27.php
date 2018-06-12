@@ -1,5 +1,0 @@
-2017-07-27 11:33:43: Added course to Flex: PHIL2601_2017_S2
-2017-07-27 14:11:21: Added course to Flex: SOCI2002_2017_S2
-2017-07-27 14:48:40: Added course to Flex: DVST9022_2017_S2_DE
-2017-07-27 14:48:40: Added course to Flex: DVST9022_2017_S2
-2017-07-27 16:35:07: Added course to Flex: EDUC9794_2017_S2_DE

@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/* CSS Document */
+
+h2 {
+	font-size:22px;
+
+}
+
+.fieldTitle {
+	font-weight: bold;
+	float: left;
+	width: 6.5em;
+}
+
+.timetableTitle {
+	font-weight: normal;
+	float: left;
+	width: 8em;
+}
+
+
+.margin10 {
+	
+	margin:10px;
+	
+	
+}.important {
+	color: #C00;
+}
+
+a:link,
+a:visited {
+	
+	color: #0077b3;
+	
+}
+
+a.btn:link,
+a.btn:visited {
+	
+	color: rgb(35, 87, 122);
+	
+}
+
+a.btn-info:link, 
+a.btn-info:visited,
+a.btn-primary:link, 
+a.btn-primary:visited,
+a.btn-success:link, 
+a.btn-success:visited
+
+
+
+{
+	
+	color:#FFF;
+	
+}
+
+
+.text-muted {
+	color: #CCC;
+}
+
+
+
+.modal-backdrop {background: none;}
+
+
+.text-primary {
+  color: #428bca;
+}
+.userfan {
+	font-size: 0.8em;
+	font-style: italic;
+	text-align: right;
+}
