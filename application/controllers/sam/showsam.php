@@ -4,6 +4,23 @@
  */
 class Showsam extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+
+        $ci =& get_instance();
+        $ci->load->config('flex');
+        $this->load->helper('url');
+        $this->load->library('flexrest/flexrest');
+        $this->load->library('uuid/uuid');
+
+        $success = $this->flexrest->processClientCredentialToken();
+        if(!$success)
+        {
+          log_message('error', 'REST processClientCredentialToken controller error');
+          exit;
+        }
+    }
 
     /**
      * Display a SAM in HTML or PDF format
@@ -101,9 +118,21 @@ class Showsam extends CI_Controller
 
         /* Set the variables from the metadata */
 
-        $data['sam_array']['avail_ref'] = $data['sam_array']['metadata']['availability'][1]['avRef'];
+        /*$data['sam_array']['avail_ref'] = $data['sam_array']['metadata']['availability'][1]['avRef'];
         $data['sam_array']['avail_ver'] = $data['sam_array']['metadata']['availability'][1]['avVersion'];
-        $data['sam_array']['avail_year'] = $data['sam_array']['metadata']['availability'][1]['avYear'];
+        $data['sam_array']['avail_year'] = $data['sam_array']['metadata']['availability'][1]['avYear'];*/
+
+        //Han fixed location display error 07/09/2018
+        $data['sam_array']['avail_ref'] = $avail_ref;
+        foreach($data['sam_array']['metadata']['availability'] as $avails)
+        {
+          if($avails['avRef'] == $avail_ref)
+          {
+            $data['sam_array']['avail_year'] = $avails['avYear'];
+            $data['sam_array']['avail_ver'] = $avails['avVersion'];
+            break;
+          }
+        }
 
         /*
          *
@@ -156,11 +185,11 @@ class Showsam extends CI_Controller
 
             ob_start();
             $this->load->view($sam_for_delivery, $data);
-            
+
             #exit;
-            
+
             #sleep(2);
-            
+
             $html = ob_get_contents();
             ob_end_clean();
 
@@ -176,7 +205,7 @@ class Showsam extends CI_Controller
             #$this->pdf_class->setHeader('|STATEMENT OF ASSESSMENT METHODS – 2016|');
             #$this->pdf_class->SetAutoFont();
             $this->pdf_class->WriteHTML($html,0);
-            
+
             #sleep(2);
             $this->pdf_class->Output($pdffilename, 'I');
 
@@ -202,6 +231,630 @@ class Showsam extends CI_Controller
         if(isset($itemissam) && $itemissam == 'SAM')
             return true;
         return false;
+    }
+
+    /**
+     * Attach SAM PDF to ITEM
+     *   More detailed comments in line
+     *
+     * @param string $uuid, item UUID
+     * @param string $version, item Version
+     */
+    public function generate_pdf($uuid='missed', $version='missed')
+    {
+      if($this->validate_params('pdf', $uuid, $version) == false)
+      {
+          log_message('error', 'Attaching SAM pdf failed, item uuid: ' . $uuid . ', error: ' . 'Invalid input params.');
+          exit;
+      }
+
+      //$this->load->helper('url');
+      //$this->load->library('flexrest/flexrest');
+      //$this->load->library('uuid/uuid');
+
+      /*$success = $this->flexrest->processClientCredentialToken();
+      if(!$success)
+      {
+          $errdata['message'] = $this->flexrest->error;
+          log_message('error', 'Attaching SAM pdf failed, item uuid: ' . $uuid . ', error: ' . $errdata['message']);
+          exit;
+        //  $this->load->view('sam/showerror_view', $errdata);
+          //return;
+      }*/
+
+      //clean up previou files subtrees
+
+      $success = $this->clean_previous_files($uuid,$version);
+
+      if(!$success)
+      {
+        log_message('error', 'clean SAMs previous files failed, item uuid: ' . $uuid);
+        exit;
+      }
+
+      //log_message('error', '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+      //only edit not locked item
+      $lock = $this->flexrest->getLock($uuid, $version, $lock_response);
+      if($lock)
+      {
+        log_message('error', 'Generate pdf error: Item locked for editing, item uuid: ' . $uuid);
+        exit;
+      }
+
+      //lock item for editing
+      $new_lock = $this->flexrest->createLock($uuid, $version, $new_lock_response);
+
+      if(!$new_lock)
+      {
+        log_message('error', 'Generate SAM pdf error: Falied to create lock for item:' . $uuid);
+        exit;
+      }
+
+      //get lock uuid
+      $lock_uuid = $new_lock_response['uuid'];
+
+      $success = $this->flexrest->getItem($uuid, $version, $response);
+      if(!$success)
+      {
+          $errdata['message'] = $this->flexrest->error;
+          log_message('error', 'Attaching SAM pdf failed, item uuid: ' . $uuid . ', error: ' . $errdata['message']);
+          exit;
+      }
+
+      unset($response['headers']);
+      $item_bean = $response;
+
+      $xmlwrapper_name = 'sam_item_'.$uuid . '_' . $version;
+      //load xml wrapper from the library
+      $this->load->library('xmlwrapper/xmlwrapper', array('xmlString' => (string)$response['metadata']), $xmlwrapper_name);
+
+    //  $this->load->library('xmlwrapper/xmlwrapper', array('xmlString' => (string)$response['metadata']));
+
+      $sam_array = $this->samXml2Array($this->$xmlwrapper_name);
+      $sam_array['status'] = $response['status'];
+      $data = array('sam_array' => $sam_array);
+      #$data['sam_array']['avail_ref'] = $avail_ref;
+      #$data['sam_array']['avail_ver'] = $avail_ver;
+      $data['sam_array']['format'] = 'pdf';
+      $data['sam_array']['uuid'] = $uuid; #item uuid
+      $data['sam_array']['version'] = $version; #item version number
+
+      /*echo "<br>=====================================";
+      echo "<pre>";
+      print_r($data);
+      echo "</pre>";
+      exit;*/
+
+      /* format approval date **/
+      $approve_date =  $data['sam_array']['metadata']['approved'];
+      $tmp_date =  $data['sam_array']['metadata']['approvalDate'];
+      if($approve_date == null)
+      {
+          #$errdata['message'] = '/xml/item/curriculum/assessment/approval/approved is null';
+          log_message('error', 'Attaching SAM pdf failed, item uuid: ' . $uuid . ', error: ' . 'approved date is null');
+          exit;
+      }
+
+      $tmp_time = substr($approve_date, strpos($approve_date, 'T')+1, 8);
+      $tmp_time = str_replace(':', '-', $tmp_time);
+      $tmp_date_time = $tmp_date . 'T' . $tmp_time. '_' . time();
+      echo $tmp_date_time.'<br/>';
+
+      ob_start();
+
+      //copy current attachments to filearea and return file area uuid
+      $success = $this->flexrest->filesCopy($uuid, $version, $file_copy_response);
+      if(!$success)
+      {
+          $errdata['message'] = $this->flexrest->error;
+          log_message('error', 'Attaching SAM pdf failed (filesCopy), item uuid: ' . $uuid . ', error: ' . $errdata['message']);
+          exit;
+      }
+      if(!isset($file_copy_response['headers']['location']))
+      {
+          $errdata['message'] = 'No Location header in response to copy files REST call.';
+          log_message('error', 'Attaching SAM pdf failed, item uuid: ' . $uuid . ', error: ' . $errdata['message']);
+          exit;
+      }
+
+      $location = $file_copy_response['headers']['location'];
+      $filearea_uuid = substr($location, strpos($location, 'file')+5, 36);
+    //  echo 'filearea uuid:' . $filearea_uuid . '<br/>';
+
+      if(!isset($item_bean['attachments']))
+          $item_bean['attachments'] = array();
+
+      $existing_attachments = $item_bean['attachments'];
+      $new_attachments = array();
+
+      $xpath_files = '/xml/item/curriculum/assessment/SAMs/files';
+      $xpath_files_first_file = $xpath_files . '/file[1]/uuid';
+      $first_files_uuid = $this->$xmlwrapper_name->nodeValue($xpath_files_first_file);
+    //  echo 'first_file_uuid: ' . $first_files_uuid. '<br/>';
+
+      $old_files_exist = $first_files_uuid == null ? false : true;
+      $count_old_files = $this->$xmlwrapper_name->numNodes($xpath_files . '/file');
+      //echo  'count old files: '. $count_old_files. '<br/>';
+
+      if(!$old_files_exist && $count_old_files > 1)
+      {
+          $old_files_exist = true;
+          //echo 'old_files_exist: ' . $old_files_exist. '<br/>';
+      }
+
+      /****************************************************************
+       * copy all the <files> to <previous_files>
+       ****************************************************************/
+       if($old_files_exist) //IF the current SAMs has already had PDF attachments
+       {
+            //copy all files/file uuids, ref and distributed data to /xml/item/curriculum/assessment/SAMs/previous_files
+            $node_files = null;
+            $xpath_previous_files = '/xml/item/curriculum/assessment/SAMs/previous_files';
+
+            if(!$this->$xmlwrapper_name->nodeExists($xpath_previous_files)) //xml/item/curriculum/assessment/SAMs/previous_files
+            {
+              $node_files = $this->$xmlwrapper_name->createNodeFromXPath($xpath_previous_files);
+            }
+            else
+            {
+              $node_files = $this->$xmlwrapper_name->node($xpath_previous_files);
+            }
+
+            for($i=1; $i<=count($count_old_files); $i++)
+            {
+              $node_file = $this->$xmlwrapper_name->createNode($node_files, "file");
+
+              $xpath_file_uuid = $xpath_files . '/file['.$i.']/uuid';
+              $node_uuid = $this->$xmlwrapper_name->createNode($node_file, "uuid");
+              $node_uuid->nodeValue = $this->$xmlwrapper_name->nodeValue($xpath_file_uuid);
+
+              $xpath_file_ref = $xpath_files . '/file['.$i.']/@ref';
+              $node_ref = $this->$xmlwrapper_name->createAttribute($node_file, "ref");
+              $node_ref->nodeValue = $this->$xmlwrapper_name->nodeValue($xpath_file_ref);
+
+              $xpath_file_dis = $xpath_files . '/file['.$i.']/@distributed';
+              $node_distri = $this->$xmlwrapper_name->createAttribute($node_file, "distributed");
+              $node_distri->nodeValue = $this->$xmlwrapper_name->nodeValue($xpath_file_dis);
+            }
+        }
+
+      /****************************************************************
+       * create new  <files/file> subtrees
+       ****************************************************************/
+      $this->$xmlwrapper_name->deleteNodeFromXPath($xpath_files); ///xml/item/curriculum/assessment/SAMs/files
+      $node_files = $this->$xmlwrapper_name->createNodeFromXPath($xpath_files);
+
+
+      $multiple_attachment = null;
+      if(count($data['sam_array']['metadata']['availability']) > 1)
+      {
+        if($data['sam_array']['metadata']['multiple'] == 'yes')
+        {
+            $multiple_attachment = true;
+        }
+        else
+        {
+           $multiple_attachment = false;
+        }
+      }
+
+      $avail_ref = null;
+      $sam_template = null;
+      $file_uuid = null;
+      $filename = '';
+
+      if(count($data['sam_array']['metadata']['availability']) == 1)
+      {
+          $file_uuid = $this->uuid->v4(); //generate a new attachment
+          $sam_template = 'sam/showsam_view_' . $data['sam_array']['metadata']['availability'][1]['avYear'] . 'p';
+          $avail_ref = $data['sam_array']['metadata']['availability'][1]['avRef'];
+          $data['sam_array']['avail_ref'] = $avail_ref;
+          $data['sam_array']['avail_ver'] = $data['sam_array']['metadata']['availability'][1]['avVersion'];
+          //log_message('error', 'generate pdf for item uuid: ' . $uuid . 'avail_ref:'.$avail_ref.' file_uuid:'.  $file_uuid.'<br/>');
+          /*** create a new pdf attachment ****/
+          ob_start();
+          $this->load->view($sam_template, $data);
+          $html = ob_get_contents();
+          ob_end_clean();
+          $pdfclsname = 'pdf_class'.$avail_ref;
+          $this->load->library('pdf/pdf_class', null, $pdfclsname);
+          $this->$pdfclsname->setFooter('{PAGENO} / {nb}');
+          $this->$pdfclsname->WriteHTML($html);
+
+          $filename = $avail_ref . '_' . $tmp_date_time . '.pdf';
+
+          $pdf_content = $this->$pdfclsname->Output($filename, 'S');
+          $success = $this->flexrest->fileUpload($filearea_uuid, $filename, $pdf_content, $file_upload_response);
+
+          if(!$success)
+          {
+              log_message('error', 'Attaching SAM pdf failed (fileUpload), item uuid: ' . $uuid . ', error: ' . $this->flexrest->error);
+              exit;
+          }
+
+          $new_attachments[0] = array('type'=>'file','filename'=>$filename,'description'=>$filename,'uuid'=>$file_uuid);
+
+          /*** create new file subtree on xml ****/
+          $node_file = $this->$xmlwrapper_name->createNode($node_files, "file");
+          $node_uuid = $this->$xmlwrapper_name->createNode($node_file, "uuid");
+          $node_uuid->nodeValue = $file_uuid;
+          $node_ref = $this->$xmlwrapper_name->createAttribute($node_file, "ref");
+          $node_ref->nodeValue = $avail_ref;
+          $node_distri = $this->$xmlwrapper_name->createAttribute($node_file, "distributed");
+          $node_distri->nodeValue = $approve_date;
+
+      }
+      elseif(count($data['sam_array']['metadata']['availability']) > 1) //multiple availbilities
+      {
+        if($data['sam_array']['metadata']['multiple'] == 'yes') //generate one pdf for each avail
+        {
+          $attachment_count = 0;
+          foreach($data['sam_array']['metadata']['availability'] as $avail)
+          {
+            $file_uuid = $this->uuid->v4(); //generate a new attachment
+            $avail_ref = $avail['avRef'];
+            $data['sam_array']['avail_ref'] = $avail_ref;
+            $data['sam_array']['avail_ver'] = $avail['avVersion'];
+
+            $sam_template = 'sam/showsam_view_' . $avail['avYear'] . 'p';
+            //log_message('error', '##'.$attachment_count.'generate pdf for item uuid: ' . $uuid . 'avail_ref:'.$data['sam_array']['avail_ref'].' file_uuid:'.  $file_uuid.'<br/>');
+            /*** create a new pdf attachment ****/
+            ob_start();
+            $this->load->view($sam_template, $data);
+            $html = ob_get_contents();
+            ob_end_clean();
+            $pdfclsname = 'pdf_class'.$avail_ref.$attachment_count;
+            $this->load->library('pdf/pdf_class', null, $pdfclsname);
+            $this->$pdfclsname->setFooter('{PAGENO} / {nb}');
+            $this->$pdfclsname->WriteHTML($html);
+
+            $filename = $avail_ref . '_' . $tmp_date_time . '.pdf';
+
+            $pdf_content = $this->$pdfclsname->Output($filename, 'S');
+            $success = $this->flexrest->fileUpload($filearea_uuid, $filename, $pdf_content, $file_upload_response);
+
+            if(!$success)
+            {
+                log_message('error', 'Attaching SAM pdf failed (fileUpload), item uuid: ' . $uuid . ', error: ' . $this->flexrest->error);
+                exit;
+            }
+
+            $new_attachments[$attachment_count] = array('type'=>'file','filename'=>$filename,'description'=>$filename,'uuid'=>$file_uuid);
+
+            /*** create new file subtree on xml ****/
+            $node_file = $this->$xmlwrapper_name->createNode($node_files, "file");
+            $node_uuid = $this->$xmlwrapper_name->createNode($node_file, "uuid");
+            $node_uuid->nodeValue = $file_uuid;
+            $node_ref = $this->$xmlwrapper_name->createAttribute($node_file, "ref");
+            $node_ref->nodeValue = $avail_ref;
+            $node_distri = $this->$xmlwrapper_name->createAttribute($node_file, "distributed");
+            $node_distri->nodeValue = $approve_date;
+            $attachment_count++;
+
+            //echo 'new attachment uuid:' . $file_uuid . '<br/>';
+            //echo 'new attachment name:' . $filename . '<br/>';
+          }
+        }
+        elseif ($data['sam_array']['metadata']['multiple'] == '' || $data['sam_array']['metadata']['multiple'] == 'no') //generate combined attachment for multiple avails
+        {
+            ob_start();
+            $file_uuid = $this->uuid->v4(); //generate a new attachment uuid
+            $sam_template = 'sam/showsam_view_' . $data['sam_array']['metadata']['availability'][1]['avYear'] . 'p';
+            $data['sam_array']['avail_ref'] = $data['sam_array']['metadata']['availability'][1]['avRef'];
+            $data['sam_array']['avail_ver'] = $data['sam_array']['metadata']['availability'][1]['avVersion'];
+            log_message('error', 'generate pdf for item uuid: ' . $uuid . 'avail_ref:'.$data['sam_array']['avail_ref'].' file_uuid:'.  $file_uuid.'<br/>');
+
+            $this->load->view($sam_template, $data);
+            $html = ob_get_contents();
+            ob_end_clean();
+            $pdfclsname = 'pdf_class'.$avail_ref;
+            $this->load->library('pdf/pdf_class', null, $pdfclsname);
+            $this->$pdfclsname->setFooter('{PAGENO} / {nb}');
+            $this->$pdfclsname->WriteHTML($html);
+            $filename = $data['sam_array']['metadata']['availability_name'];
+            if(substr($filename, -2) == '. ')
+                $filename = substr($filename, 0, strlen($filename)-2);
+            if(substr($filename, -1) == '.')
+                $filename = substr($filename, 0, strlen($filename)-1);
+            $filename = str_replace('.', ' ', $filename);
+            $filename = str_replace('(', ' ', $filename);
+            $filename = str_replace(')', ' ', $filename);
+            $filename = str_replace('/', ' ', $filename);
+            $filename = str_replace(',', ' ', $filename);
+            $filename = str_replace(':', ' ', $filename);
+            $filename = str_replace('[', ' ', $filename);
+            $filename = str_replace(']', ' ', $filename);
+            $filename = preg_replace('/\s+/', ' ', $filename);
+            if(strlen($filename) > 70)
+                $filename = substr($filename, 0, 70);
+            if(substr($filename, -1) == ' ')
+                $filename = substr($filename, 0, strlen($filename)-1);
+            $filename = str_replace(' ', '_', $filename);
+            $filename = $filename . '_' . $tmp_date_time . '.pdf';
+
+          #echo 'new attachment name:' . $filename . '<br/>';
+
+          $pdf_content = $this->$pdfclsname->Output($filename, 'S');
+          $success = $this->flexrest->fileUpload($filearea_uuid, $filename, $pdf_content, $file_upload_response);
+
+          if(!$success)
+          {
+              log_message('error', 'Attaching SAM pdf failed (fileUpload), item uuid: ' . $uuid . ', error: ' . $this->flexrest->error);
+              exit;
+          }
+
+          $new_attachments[0] = array('type'=>'file','filename'=>$filename,'description'=>$filename,'uuid'=>$file_uuid);
+
+          /*** create new file subtree on xml ****/
+          foreach($data['sam_array']['metadata']['availability'] as $avail)
+          {
+              $node_file = $this->$xmlwrapper_name->createNode($node_files, "file");
+              $node_uuid = $this->$xmlwrapper_name->createNode($node_file, "uuid");
+              $node_uuid->nodeValue = $file_uuid;
+              $node_ref = $this->$xmlwrapper_name->createAttribute($node_file, "ref");
+              $node_ref->nodeValue = $avail['avRef'];
+              $node_distri = $this->$xmlwrapper_name->createAttribute($node_file, "distributed");
+              $node_distri->nodeValue = $approve_date;
+          }
+        }
+      }
+
+      $item_bean['attachments'] = array_merge($new_attachments, $existing_attachments);
+      $item_bean['metadata'] = $this->$xmlwrapper_name->__toString();
+      //echo 'edit lock item attachment<br/>';
+      $success = $this->flexrest->editLockedItemAttachment($uuid, $version, $item_bean, $lock_uuid, $edit_response, $filearea_uuid);
+      //$success = $this->flexrest->editItem($uuid, $version, $item_bean, $edit_response, $filearea_uuid);
+      if(!$success)
+      {
+          log_message('error', 'Attaching SAM pdf failed (editItem), item uuid: ' . $uuid . ', error: ' . $this->flexrest->error);
+          exit;
+      }
+
+      //echo 'remove lock<br/>';
+      $remove_lock = $this->flexrest->deleteLock($uuid, $version, $delete_lock_response);
+
+      if(!$remove_lock)
+      {
+        log_message('error', 'Generate SAM pdf error: failed to remove lock for item: ' . $uuid);
+        exit;
+      }
+
+      echo 'pdf upload completed<br/>';
+      exit;
+  }
+
+    private function clean_previous_files($item_uuid='missed', $item_version='missed')
+    {
+        //echo 'Start to clean previous files XML .... <br/>';
+        /*  $this->load->helper('url');
+        $this->load->library('flexrest/flexrest');
+        $success = $this->flexrest->processClientCredentialToken();
+        if(!$success)
+        {
+            log_message('error', 'SAM process client credentail tenken failed, item uuid: ' . $item_uuid . ', error: ' . $this->flexrest->error);
+            return false;
+        }*/
+
+        //only edit not locked item
+        $lock = $this->flexrest->getLock($item_uuid, $item_version, $lock_response);
+        if($lock)
+        {
+          log_message('error', 'Cleaning previous files error: Item locked for editing, item uuid: ' . $item_uuid);
+          return false;
+        }
+        //lock item for editing
+        $new_lock = $this->flexrest->createLock($item_uuid, $item_version, $new_lock_response);
+
+        if(!$new_lock)
+        {
+          log_message('error', 'Cleaning previous files error: Falied to create lock for item:' . $item_uuid);
+          return false;
+        }
+        $lock_uuid = $new_lock_response['uuid'];
+
+        $success = $this->flexrest->getItem($item_uuid, $item_version, $response);
+
+        if(!$success) // getItem
+        {
+            log_message('error', 'Getting SAM failed, item uuid: ' . $item_uuid . ', error: ' . $this->flexrest->error);
+            return false;
+        }
+
+        unset($response['headers']);
+        $item_bean = $response;
+        /*echo '<pre>';
+        print_r($item_bean);
+        echo '</pre>';*/
+
+        //IMPORTANT: each xml item needs to be assigned a unique xml wrapper name
+        $xmlwrapper_name = 'sam' . $item_uuid . '_' . $item_version;
+        //load xml wrapper from the library
+        $this->load->library('xmlwrapper/xmlwrapper', array('xmlString' => (string)$response['metadata']), $xmlwrapper_name);
+
+        $xpath_previous_files = '/xml/item/curriculum/assessment/SAMs/previous_files';
+        $xpath_previous_files_first_file = $xpath_previous_files . '/file[1]/uuid';
+        $first_previous_files_uuid = $this->$xmlwrapper_name->nodeValue($xpath_previous_files_first_file);
+
+        $previous_files_exist = $first_previous_files_uuid == null ? false : true;
+        $count_previous_files = $this->$xmlwrapper_name->numNodes($xpath_previous_files . '/file');
+
+        if(!$previous_files_exist && $count_previous_files > 1)
+        {
+          $previous_files_exist = true;
+        }
+
+        if($previous_files_exist)
+        {
+            $change_made = false; //variable to store if any previous file has been changed
+
+            //get filearea_uuid
+            $s = $this->flexrest->filesCopy($item_uuid, $item_version, $r);
+            if(!$s)
+            {
+                log_message('error', 'Clean SAM previous files failed (filesCopy), item uuid: ' . $item_uuid . ', error: ' . $this->flexrest->error);
+                return false;
+            }
+
+            if(!isset($r['headers']['location']))
+            {
+                log_message('error', 'Clean SAM previous files failed (filesCopy_no location), item uuid: ' . $item_uuid . ', error: ' . 'No Location header in response to copy files REST call.');
+                return false;
+            }
+
+            $location = $r['headers']['location'];
+            $filearea_uuid = substr($location, strpos($location, 'file')+5, 36);
+
+            //get all attachments
+            $existing_attachments = $item_bean['attachments'];
+            /*echo 'attachments: <pre>';
+            print_r($existing_attachments);
+            echo '</pre>';*/
+            //store all previous_files parameters in an array: uuid, ref, distributed date
+            $previous_files_array = array();
+            for ($o = 1; $o <= $count_previous_files; $o++)
+            {
+               $previous_file_uuid_xpath = $xpath_previous_files. '/file['.$o.']/uuid';
+               $previous_file_ref_xpath = $xpath_previous_files. '/file['.$o.']/@ref';
+               $previous_file_distributed_xpath = $xpath_previous_files. '/file['.$o.']/@distributed';
+               $previous_files_array[$o-1]['uuid'] = $this->$xmlwrapper_name->nodeValue($previous_file_uuid_xpath);
+               $previous_files_array[$o-1]['ref'] = $this->$xmlwrapper_name->nodeValue($previous_file_ref_xpath);
+               $previous_files_array[$o-1]['distributed'] = $this->$xmlwrapper_name->nodeValue($previous_file_distributed_xpath);
+            }
+
+
+            $current_files_array = array();
+            $xpath_files = '/xml/item/curriculum/assessment/SAMs/files';
+            $count_current_files = $this->$xmlwrapper_name->numNodes($xpath_files . '/file');
+            for($i=1; $i <= $count_current_files; $i++)
+            {
+                $current_file_uuid = $xpath_files. '/file['.$i.']/uuid';
+                $current_files_array[$i-1]['uuid'] = $this->$xmlwrapper_name->nodeValue($current_file_uuid);
+                $current_file_ref = $xpath_files. '/file['.$i.']/@ref';
+                $current_files_array[$i-1]['ref'] = $this->$xmlwrapper_name->nodeValue($current_file_ref);
+                $current_file_distributed = $xpath_files. '/file['.$i.']/@distributed';
+                $current_files_array[$i-1]['distributed'] = $this->$xmlwrapper_name->nodeValue($current_file_distributed);
+            }
+
+          /*  echo 'Current SAMs files array: <pre>';
+            print_r($current_files_array);
+            echo '</pre>';
+            echo 'Previous SAMs files array: <pre>';
+            print_r($previous_files_array);
+            echo '</pre>';*/
+
+            $count = count($previous_files_array);
+            $temp_array = array();
+            $temp_uuid_array = array();
+            while($count > 0)
+            {
+                //echo '~~~~~~~~~~~~~~~~~~~~~~current previous file uuid:' . $previous_files_array[$count-1]['uuid'].'<br/>';
+                if($previous_files_array[$count-1]['uuid'] != '' && !in_array($previous_files_array[$count-1]['uuid'],$temp_uuid_array))
+                {
+                    #echo 'previou_file_uuid:'.$previous_files_array[$count-1]['uuid'].'<br/>';
+                    $uuid_duplicate = false;
+                    foreach($current_files_array as $current_file)
+                    {
+                      //echo '#########################################current file uuid:' . $current_file['uuid'].'<br/>';
+                      if($current_file['uuid'] == $previous_files_array[$count-1]['uuid'])
+                      {
+                          $uuid_duplicate = true;
+                          //echo 'This previous file uuid duplicated with current file uuid. this uuid will be removed from the previous files xml.<br/>';
+                          break;
+                      }
+                    }
+
+                  //search in attachments see if the file uuid exits
+                  if(!$uuid_duplicate)
+                  {
+                      $attachment_exists = false;
+                      foreach($existing_attachments as $attachment)
+                      {
+                          $attachment_uuid = $attachment['uuid'];
+                          //echo 'attachment_uuid:'.$attachment_uuid.'<br/>';
+
+                          if($previous_files_array[$count-1]['uuid'] == $attachment_uuid)
+                          {
+                            array_push($temp_uuid_array, $previous_files_array[$count-1]['uuid']);
+                            $temp_array[] = $previous_files_array[$count-1];
+                            $attachment_exists = true;
+                            break;
+                          }
+                      }
+                      /* if(!$attachment_exists)
+                      {
+                          echo 'This previous file uuid is not found from the attachment list. It will be removed from the previous files xml.<br/>';
+                      }*/
+                  }
+                }
+                $count--;
+            }
+
+            /*foreach($current_files_array as $current_file)
+            {
+              $temp_array[] = $current_file;
+              array_push($temp_uuid_array, $current_file['uuid']);
+
+            }*/
+
+          /*  echo 'New previous files array<pre>';
+            print_r($temp_array);
+            echo '</pre>';
+            echo 'temp uuid files array<pre>';
+            print_r($temp_uuid_array);
+            echo '</pre>';*/
+
+
+            if(count($temp_uuid_array)>0)
+            {
+                //$xpath_previous_files
+                $this->$xmlwrapper_name->deleteNodeFromXPath($xpath_previous_files);
+                $node_files = $this->$xmlwrapper_name->createNodeFromXPath($xpath_previous_files);
+                foreach($temp_array as $file_item)
+                {
+                  $node_file = $this->$xmlwrapper_name->createNode($node_files, "file");
+                  $node_uuid = $this->$xmlwrapper_name->createNode($node_file, "uuid");
+                  $node_uuid->nodeValue = $file_item['uuid'];
+                  $node_ref = $this->$xmlwrapper_name->createAttribute($node_file, "ref");
+                  $node_ref->nodeValue = $file_item['ref'];
+                  $node_distri = $this->$xmlwrapper_name->createAttribute($node_file, "distributed");
+                  $node_distri->nodeValue = $file_item['distributed'];
+                }
+
+
+                $item_bean['metadata'] = $this->$xmlwrapper_name->__toString();
+
+                //$success = $this->flexrest->editItem($item_uuid, $item_version, $item_bean, $edit_response, $filearea_uuid);
+                $success = $this->flexrest->editLockedItemAttachment($item_uuid, $item_version, $item_bean, $lock_uuid, $edit_response, $filearea_uuid);
+                if(!$success)
+                {
+                  log_message('error', 'Clean SAM previous files failed (edit item), item uuid: ' . $item_uuid . ', error: ' . 'No Location header in response to copy files REST call.');
+                  return false;
+                }
+            }
+            elseif (count($previous_files_array) > 0)
+            {
+                $this->$xmlwrapper_name->deleteNodeFromXPath($xpath_previous_files);
+                $item_bean['metadata'] = $this->$xmlwrapper_name->__toString();
+                //$success = $this->flexrest->editItem($item_uuid, $item_version, $item_bean, $edit_response, $filearea_uuid);
+                $success = $this->flexrest->editLockedItemAttachment($item_uuid, $item_version, $item_bean, $lock_uuid, $edit_response, $filearea_uuid);
+
+                if(!$success)
+                {
+                  log_message('error', 'Clean SAM previous files failed (edit item), item uuid: ' . $item_uuid . ', error: ' . 'No Location header in response to copy files REST call.');
+                  return false;
+                }
+            }
+        }
+
+        //remove lock from item
+        $remove_lock = $this->flexrest->deleteLock($item_uuid, $item_version, $delete_lock_response);
+        if(!$remove_lock)
+        {
+          log_message('error', 'Cleaning previous files error: falsed to remove lock for item: ' . $item_uuid);
+          return false;
+        }
+        //echo 'END clean previous files XML .... <br/>';
+        return true;
     }
 
     /**
@@ -519,11 +1172,11 @@ class Showsam extends CI_Controller
         #make sure sam work flow completely finishes
         sleep (5);
 
-        
+
         $success = $this->flexrest->getItem($uuid, $version, $response);
 
-       
-        /*  --------------------------  
+
+        /*  --------------------------
         echo "<pre>";
         echo "<h3>getItem Response</h3>";
         print_r($response);
@@ -531,8 +1184,8 @@ class Showsam extends CI_Controller
 
         */
 
-        
-        
+
+
 
 
         if(!$success)
@@ -546,7 +1199,7 @@ class Showsam extends CI_Controller
         unset($response['headers']);
         $item_bean = $response;
 
-        /*  --------------------------   
+        /*  --------------------------
         echo "<pre>";
         echo "<h3>Item Bean</h3>";
         print_r($response);
@@ -554,9 +1207,9 @@ class Showsam extends CI_Controller
 
         */
 
-       
-       
-	 
+
+
+
         $this->load->library('xmlwrapper/xmlwrapper', array('xmlString' => (string)$response['metadata']));
 
         if(!$this->itemIsSam($this->xmlwrapper))
@@ -567,7 +1220,7 @@ class Showsam extends CI_Controller
             return;
         }
 
-        /*  --------------------------  
+        /*  --------------------------
         echo "<pre>";
         echo "Item is SAM<br />";
         #print_r($response);
@@ -577,7 +1230,7 @@ class Showsam extends CI_Controller
 
         $sam_array = $this->samXml2Array($this->xmlwrapper);
 
-        /*  --------------------------  
+        /*  --------------------------
         echo "<pre>";
         echo "<h3>SAM Array</h3>";
         print_r($sam_array);
@@ -590,7 +1243,7 @@ class Showsam extends CI_Controller
         $sam_array['status'] = $response['status'];
         $data = array('sam_array' => $sam_array);
 
-        /*  --------------------------  
+        /*  --------------------------
         echo "<pre>";
         echo "<h3>Data</h3>";
         print_r($data);
@@ -609,7 +1262,7 @@ class Showsam extends CI_Controller
         $approve_date =  $data['sam_array']['metadata']['approved'];
 
 
-        /*  -------------------------- 
+        /*  --------------------------
         echo "<pre>";
         echo "<h3>Var approve_date</h3>";
         echo $approve_date . "<br />";
@@ -630,7 +1283,7 @@ class Showsam extends CI_Controller
         $tmp_time = str_replace(':', '-', $tmp_time);
         $tmp_date_time = $tmp_date . 'T' . $tmp_time;
 
-        /*  --------------------------  
+        /*  --------------------------
         echo "<pre>";
         echo "<h3>Var tmp_date_time</h3>";
         echo $tmp_date . "<br />";
@@ -638,7 +1291,7 @@ class Showsam extends CI_Controller
 
         */
 
-        
+
 
 
         #log_message('error', 'ob_get_level ():');
@@ -650,13 +1303,13 @@ class Showsam extends CI_Controller
         $success = $this->flexrest->filesCopy($uuid, $version, $response1);
 
 
-        /*  --------------------------   
+        /*  --------------------------
         echo "<pre>";
         echo "<h3>filesCopy Response</h3>";
         print_r($response1);
         echo "</pre>";
 
-       
+
         #exit;
 
         */
@@ -913,14 +1566,14 @@ class Showsam extends CI_Controller
                 $pdf_content = $this->$pdfclsname->Output($filename, 'S');
                 $success = $this->flexrest->fileUpload($filearea_uuid, $filename, $pdf_content, $response2);
 
-                /* -----------------------------  
+                /* -----------------------------
 
                 echo "<pre>";
                 echo "<h3>File upload response</h3>";
                 print_r($response2);
                 echo "</pre>";
 
-               
+
 
                 #exit;
 
@@ -1108,7 +1761,7 @@ class Showsam extends CI_Controller
         $item_bean['attachments'] = array_merge($new_attachments, $existing_attachments);
         $item_bean['metadata'] = $this->xmlwrapper->__toString();
 
-        /* ----------------------------------  
+        /* ----------------------------------
         echo '<pre>';
         #print_r($new_attachments);echo '<br>';
         #print_r($existing_attachments);echo '<br>';
@@ -1127,19 +1780,19 @@ class Showsam extends CI_Controller
         $s = $this->flexrest->getLock($uuid, $version, $r);
 		if($s) // item is locked
 		{
-  
-            /* -----------------------------  
+
+            /* -----------------------------
 
             echo "<pre>";
             echo "<h3>Initial lock status</h3>";
             print_r($r);
             echo "</pre>";
             */
-            
+
             $lock_uuid = $r['uuid'];
 
-   
-			
+
+
 		} else { //item is unlocked, should be the status
 
             // lock the item
@@ -1148,7 +1801,7 @@ class Showsam extends CI_Controller
             // Get the lock status. Array element uuid is the lock uuid used in the edit API
             $s1 = $this->flexrest->getLock($uuid, $version, $r1);
 
-            /* -----------------------------  
+            /* -----------------------------
 
             echo "<pre>";
             echo "<h3>Lock status</h3>";
@@ -1159,12 +1812,12 @@ class Showsam extends CI_Controller
 
 
             $lock_uuid = $r1['uuid'];
-           
+
 
             // Edit the locked item here
             $success = $this->flexrest->editLockedItemAttachment($uuid, $version, $item_bean, $lock_uuid, $response3, $filearea_uuid);
 
-            /* -----------------------------  
+            /* -----------------------------
 
             echo "<pre>";
             echo "<h3>Edit locked item response</h3>";
@@ -1176,12 +1829,12 @@ class Showsam extends CI_Controller
 
             // unlock the item
             $item_unlock = $this->flexrest->deleteLock($uuid, $version, $r);
-            
+
 
             //Final lock status check, should return NULL
             $s2 = $this->flexrest->getLock($uuid, $version, $r2);
 
-            /* -----------------------------  
+            /* -----------------------------
 
             echo "<pre>";
             echo "<h3>Lock status after unlock</h3>";
@@ -1191,7 +1844,7 @@ class Showsam extends CI_Controller
             */
 
         }
-       
+
 
 
         #$success = $this->flexrest->editItem($uuid, $version, $item_bean, $response3, $filearea_uuid);
