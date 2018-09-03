@@ -1,10 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * Class to support eReading list management by topic coordinator: 
- *   
+ * Class to support eReading list management by topic coordinator:
+ *
  *   Rollover: activate eReadings against availabilities based on activated eReadings of another availability
- * 
+ *
  *   activation: activate one eReading against multiple availabilities
  */
 class Listmgr extends CI_Controller {
@@ -14,14 +14,14 @@ class Listmgr extends CI_Controller {
         protected $soapusername;
         protected $soappassword;
         protected $soapparams;
-        
+
         /**
          * Constructor
          *
          * Get logger at application/logs/rollover for rollover and
          *               application/logs/activation for activation
          *
-         * Get user's user groups in Equella. Check whether the user is in 
+         * Get user's user groups in Equella. Check whether the user is in
          * required group for rollover and activation. Set session variables.
          */
         public function __construct()
@@ -36,7 +36,7 @@ class Listmgr extends CI_Controller {
             $this->logger_rollover = $this->logging->get_logger('rollover');
             $this->logger_activation = $this->logging->get_logger('activation');
             $this->load->helper('url');
-            
+
             $this->load->model('reading_listmgr/listmgr_model');
             #check down time before authentication through FLEX
             $down_notice = false;
@@ -59,10 +59,10 @@ class Listmgr extends CI_Controller {
             $down_notice = $this->listmgr_model->db_chk_notice();
             if($down_notice != false)
             {
-                
+
                 #if ($down_notice['message'] == '')
                 #    $down_notice['message'] = 'eReading list management application is temporarily unavailable, please try again later.';
-                
+
                 #$errdata['message'] = $down_notice['message'];
                 #$errdata['heading'] = "Notice";
                 #$this->load->view('reading_listmgr/showerror_view', $errdata);
@@ -70,24 +70,25 @@ class Listmgr extends CI_Controller {
                 #exit();
                 $_SESSION['listmgr_notice'] = $down_notice['message'];
             }*/
-            
+						if(isset($_SESSION['rollover_privilege']) && $_SESSION['rollover_privilege']=='administrator')
+								return;
             if(isset($_SESSION['rollover_privilege']) && $_SESSION['rollover_privilege']=='contributor')
                 return;
             if(isset($_SESSION['rollover_privilege']) && $_SESSION['rollover_privilege']=='topic_coordinator')
                 return;
-            
+
             #Below URL does not require authenticaion:
             $link_erlist_url = '/flex/reading/listmgr/view_erlist_url';
             $link_erlist_url_length = strlen($link_erlist_url);
             if( substr($_SERVER['REQUEST_URI'], 0, $link_erlist_url_length) === $link_erlist_url )
                     return;
-            
+
             if(isset($_SESSION['rollover_privilege']) && $_SESSION['rollover_privilege']=='none')
             {
                 redirect( 'reading/notification/noprivilege');
                 return;
             }
-            
+
             if(!isset($_SERVER['REMOTE_USER']))
             {
                 ####
@@ -101,7 +102,7 @@ class Listmgr extends CI_Controller {
             }
             $userUuid = strtolower($_SERVER['REMOTE_USER']);
             #log_message('error', '2222' . $userUuid);
-               
+
             #check topic coordinator
             $topic_coord = $this->listmgr_model->db_chk_topic_coord($userUuid);
             if($topic_coord != false)
@@ -111,61 +112,19 @@ class Listmgr extends CI_Controller {
                 //$_SESSION['listmgr_role'] = 'topic_coordinator';
                 return;
             }
-            /*
-            # check The Learning Access Team 
-            $erlist_liaison_collection = $ci->config->item('subject_areas_collection');
-            $q = '';
-            $start = 0;
-            $length = 1;
-            $order = 'modified';
-            $reverse = false;
-            $info = 'all';
-            $showall = true;
-            $where = "/xml/item/curriculum/people/coords/coord/fan='$userUuid'";
-            $where .= " AND /xml/item/@itemstatus='live'";
-            $where = urlencode($where);
-            #Search in FLEX
-            $this->load->library('flexrest/flexrest');
-            $success = $this->flexrest->processClientCredentialToken();
-            if(!$success)
-            {
-                $errdata['message'] = 'Failed to access FLEX.';
-                $errdata['heading'] = "Internal error";
-                log_message('error', 'Failed to search fan in subject areas collection for ereading list management: ' . $this->flexrest->error);
-                $this->load->view('reading_listmgr/showerror_view', $errdata);
-                $this->output->_display();
-                exit();
-            }
-            $searchsuccess = $this->flexrest->search($response, $q, $erlist_liaison_collection, $where, $start, $length, $order, $reverse, $info, $showall);
-            if(!$searchsuccess)
-            {
-                $errdata['message'] = 'Failed to search in FLEX.';
-                $errdata['heading'] = "Internal error";
-                log_message('error', 'Failed to search fan in subject areas collection for ereading list management: ' . $this->flexrest->error);
-                $this->load->view('reading_listmgr/showerror_view', $errdata);
-                $this->output->_display();
-                exit();
-            }
-            
-            if(intval($response['available']) > 0)
-            {
-                #Is The Learning Access Team 
-                $_SESSION['rollover_privilege'] = 'topic_coordinator';
-                //$_SESSION['listmgr_role'] = 'topic_coordinator';
-                return;
-            }
-            */
+
             #Check eReadings team
             $this->soapusername = $ci->config->item('soap_activation_username');
             $this->soappassword = $ci->config->item('soap_activation_password');
             $this->soapparams = array('username'=>$this->soapusername, 'password'=>$this->soappassword);
-            
+
             #$groups = 'EQ contributor'; #### '';
             $groups = '';
-            
+
             $usergrp_listmgr_advcontributor = $ci->config->item('usergrp_listmgr_advcontributor');
             $usergrp_listmgr_libviewer = $ci->config->item('usergrp_listmgr_libviewer');
-            
+						$usergrp_listmgr_lib_admin = $ci->config->item('usergrp_listmgr_lib_admin');
+
             $this->load->library('flexsoap/flexsoap',$this->soapparams);
             if(!$this->flexsoap->success)
             {
@@ -178,7 +137,7 @@ class Listmgr extends CI_Controller {
                 $this->output->_display();
                 exit();
             }
-            
+
             $groups = $this->flexsoap->getGroupsByUser($userUuid);
             if(!$this->flexsoap->success)
             {
@@ -191,11 +150,15 @@ class Listmgr extends CI_Controller {
                 $this->output->_display();
                 exit();
             }
-            
+
             #$this->logger_rollover->info("user group: " . $groups);
             #must in one of the user groups to proceed.
-            
-            if(strpos($groups, $usergrp_listmgr_advcontributor) !== false)
+            if(strpos($groups, $usergrp_listmgr_lib_admin) !== false)
+						{
+							$_SESSION['rollover_privilege'] = 'administrator';
+							return;
+						}
+            else if(strpos($groups, $usergrp_listmgr_advcontributor) !== false)
             {
                 #Advanced contributors
                 $_SESSION['rollover_privilege'] = 'contributor';
@@ -212,14 +175,14 @@ class Listmgr extends CI_Controller {
                 $_SESSION['rollover_privilege'] = 'none';
                 redirect( 'reading/notification/noprivilege');
             }
-            
+
         }
-        
+
         public function rollover_er_chktopic()
 	{
-            
+
             $this->load->helper('url');
-            
+
             $topic_code = null;
             $view_type = null;
             if(isset($_GET["topic_code"]))
@@ -230,17 +193,17 @@ class Listmgr extends CI_Controller {
             {
                  $view_type = strtoupper(trim($_GET["view_type"]));
             }
-            
+
             $data = array("view_type"=>$view_type,
                           "topic_code"=>$topic_code);
             $this->load->view('reading_listmgr/rollover_er_chktopic_view.php', $data);
 	}
-        
+
         public function view_er_chktopic()
 	{
-            
+
             $this->load->helper('url');
-            
+
             $topic_code = null;
             $view_type = null;
             if(isset($_GET["topic_code"]))
@@ -251,17 +214,17 @@ class Listmgr extends CI_Controller {
             {
                  $view_type = strtoupper(trim($_GET["view_type"]));
             }
-            
+
             $data = array("view_type"=>$view_type,
                           "topic_code"=>$topic_code);
             $this->load->view('reading_listmgr/view_er_chktopic_view.php', $data);
 	}
-        
+
         public function view_req_chktopic()
 	{
-            
+
             $this->load->helper('url');
-            
+
             $topic_code = null;
             $view_type = null;
             if(isset($_GET["topic_code"]))
@@ -272,17 +235,17 @@ class Listmgr extends CI_Controller {
             {
                  $view_type = strtoupper(trim($_GET["view_type"]));
             }
-            
+
             $data = array("view_type"=>$view_type,
                           "topic_code"=>$topic_code);
             $this->load->view('reading_listmgr/view_req_chktopic_view.php', $data);
 	}
-        
+
         public function create_req_chktopic()
 	{
-            
+
             $this->load->helper('url');
-            
+
             $topic_code = null;
             $view_type = null;
             if(isset($_GET["topic_code"]))
@@ -293,12 +256,12 @@ class Listmgr extends CI_Controller {
             {
                  $view_type = strtoupper(trim($_GET["view_type"]));
             }
-            
+
             $data = array("view_type"=>$view_type,
                           "topic_code"=>$topic_code);
             $this->load->view('reading_listmgr/create_req_chktopic_view.php', $data);
 	}
-        
+
         /*
         public function notauthorized()
 	{
@@ -317,17 +280,17 @@ class Listmgr extends CI_Controller {
          */
         public function getavails()
 	{
-            $this->load->helper('url');    
+            $this->load->helper('url');
             #$this->load->helper('form');
             #$this->load->library('form_validation');
-            
+
             if(!isset($_POST["from_topic_code"]) || !isset($_POST["action_type"]))
             {
                 $error_data = array('error_info'=>'Invalid input topic code.');
                 $this->load->view('reading_listmgr/fromto_avails_error_view', $error_data);
                 return;
             }
-            
+
             $from_topic_code = strtoupper(trim($_POST["from_topic_code"]));
             $action_type = (trim($_POST["action_type"]));
            # $to_topic_code = strtoupper(trim($_POST["to_topic_code"]));
@@ -335,10 +298,10 @@ class Listmgr extends CI_Controller {
             #$topic_code = strtoupper(trim(set_value('topic_code')));
             #log_message('error', $topic_code);
             $this->load->model('reading_listmgr/listmgr_model');
-            /*    
+            /*
             $from_avails = $this->listmgr_model->db_get_all_avails_by_topic($from_topic_code);
             #$from_avails = $this->listmgr_model->db_chk_avails_by_topic($from_topic_code);
-            
+
             if($from_avails === false )
             {
                 $error_data = array('error_info'=>'No availability with eReading list found for the topic code.');
@@ -348,13 +311,13 @@ class Listmgr extends CI_Controller {
                 return;
             }
             */
-            
+
             #$tmp_count = count($from_avails);
             #$from_avails[$tmp_count]['availability'] = $from_topic_code . '_OTHER';
             #$from_avails[$tmp_count]['in_equella'] = 'existing';
             /*
             $to_avails = $this->listmgr_model->db_chk_avails_by_topic($to_topic_code);
-            
+
             if($to_avails === false )
             {
                 $error_data = array('error_info'=>'No availability found for To topic code.');
@@ -362,15 +325,15 @@ class Listmgr extends CI_Controller {
                 return;
             }
             */
-            
+
             #
             $from_topic_name = $this->listmgr_model->db_get_topicname($from_topic_code);
             /*
             $from_avails_num_readings = $this->listmgr_model->db_get_numof_readings_by_avail($from_avails);
-            
+
             #Number of readings rolled over or activated in this system today.
             $from_avails_rollover_readings = $this->listmgr_model->db_get_numof_rollover_readings_by_avail($from_avails);
-            
+
             $data = array("from_avails"=>$from_avails,
                             "from_topic_code"=>$from_topic_code,
                             "from_topic_name"=>$from_topic_name,
@@ -389,19 +352,19 @@ class Listmgr extends CI_Controller {
                 #echo ('<p style="color:red">&nbsp;No availability found for From topic code.<p>');
                 return;
             }
-            
+
             $to_avails = $this->listmgr_model->db_get_active_avails_by_topic($from_topic_code);
-            
+
             $_SESSION['listmgr_topic_code'] = $from_topic_code;
-            
-            $data = array("from_topic_code"=>$from_topic_code, 
-                          "from_topic_name"=>$from_topic_name, 
+
+            $data = array("from_topic_code"=>$from_topic_code,
+                          "from_topic_name"=>$from_topic_name,
                           "action_type"=>$action_type,
                           "from_avails"=>$avails,
                           "to_avails"=>$to_avails);
             $this->load->view('reading_listmgr/fromto_avails_view', $data);
         }
-        
+
         /**
          * Get the availabilities of From/ topic codes
          *
@@ -410,17 +373,17 @@ class Listmgr extends CI_Controller {
          */
         public function getrequests()
 	{
-            $this->load->helper('url');    
+            $this->load->helper('url');
             #$this->load->helper('form');
             #$this->load->library('form_validation');
-            
+
             if(!isset($_POST["from_topic_code"]) || !isset($_POST["action_type"]))
             {
                 $error_data = array('error_info'=>'Invalid input topic code.');
                 $this->load->view('reading_listmgr/fromto_avails_error_view', $error_data);
                 return;
             }
-            
+
             $from_topic_code = strtoupper(trim($_POST["from_topic_code"]));
             $action_type = (trim($_POST["action_type"]));
            # $to_topic_code = strtoupper(trim($_POST["to_topic_code"]));
@@ -428,10 +391,10 @@ class Listmgr extends CI_Controller {
             #$topic_code = strtoupper(trim(set_value('topic_code')));
             #log_message('error', $topic_code);
             $this->load->model('reading_listmgr/listmgr_model');
-                
+
             $from_avails = $this->listmgr_model->db_get_active_avails_by_topic($from_topic_code);
             #$from_avails = $this->listmgr_model->db_chk_avails_by_topic($from_topic_code);
-            
+
             if($from_avails === false )
             {
                 $error_data = array('error_info'=>'Requests can only be viewd/added for topic availabilities that are currently in progress, or have a future start date. Please check the Topic Code is entered correctly.');
@@ -445,7 +408,7 @@ class Listmgr extends CI_Controller {
             $from_avails[$tmp_count]['in_equella'] = 'existing';
             /*
             $to_avails = $this->listmgr_model->db_chk_avails_by_topic($to_topic_code);
-            
+
             if($to_avails === false )
             {
                 $error_data = array('error_info'=>'No availability found for To topic code.');
@@ -456,14 +419,14 @@ class Listmgr extends CI_Controller {
             $_SESSION['listmgr_topic_code'] = $from_topic_code;
             #
             $from_topic_name = $this->listmgr_model->db_get_topicname($from_topic_code);
-            
+
             #$from_avails_num_readings = $this->listmgr_model->db_get_numof_readings_by_avail($from_avails);
-            
+
             #Number of readings rolled over or activated in this system today.
             #$from_avails_rollover_readings = $this->listmgr_model->db_get_numof_rollover_readings_by_avail($from_avails);
-            
+
             $avails_num_requests = $this->get_count_of_requests($from_topic_code, $from_avails);
-            
+
             $data = array("from_avails"=>$from_avails,
                             "from_topic_code"=>$from_topic_code,
                             "from_topic_name"=>$from_topic_name,
@@ -474,7 +437,7 @@ class Listmgr extends CI_Controller {
                          );
             $this->load->view('reading_listmgr/fromto_avails_requests_view', $data);
         }
-        
+
         /**
          * Get the activated eReadings for the From availability
          * This is for Rollover
@@ -482,29 +445,29 @@ class Listmgr extends CI_Controller {
          */
         public function rollover_ereadings()
 	{
-            $this->load->helper('url');    
+            $this->load->helper('url');
             #$this->load->helper('form');
             #$this->load->library('form_validation');
-            
+
             if(!isset($_POST["from_avail"]) || !isset($_POST["from_topic_code"]))
             {
                 $error_data = array('heading'=>'Error', 'message'=>'Invalid input data');
                 $this->load->view('reading_listmgr/showerror_view', $error_data);
                 return;
             }
-            
+
             $from_avail = (trim($_POST["from_avail"]));
             $from_topic_code = $_POST["from_topic_code"];
-            
+
             #$to_avails = $_POST["to_avails"];
             #echo $from_avail;
             #if($from_avail != null)
-            #{    
+            #{
             $this->load->model('reading_listmgr/listmgr_model');
-                
+
             #$ereadings = $this->listmgr_model->db_get_readings_by_avail($from_avail);
             $ereadings = $this->listmgr_model->db_get_ereadings_usg_by_avail($from_avail);
-            
+
             $is_tc = false;
             if(isset($_SESSION['rollover_privilege']) && $_SESSION['rollover_privilege'] == 'topic_coordinator')
             {
@@ -516,25 +479,25 @@ class Listmgr extends CI_Controller {
                 }*/
                 $is_tc = true;
             }
-	    
+
 	    #### Generate a token in view_flex_reading for SSO when viewing a eReading
-	    if($ereadings != false)
-	    {
-		for($i=0;$i<count($ereadings);$i++)
-		{
-		    $link = $ereadings[$i]['reading_link'];
-		    $part1 = substr($link, 0, strpos($link, 'items')+6);
-		    $ereadings[$i]['reading_link'] = str_replace($part1, 'view_flex_reading/items/', $link);
-			
-		}
-	    }
-	    
+				    if($ereadings != false)
+				    {
+								for($i=0;$i<count($ereadings);$i++)
+								{
+								    $link = $ereadings[$i]['reading_link'];
+								    $part1 = substr($link, 0, strpos($link, 'items')+6);
+								    $ereadings[$i]['reading_link'] = str_replace($part1, 'view_flex_reading/items/', $link);
+
+								}
+				    }
+
             #echo'<pre>'; print_r($other_avails); echo'</pre>'; exit();
-            
+
             ##$rollover_ereadings = $this->listmgr_model->db_get_rollover_readings_by_avail($from_avail);
             $from_avails[0]['availability'] = $from_avail;
             $num_rollover_ereadings = $this->listmgr_model->db_get_numof_rollover_readings_by_avail($from_avails);
-            
+
             $avail_info = $this->listmgr_model->db_get_availability_info($from_avail);
             #}
             #else
@@ -564,9 +527,9 @@ class Listmgr extends CI_Controller {
                             "to_avails"=>$to_avails, "num_rollover_ereadings"=>$num_rollover_ereadings[0]['num_readings'],
                             "is_tc"=>$is_tc);
             $this->load->view('reading_listmgr/rollover_ereadings_view', $data);
-            
+
         }
-        
+
         /**
          * Get the activated eReadings for the availability, view only, no rollover
          *
@@ -574,7 +537,7 @@ class Listmgr extends CI_Controller {
          */
         public function view_ereadings()
 	{
-            $this->load->helper('url');    
+            $this->load->helper('url');
             #$this->load->helper('form');
             #$this->load->library('form_validation');
             if(isset($_POST["from_avail"]) )
@@ -593,7 +556,7 @@ class Listmgr extends CI_Controller {
                 $this->load->view('reading_listmgr/showerror_view', $error_data);
                 return;
             }
-            
+
             if($from_avail == "")
             {
                 $error_data = array('heading'=>'Error', 'message'=>'Invalid input data');
@@ -601,34 +564,34 @@ class Listmgr extends CI_Controller {
                 return;
             }
             $from_topic_code = substr($from_avail, 0, strpos($from_avail,"_"));
-            
+
             /*if(!isset($_POST["from_avail"]) || !isset($_POST["from_topic_code"]))
             {
                 $error_data = array('heading'=>'Error', 'message'=>'Invalid input data');
                 $this->load->view('reading_listmgr/showerror_view', $error_data);
                 return;
             }
-            
+
             $from_avail = (trim($_POST["from_avail"]));
             $from_topic_code = $_POST["from_topic_code"];*/
-            
+
             #$to_avails = $_POST["to_avails"];
             #echo $from_avail;
             #if($from_avail != null)
-            #{    
+            #{
             $this->load->model('reading_listmgr/listmgr_model');
-                
+
             #$ereadings = $this->listmgr_model->db_get_readings_by_avail($from_avail);
             $ereadings = $this->listmgr_model->db_get_ereadings_usg_by_avail($from_avail);
-            
+
             #echo'<pre>'; print_r($other_avails); echo'</pre>'; exit();
-            
+
             ##$rollover_ereadings = $this->listmgr_model->db_get_rollover_readings_by_avail($from_avail);
             $from_avails[0]['availability'] = $from_avail;
             $num_rollover_ereadings = $this->listmgr_model->db_get_numof_rollover_readings_by_avail($from_avails);
             $rollover_today_readings = $this->listmgr_model->db_get_rollover_today_reading_for_avail($from_avail);
             $activate_today_readings = $this->listmgr_model->db_get_activate_today_reading_for_avail($from_avail);
-            
+
             $is_tc = false;
             if(isset($_SESSION['rollover_privilege']) && $_SESSION['rollover_privilege'] == 'topic_coordinator')
             {
@@ -645,7 +608,7 @@ class Listmgr extends CI_Controller {
                 }*/
                 $is_tc = true;
             }
-	    
+
 	    #### Generate a token in view_flex_reading for SSO when viewing a eReading
 	    if($ereadings != false)
 	    {
@@ -654,7 +617,7 @@ class Listmgr extends CI_Controller {
 		    $link = $ereadings[$i]['reading_link'];
 		    $part1 = substr($link, 0, strpos($link, 'items')+6);
 		    $ereadings[$i]['reading_link'] = str_replace($part1, 'view_flex_reading/items/', $link);
-			
+
 		}
 	    }
 	    if($rollover_today_readings != false)
@@ -665,10 +628,10 @@ class Listmgr extends CI_Controller {
 		    $part1 = substr($link, 0, strpos($link, 'items')+6);
 		    $rollover_today_readings[$i]['reading_link'] = str_replace($part1, 'view_flex_reading/items/', $link);
 		    #$rollover_today_readings[$i]['reading_link'] .= '&token=' . $token;
-			
+
 		}
 	    }
-            
+
             $avail_info = $this->listmgr_model->db_get_availability_info($from_avail);
             #}
             #else
@@ -676,7 +639,7 @@ class Listmgr extends CI_Controller {
             #    $ereadings = false;
             #    $num_rollover_ereadings[0]['num_readings'] = 0;
             #}
-			
+
             #if($ereadings != false)
             #    $readings_count = count($ereadings);
             #$to_avails_count = count($to_avails);
@@ -696,9 +659,9 @@ class Listmgr extends CI_Controller {
                             "to_avails"=>$to_avails, "num_rollover_ereadings"=>$num_rollover_ereadings[0]['num_readings'],
                             "rollover_today_readings"=>$rollover_today_readings, "is_tc"=>$is_tc, "activate_today_readings"=>$activate_today_readings);
             $this->load->view('reading_listmgr/view_ereadings_view', $data);
-            
+
         }
-        
+
         /**
          * View the eReading in FLEX
          *
@@ -717,7 +680,7 @@ class Listmgr extends CI_Controller {
                 $this->load->view('reading_listmgr/fromto_avails_error_view', $error_data);
                 return;
             }
-	    
+
             $ci =& get_instance();
             $ci->load->config('flex');
             $institute_url = $ci->config->item('institute_url');
@@ -729,12 +692,12 @@ class Listmgr extends CI_Controller {
             {
                 $token = $this->generateToken();
                 $reading_link .= '&token=' . $token;
-                
+
             }
 
             redirect($reading_link);
         }
-	
+
         /**
          * Get the activated eReadings for the availability, with URLs to readings
          *
@@ -742,7 +705,7 @@ class Listmgr extends CI_Controller {
          */
         public function view_erlist_url()
 	{
-            $this->load->helper('url');    
+            $this->load->helper('url');
             #$this->load->helper('form');
             #$this->load->library('form_validation');
             if(isset($_POST["from_avail"]) )
@@ -761,7 +724,7 @@ class Listmgr extends CI_Controller {
                 $this->load->view('reading_listmgr/showerror_view', $error_data);
                 return;
             }
-            
+
             if($from_avail == "")
             {
                 $error_data = array('heading'=>'Error', 'message'=>'Invalid input data');
@@ -769,61 +732,61 @@ class Listmgr extends CI_Controller {
                 return;
             }
             $from_topic_code = substr($from_avail, 0, strpos($from_avail,"_"));
-            
-           
+
+
             $this->load->model('reading_listmgr/listmgr_model');
-                
+
             #$ereadings = $this->listmgr_model->db_get_readings_by_avail($from_avail);
             $ereadings = $this->listmgr_model->db_get_ereadings_usg_by_avail($from_avail);
-            
+
             #echo'<pre>'; print_r($other_avails); echo'</pre>'; exit();
-            
+
             ##$rollover_ereadings = $this->listmgr_model->db_get_rollover_readings_by_avail($from_avail);
             $from_avails[0]['availability'] = $from_avail;
             $num_rollover_ereadings = $this->listmgr_model->db_get_numof_rollover_readings_by_avail($from_avails);
             $rollover_today_readings = $this->listmgr_model->db_get_rollover_today_reading_for_avail($from_avail);
-            
+
             #$avail_info = $this->listmgr_model->db_get_availability_info($from_avail);
             $avail_info = null;
-            
+
             $to_avails = null;
-            
+
             $data = array("from_avail"=>$from_avail, "ereadings"=>$ereadings, "avail_info"=>$avail_info, "from_topic_code"=>$from_topic_code,
                             "to_avails"=>$to_avails, "num_rollover_ereadings"=>$num_rollover_ereadings[0]['num_readings'],
                             "rollover_today_readings"=>$rollover_today_readings);
             $this->load->view('reading_listmgr/view_erlist_url_view', $data);
-            
+
         }
-        
+
         /**
          * rollover_activate()
-         * Activate the eReadings in rollover process. This is in AJAX post call to activate a few eReadings. 
+         * Activate the eReadings in rollover process. This is in AJAX post call to activate a few eReadings.
          *
          * Get UUID/Version/Attachment from the reading link, check whether this activation
          * on selected availability already exitsts, if not, activate the reading against the availability.
          */
-        
+
         /**
          * This comment block is to explain the functions of ereadings.js which calls rollover_activate().
          * The source javascript file is at flex/resource/rollover/js/readings.js.
-         * 
+         *
          * All the selected eReadings are in ereadingArray, suppose there are 173 eReadings,
          * then num_div = 173/5 = 34 (batch_size=5)
          *      num_mod = 173%5 = 3
-         *      
+         *
          * to_avails array has all the To availabilities, supporse there are 5 availabilities,
          * then toavail_idx is incremented from 0 to 4.
-         * 
+         *
          * In every AJAX call 5(batch_size) eReadings are activated. postcall_idx is incremented from 1
          * to 34. After it reaches 34 then toavail_idx is incremented by 1 and postcall_idx is set to 1.
          * This means it is one availability after another.
-         * 
+         *
          * num_success is the number of all successful new activations (for one availability) and
          * num_duplication is the number of all duplication activations (for one availability)
          */
         public function rollover_activate()
 	{
-            
+
             /*
             if(!isset($_POST["from_avail"]) || !isset($_POST["to_avail"])
                 || !isset($_POST["readings"]) || !isset($_POST["reading_idxs"]))
@@ -841,17 +804,17 @@ class Listmgr extends CI_Controller {
             $reading_idxs = ($_POST["reading_idxs"]);
             $reading_count = count($readings);
             #log_message('error', "reaing_count is:".$reading_count);
-            
+
             #$result['to_avail'] = $to_avail;
             $result['items_count'] = $reading_count;
-            
+
             if(isset($_SERVER['REMOTE_USER']))
                 $user = $_SERVER['REMOTE_USER'];
             else
                 $user = '????';
-                    
+
             $this->load->model('reading_listmgr/listmgr_model');
-            
+
             $avail_date = $this->listmgr_model->db_get_avail_date($to_avail);
             if($avail_date === false)
             {
@@ -872,7 +835,7 @@ class Listmgr extends CI_Controller {
             $this->soappassword = $ci->config->item('soap_activation_password');
             $this->soapparams = array('username'=>$this->soapusername, 'password'=>$this->soappassword);
             $this->load->library('flexsoap/flexsoap',$this->soapparams);
-            
+
             if(!$this->flexsoap->success)
             {
                 #$errdata['message'] = $this->flexsoap->error_info;
@@ -903,24 +866,24 @@ class Listmgr extends CI_Controller {
                 return;
             }
             ##
-        
+
             for($i=0;$i<$reading_count;$i++)
             {
                 //log_message('error', "reaing idx is:".$reading_idxs[$i]);
                 //log_message('error', "\nreaing is:".$readings[$i]);
-                
+
                 $reading_link = $readings[$i];
                 $item_uuid = substr($reading_link, strpos($reading_link, 'items')+6, 36);
                 $attachment_uuid = substr($reading_link, strpos($reading_link, 'uuid')+5, 36);
                 $version = substr($reading_link, strpos($reading_link, 'items')+43, strpos($reading_link, '/?') - (strpos($reading_link, 'items')+43) );
                 #log_message('error', "version is:".$version);
-                
+
 		####
 		$ci =& get_instance();
 		$ci->load->config('flex');
 		$institute_url = $ci->config->item('institute_url');
 		$reading_link = $institute_url . "items/" . $item_uuid . "/" . $version . "/?.vi=file&attachment.uuid=" . $attachment_uuid;
-	    
+
                 #$this->load->model('reading_listmgr/listmgr_model');
                 #this is a validation
                 $data_valid = true;
@@ -936,20 +899,20 @@ class Listmgr extends CI_Controller {
                     $result['error_info'] = "Error: data invalid";
                     echo json_encode($result);
                     return;
-                }    
-                    
+                }
+
                 ##$activated = $this->listmgr_model->db_chk_reading_for_avail($reading_link,$to_avail);
                 $activated = $this->listmgr_model->db_chk_active_reading_for_avail($reading_link,$to_avail);
                 $rollovered = $this->listmgr_model->db_chk_rollover_reading_for_avail($reading_link,$to_avail);
-                
+
                 if($activated == false && $rollovered == false)
                 #if(false)####
                 {
                     #$result['items']["status"][$i] = "failed";
                     #$result['items']["readingidx"][$i] = $reading_idxs[$i];
-                    #$result['items']["message"][$i] = "Copywrite error! Missing item!" ;   
-                    #continue;    
-                    
+                    #$result['items']["message"][$i] = "Copywrite error! Missing item!" ;
+                    #continue;
+
                     #REST
                     $activation_bean = null;
                     $activation_bean["type"] = "cal";
@@ -984,7 +947,7 @@ class Listmgr extends CI_Controller {
                         $result['items']["message"][$i] = $this->flexrest->error;
                         continue;
                     }##
-                    
+
                     /*#SOAP
                     $this->flexsoap->activateItemAttachments($item_uuid, intval($version), $to_avail, array($attachment_uuid));
                     if(!$this->flexsoap->success)
@@ -1003,24 +966,24 @@ class Listmgr extends CI_Controller {
                         $result['items']["message"][$i] = $this->flexsoap->error_info;
                         continue;
                     }*/
-                    
+
                     $this->listmgr_model->db_ins_rollover_reading_for_avail($reading_link,$to_avail,$user,$from_avail);
-                    
+
                     $result['items']["readingidx"][$i] = $reading_idxs[$i];
                     $result['items']["status"][$i] = "activated";
                     $result['items']["message"][$i] = "";
-                    
+
                     $this->logger_rollover->info("Rollover Success with user: " . $user . ", from: " . $from_avail . " to " . $to_avail . ", index: " . $reading_idxs[$i] . ", reading link: " . $reading_link);
-                    
+
                 }
                 else
                 {
                     $result['items']["readingidx"][$i] = $reading_idxs[$i];
                     $result['items']["status"][$i] = "duplication";
                     $result['items']["message"][$i] = "";
-                    
+
                     $this->logger_rollover->info("Rollover Duplication with user: " . $user . ", from: " . $from_avail . " to " . $to_avail . ", index: " . $reading_idxs[$i] . ", reading link: " . $reading_link);
-                    
+
                     /*if($reading_idxs[$i] == 8) #### for testing
                     {
 
@@ -1035,26 +998,26 @@ class Listmgr extends CI_Controller {
             //log_message('error', json_encode($result));
             $result['satus'] = "success";
             $result['error_info'] = "";
-            echo json_encode($result); 
-           
+            echo json_encode($result);
+
         }
-        
-        
+
+
         /**
-         * On FLEX item summary page there is a link "Activate via Flextra tool", 
+         * On FLEX item summary page there is a link "Activate via Flextra tool",
          * this is the function to activate the eReading for selected availabilities.
          *
          * Show activation interface.
          */
         public function activate_reading()
 	{
-            if(!isset($_SESSION['rollover_privilege']) || $_SESSION['rollover_privilege']!='contributor')
+            if(!isset($_SESSION['rollover_privilege']) || ($_SESSION['rollover_privilege']!='contributor' && $_SESSION['rollover_privilege']!='administrator'))
             {
                 $error_data = array('heading'=>'Error', 'message'=>"Sorry you don't have the required privilege.");
                 $this->load->view('reading_listmgr/showerror_view', $error_data);
                 return;
             }
-            
+
             if(!isset($_GET["uuid"]) || !isset($_GET["version"]) || !isset($_GET["attachment"]) || !isset($_GET["item_name"]))
             {
                 $error_data = array('heading'=>'Error', 'message'=>'Invalid Request');
@@ -1065,19 +1028,19 @@ class Listmgr extends CI_Controller {
             $version = $_GET["version"];
             $attachment = $_GET["attachment"];
             $item_name = $_GET["item_name"];
-            
+
             if(strlen($uuid) != 36 || !is_numeric($version) || strlen($attachment) != 36 )
             {
                 $error_data = array('heading'=>'Error', 'message'=>'Invalid Request');
                 $this->load->view('reading_listmgr/showerror_view', $error_data);
                 return;
             }
-            
+
             $data['uuid'] = $uuid;
             $data['version'] = $version;
             $data['attachment'] = $attachment;
             $data['item_name'] = $item_name;
-            
+
             $ci =& get_instance();
             $ci->load->config('flex');
             $institute_url = $ci->config->item('institute_url');
@@ -1093,7 +1056,7 @@ class Listmgr extends CI_Controller {
             $this->load->helper('url');
             $this->load->view('reading_listmgr/activate_reading_view.php', $data);
 	}
-        
+
         /**
          * Get the availabilities for the specified (To, Target) topic code.
          *
@@ -1104,8 +1067,8 @@ class Listmgr extends CI_Controller {
             #$uuid = $_POST["uuid"];
             #$version = $_POST["version"];
             #$attachment = $_POST["attachment"];
-            
-            $this->load->helper('url');    
+
+            $this->load->helper('url');
             #$this->load->helper('form');
             #$this->load->library('form_validation');
             if(!isset($_POST["topic_code"]))
@@ -1120,37 +1083,37 @@ class Listmgr extends CI_Controller {
             #$topic_code = strtoupper(trim(set_value('topic_code')));
             #log_message('error', $topic_code);
             $this->load->model('reading_listmgr/listmgr_model');
-                
+
             #$availabilities = $this->listmgr_model->db_chk_to_avails_by_topic($topic_code);
             $availabilities = $this->listmgr_model->db_get_active_avails_by_topic($topic_code);
-            
+
             $topic_name = $this->listmgr_model->db_get_topicname($topic_code);
-             
+
             if($availabilities === false )
             {
                 $error_data = array('error_info'=>'eReadings can only be activated for topic availabilities that are currently in progress, or have a future start date. Please check the Topic Code is entered correctly.');
                 $this->load->view('reading_listmgr/toavails_error_view', $error_data);
                 return;
             }
-            #$_SESSION['listmgr_topic_code'] = $topic_code; 
+            #$_SESSION['listmgr_topic_code'] = $topic_code;
             #$from_avails_num_readings = $this->activate_model->db_get_numof_readings_by_avail($from_avails);
             #$to_avails_num_readings = $this->activate_model->db_get_numof_readings_by_avail($to_avails);
-            
+
             #Number of readings rolled over today.
             #$from_avails_rollover_readings = $this->activate_model->db_get_numof_rollover_readings_by_avail($from_avails);
             #$to_avails_rollover_readings = $this->activate_model->db_get_numof_rollover_readings_by_avail($to_avails);
-            
+
             #$from_data = '';
             #foreach ($avails as $row)
             #{
               #$from_data .= '<br>' . $row['availability'];
-              
+
             #}
             #echo $data;
             $data = array("topic_code"=>$topic_code, "availabilities"=>$availabilities, "topic_name"=>$topic_name);
             $this->load->view('reading_listmgr/activate_reading_avails_view', $data);
         }
-        
+
         /**
          * Get the availabilities for the specified (To, Target) topic code.
          *
@@ -1161,8 +1124,8 @@ class Listmgr extends CI_Controller {
             #$uuid = $_POST["uuid"];
             #$version = $_POST["version"];
             #$attachment = $_POST["attachment"];
-            
-            $this->load->helper('url');    
+
+            $this->load->helper('url');
             #$this->load->helper('form');
             #$this->load->library('form_validation');
             if(!isset($_POST["topic_code"]))
@@ -1177,37 +1140,37 @@ class Listmgr extends CI_Controller {
             #$topic_code = strtoupper(trim(set_value('topic_code')));
             #log_message('error', $topic_code);
             $this->load->model('reading_listmgr/listmgr_model');
-                
+
             #$availabilities = $this->listmgr_model->db_chk_to_avails_by_topic($topic_code);
             $availabilities = $this->listmgr_model->db_get_active_avails_by_topic($topic_code);
-            
+
             $topic_name = $this->listmgr_model->db_get_topicname($topic_code);
-             
+
             if($availabilities === false )
             {
                 $error_data = array('error_info'=>'eReadings can only be activated for topic availabilities that are currently in progress, or have a future start date. Please check the Topic Code is entered correctly.');
                 $this->load->view('reading_listmgr/toavails_error_view', $error_data);
                 return;
             }
-            $_SESSION['listmgr_topic_code'] = $topic_code; 
+            $_SESSION['listmgr_topic_code'] = $topic_code;
             #$from_avails_num_readings = $this->activate_model->db_get_numof_readings_by_avail($from_avails);
             #$to_avails_num_readings = $this->activate_model->db_get_numof_readings_by_avail($to_avails);
-            
+
             #Number of readings rolled over today.
             #$from_avails_rollover_readings = $this->activate_model->db_get_numof_rollover_readings_by_avail($from_avails);
             #$to_avails_rollover_readings = $this->activate_model->db_get_numof_rollover_readings_by_avail($to_avails);
-            
+
             #$from_data = '';
             #foreach ($avails as $row)
             #{
               #$from_data .= '<br>' . $row['availability'];
-              
+
             #}
             #echo $data;
             $data = array("topic_code"=>$topic_code, "availabilities"=>$availabilities, "topic_name"=>$topic_name);
             $this->load->view('reading_listmgr/toavailability_view', $data);
         }
-        
+
         /**
          * Check the specified (To) topic availabilities, if it is not in Flex
          * then add it to Flex via soap.
@@ -1216,8 +1179,8 @@ class Listmgr extends CI_Controller {
          */
         public function chk_to_availabilities($ajax=true,$avails_param=null)
 	{
-            
-            #$this->load->helper('url');    
+
+            #$this->load->helper('url');
             if($ajax)
             {
                 if(!isset($_POST["to_avails"]))
@@ -1232,7 +1195,7 @@ class Listmgr extends CI_Controller {
             else
             {
                 $to_avails = $avails_param;
-                
+
                 $result['error_info'] = '';
                 $result['courses_added'] = null;
             }
@@ -1241,7 +1204,7 @@ class Listmgr extends CI_Controller {
             #$topic_code = strtoupper(trim(set_value('topic_code')));
             #log_message('error', $topic_code);
             $this->load->model('reading_listmgr/listmgr_model');
-                
+
             $course = $this->listmgr_model->db_chk_to_availabilities($to_avails);
             #$topic_name = $this->listmgr_model->db_get_topicname($topic_code);
             $result['count_courses_added'] = $course["count"];
@@ -1270,8 +1233,8 @@ class Listmgr extends CI_Controller {
                     return $result;
                 }
             }
-            
-            
+
+
             $this->load->library('flexrest/flexrest');
             $success = $this->flexrest->processClientCredentialToken();
             if(!$success)
@@ -1320,7 +1283,7 @@ class Listmgr extends CI_Controller {
                 #log_message('error', $course_bean["from"]);
                 */
                 $success = $this->flexrest->createCourse($course_bean, $response1);
-                
+
                 if(!$success)
                 {
                     if(strpos($this->flexrest->error, "Course code must be unique") === false)
@@ -1379,7 +1342,7 @@ class Listmgr extends CI_Controller {
                     return $result;
                 }
             }
-            
+
             $this->flexsoap->bulkImportCourses($course["csv"]);
             if(!$this->flexsoap->success)
             {
@@ -1398,14 +1361,14 @@ class Listmgr extends CI_Controller {
                     return $result;
                 }
             }
-            
+
             $this->listmgr_model->db_ins_readings_avails($course);
             #$data = array("topic_code"=>$topic_code, "availabilities"=>$availabilities, "topic_name"=>$topic_name);
             #$this->load->view('reading_listmgr/availability_view', $data);
             */
             $result["result_stat"] = "success";
             $result['error_info'] = "";
-            
+
             #echo json_encode($result);
             if($ajax)
             {
@@ -1417,24 +1380,24 @@ class Listmgr extends CI_Controller {
                 return $result;
             }
         }
-        
+
         /**
-         * On FLEX item summary page there is a link "Activate via Flextra tool", 
+         * On FLEX item summary page there is a link "Activate via Flextra tool",
          * this is the function to activate the eReading for selected availabilities.
          *
          * Show activation results.
          */
-        
+
         public function activate_reading_res()
 	{
-            if(!isset($_SESSION['rollover_privilege']) || $_SESSION['rollover_privilege']!='contributor')
+            if(!isset($_SESSION['rollover_privilege']) || ($_SESSION['rollover_privilege']!='contributor' && $_SESSION['rollover_privilege']!='administrator'))
             {
                 $error_data = array('heading'=>'Error', 'message'=>"Sorry you don't have the required privilege.");
                 $this->load->view('reading_listmgr/showerror_view', $error_data);
                 return;
             }
-            
-            $this->load->helper('url'); 
+
+            $this->load->helper('url');
             //sleep(1);
             //log_message('error', implode($readings, ","));
             if(!isset($_POST["to_avails"]) || !isset($_POST["uuid"]) || !isset($_POST["version"]) || !isset($_POST["attachment"]) || !isset($_POST["item_name"]))
@@ -1443,7 +1406,7 @@ class Listmgr extends CI_Controller {
                 $this->load->view('reading_listmgr/showerror_view', $error_data);
                 return;
             }
-            
+
             #$from_avail = ($_POST["from_avail"]);
             $to_avails = ($_POST["to_avails"]);
             $item_uuid = $_POST["uuid"];
@@ -1451,12 +1414,12 @@ class Listmgr extends CI_Controller {
             $attachment_uuid = $_POST["attachment"];
             $item_name = $_POST["item_name"];
             $avail_count = count($to_avails);
-            
+
             $suppress_dup_chk = false;
             if(isset($_POST["suppress_dup_chk"]) && $_POST["suppress_dup_chk"] == '1')
                 $suppress_dup_chk = true;
             #log_message('error', "reaing_count is:".$reading_count);
-            
+
             #$result['to_avail'] = $to_avail;
             #$result['items_count'] = $reading_count;
             $ci =& get_instance();
@@ -1465,19 +1428,19 @@ class Listmgr extends CI_Controller {
             $reading_link = $institute_url . "items/" . $item_uuid . "/" . $version . "/?.vi=file&attachment.uuid=" . $attachment_uuid;
             $activate_link = "activate_reading?uuid=" . $item_uuid . "&version=" . $version . "&attachment=" . $attachment_uuid . "&item_name=" . htmlentities($item_name);
             #"https://flex-test.flinders.edu.au/items/28c35509-8943-4e76-ac54-0863e24e36ce/1/?.vi=file&attachment.uuid=f9f4c271-dbb1-4093-9a4c-e974bc406d26"
-            
+
             if(isset($_SERVER['REMOTE_USER']))
                 $user = $_SERVER['REMOTE_USER'];
             else
                 $user = '????';
-                    
+
             for($i=0;$i<$avail_count;$i++)
             {
                 $result["status"][$i] = '';
             }
             $result['error_info'] = '';
             $result['courses_added'] = null;
-	    
+
             #REST
             $this->load->library('flexrest/flexrest');
             $success = $this->flexrest->processClientCredentialToken();
@@ -1492,9 +1455,9 @@ class Listmgr extends CI_Controller {
             $this->soapusername = $ci->config->item('soap_activation_username');
             $this->soappassword = $ci->config->item('soap_activation_password');
             $this->soapparams = array('username'=>$this->soapusername, 'password'=>$this->soappassword);
-            
+
             $this->load->library('flexsoap/flexsoap',$this->soapparams);
-            
+
             if(!$this->flexsoap->success)
             {
                 $this->logger_activation->error("Error: " . $this->flexsoap->error_info);
@@ -1504,10 +1467,10 @@ class Listmgr extends CI_Controller {
                 $this->load->view('reading_activate/readingfortopic_res_view', $data);
                 return;
             }*/
-            
+
             #$this->load->model('reading_rollover/rollover_model');
             $this->load->model('reading_listmgr/listmgr_model');
-            
+
             #Add new courses to FLEX.
             $add_couse_res = $this->chk_to_availabilities(false,$to_avails);
             $result['error_info'] = $add_couse_res['error_info'];
@@ -1529,9 +1492,9 @@ class Listmgr extends CI_Controller {
                     $course_bean["departmentName"] = $onecourse["departmentname"];
                     $course_bean["from"] = substr($onecourse["start"], 0, 10);
                     $course_bean["until"] = substr($onecourse["end"], 0, 10);
-                    
+
                     $success = $this->flexrest->createCourse($course_bean, $response1);
-                
+
                     if(!$success)
                     {
                         if(strpos($this->flexrest->error, "Course code must be unique") === false)
@@ -1539,7 +1502,7 @@ class Listmgr extends CI_Controller {
                             $this->logger_activation->error("Error: " . $this->flexrest->error);
                             #$result["status"][0] = "Failed";
                             $result['error_info'] = $this->flexrest->error;
-                            break;  
+                            break;
                         }
                         else
                         {
@@ -1553,12 +1516,12 @@ class Listmgr extends CI_Controller {
                     $this->listmgr_model->db_ins_readings_avails($db_course);
                 }
             }*/
-            
+
             if($result['error_info'] == '')
             {
             for($i=0;$i<$avail_count;$i++)
             {
-                
+
                 $to_avail = $to_avails[$i];
                 $avail_date = $this->listmgr_model->db_get_avail_date($to_avail);
                 #$this->load->model('reading_rollover/rollover_model');
@@ -1571,9 +1534,9 @@ class Listmgr extends CI_Controller {
                     $rollovered = $this->listmgr_model->db_chk_rollover_reading_for_avail($reading_link,$to_avail);
                 }
                 if($suppress_dup_chk == true || ($activated == false && $rollovered == false))
-                //if($activated == false)    
+                //if($activated == false)
                 {
-                    
+
                     #Activate eReading via REST.
                     $activation_bean = null;
                     $activation_bean["type"] = "cal";
@@ -1611,20 +1574,20 @@ class Listmgr extends CI_Controller {
                         $result['error_info'] = $this->flexsoap->error_info;
                         break;
                     }*/
-                    
+
                     $this->listmgr_model->db_ins_rollover_reading_for_avail($reading_link,$to_avail,$user);
-                    
+
                     $result["status"][$i] = "Success";
-                    
+
                     $this->logger_activation->info("Activation Successful with user: " . $user . ", availability: " . $to_avail . ", reading link: " . $reading_link);
-                    
+
                 }
                 else
                 {
                     $result["status"][$i] = "Duplication";
-                    
+
                     $this->logger_activation->info("Activation Duplicate with user: " . $user . ", availability: " . $to_avail . ", reading link: " . $reading_link);
-                    
+
                     /*if($i == 1113) #### for testing
                     {
 
@@ -1637,16 +1600,16 @@ class Listmgr extends CI_Controller {
                 //log_message('error', "uuid: " . $item_uuid . "   attachment: " . $attachment_uuid);
             }
             }
-            $data = array("to_avails"=>$to_avails, "result"=>$result, "reading_link"=>$reading_link, 
+            $data = array("to_avails"=>$to_avails, "result"=>$result, "reading_link"=>$reading_link,
                     "activate_link" => $activate_link, "item_name"=>$item_name);
             $this->load->view('reading_listmgr/activate_reading_res_view', $data);
-           
+
         }
-        
+
         /**
          * Show the form to create new request
          *
-         * 
+         *
          */
         public function create_request()
 	{
@@ -1669,18 +1632,18 @@ class Listmgr extends CI_Controller {
             */
             $avails_for_new_req = ($_POST["avails_for_new_req"]);
             $topic_code = ($_POST["topic_code"]);
-            
+
             $date_neededby = new DateTime();
             date_add($date_neededby, date_interval_create_from_date_string('28 days'));
-            
+
             $data = array("avails_for_new_req"=>$avails_for_new_req, "topic_code"=>$topic_code, "date_neededby"=>$date_neededby->format('Y-m-d'));
             $this->load->view('reading_listmgr/create_request_view', $data);
         }
-        
+
         /**
          * Contribute the request to Equella via REST
          *
-         * 
+         *
          */
         public function create_request_res()
 	{
@@ -1688,8 +1651,8 @@ class Listmgr extends CI_Controller {
             $result['status'] = "failed";
             $result['error_info'] = "";
             $errdata['heading'] = 'Internal Error';
-            
-            if( !isset($_POST["editor1"]) || !isset($_POST["topic_code"]) || !isset($_POST["avails_for_new_req"]) || 
+
+            if( !isset($_POST["editor1"]) || !isset($_POST["topic_code"]) || !isset($_POST["avails_for_new_req"]) ||
                     !isset($_POST["needed_by_date"]) || !isset($_POST["request_subject"]) )
             {
                 $errdata['message'] = 'Invalid input data.';
@@ -1710,9 +1673,9 @@ class Listmgr extends CI_Controller {
                 $availabilities = null;
             else
                 $availabilities = explode(',', $to_avails);
-            
+
             #$to_topic_code = substr($availabilities[0], 0, strpos($availabilities[0],"_"));
-            
+
             /*
             echo("<pre>==========content of to_topic_code:<br>");
             print_r($to_topic_code);echo("</pre>");
@@ -1722,11 +1685,11 @@ class Listmgr extends CI_Controller {
             print_r($request_content);echo("</pre>");
             exit();
             */
-            
+
             $ci =& get_instance();
             $ci->load->config('flex');
             $collection_id = $ci->config->item('erlistmgt_collection');
-            
+
             $this->load->model('reading_listmgr/listmgr_model');
             $school_name = $this->listmgr_model->db_get_orgname($to_topic_code);
             if($school_name === false)
@@ -1738,7 +1701,7 @@ class Listmgr extends CI_Controller {
                 echo json_encode($result);
                 return;
             }
-            
+
             #Check wether there are topic availabilities that are not in FLEX.
             #### need to handle the special availability TOPIC_OTHER
             /*
@@ -1757,7 +1720,7 @@ class Listmgr extends CI_Controller {
                 }
             }
             */
-            
+
             $this->load->library('flexrest/flexrest');
             $success = $this->flexrest->processClientCredentialToken();
             if(!$success)
@@ -1769,9 +1732,9 @@ class Listmgr extends CI_Controller {
                 echo json_encode($result);
                 return;
             }
-            
+
             $item_bean["collection"]["uuid"] = $collection_id;
-            
+
             #$dom = new DOMDocument('1.0');
             #log_message('error', 'new dom: ' . $dom->saveXML());
 
@@ -1780,13 +1743,13 @@ class Listmgr extends CI_Controller {
             $request_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/requests/request");
             $request_content_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/requests/request/content");
             #$request_content_node->nodeValue = $request_content;
-            
+
             $this->xmlwrapper->createTextNode($request_content_node, $request_content);
             #$request_content_node->appendChild($text_content);
-            
+
             $request_note_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/note");
             $this->xmlwrapper->createTextNode($request_note_node, $request_content);
-            
+
             $request_date_added_node = $this->xmlwrapper->createAttribute($request_node, "date_added");
             $request_date_added_node->nodeValue = $now;
             $request_status_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/status");
@@ -1794,16 +1757,16 @@ class Listmgr extends CI_Controller {
             $request_name_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/name");
             $request_name_node->nodeValue = str_replace('&', 'and', $request_subject);
             #$this->xmlwrapper->createTextNode($request_name_node, $request_subject);
-            
+
             $request_added_by_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/added_by");
             $request_addedby_fan_node = $this->xmlwrapper->createAttribute($request_added_by_node, "fan");
             $request_addedby_fan_node->nodeValue = $_SERVER['REMOTE_USER'];
             $request_neededby_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/needed_by");
             $request_neededby_node->nodeValue = $needed_by;
-            
+
             $date_added_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/date_added");
             $date_added_node->nodeValue = $now;
-            
+
             $topic_code_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/curriculum/topics/topic/code");
             $topic_code_node->nodeValue = $to_topic_code;
             $topic_school_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/curriculum/topics/topic/school");
@@ -1812,7 +1775,7 @@ class Listmgr extends CI_Controller {
             $item_name_node->nodeValue = str_replace('&', 'and', $request_subject);
             #$this->xmlwrapper->createTextNode($item_name_node, $request_subject);
             $to_avails_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/curriculum/avails");
-            
+
             if($availabilities != null)
             {
                 foreach($availabilities as $to_avail)
@@ -1827,7 +1790,7 @@ class Listmgr extends CI_Controller {
             #$item_bean['metadata'] = str_replace('&nbsp;', '&amp;nbsp;', $item_bean['metadata']);
             #echo("<pre>==========content of item_bean:<br>");
             #print_r($item_bean);echo("</pre>");
-            
+
             $success = $this->flexrest->createItem($item_bean, $response1);
             if(!$success)
             {
@@ -1839,10 +1802,10 @@ class Listmgr extends CI_Controller {
                 echo json_encode($result);
                 return;
             }
-            
+
             #echo("<pre>==========response of createItem:<br>");
             #print_r($response1); echo("</pre>");
-            
+
             if(!isset($response1['headers']['location']))
             {
                 $errdata['message'] = 'No Location header in createItem response.';
@@ -1862,7 +1825,7 @@ class Listmgr extends CI_Controller {
             $email_subject = $ci->config->item('listmgr_email_request_subject');
             $this->email_req_created($discipline, $location1, $email_subject, $to_topic_code);
             #log_message('error', 'after calling email_req_created');
-            
+
             $uuid = substr($location, strpos($location, 'item')+5, 36);
             $version = substr($location, strpos($location, 'item')+42, (strlen($location)-1-(strpos($location, 'item')+42)));
             #log_message('error', 'location: ' . $location);
@@ -1871,15 +1834,15 @@ class Listmgr extends CI_Controller {
             $result['status'] = "success";
             $result['uuid'] = $uuid;
             $result['version'] = $version;
-            echo json_encode($result); 
+            echo json_encode($result);
             /*
-            $data = array("avails_for_new_req"=>$availabilities,"editor1"=>$request_content, 
+            $data = array("avails_for_new_req"=>$availabilities,"editor1"=>$request_content,
                   "result_status"=>$result['status'], "error_info"=>$result['error_info']);
             $this->load->view('reading_listmgr/create_request_view', $data);
             */
-             
+
         }
-        
+
         public function get_count_of_requests($topic_code, $availabilities)
         {
             $ci =& get_instance();
@@ -1895,11 +1858,11 @@ class Listmgr extends CI_Controller {
                 $this->load->view('reading_listmgr/showerror_view', $errdata);
                 return;
             }
-            
+
             $ci =& get_instance();
             $ci->load->config('flex');
             $erlistmgt_collection = $ci->config->item('erlistmgt_collection');
-            
+
             #$institute_url = $ci->config->item('institute_url');
             #echo $institute_url;exit();
             $q = '';
@@ -1910,9 +1873,9 @@ class Listmgr extends CI_Controller {
             $info = 'basic';
             $showall = true;
             #$where = "/xml/item/curriculum/assessment/SAMs/files/file/@ref='$avail_ref'";
-            
-            #array_push($availabilities, $topic_code . '_OTHERS'); 
-            
+
+            #array_push($availabilities, $topic_code . '_OTHERS');
+
             for($i=0; $i<count($availabilities); $i++)
             {
                 $avail_ref = $availabilities[$i]['availability'];
@@ -1934,15 +1897,15 @@ class Listmgr extends CI_Controller {
                 }
 
                 #echo '<pre>'; print_r($response);echo '</pre>';exit();
- 
+
                 $avails_num_requests[$i] = intval($response['available']);
-                
+
             }
-            
+
             return $avails_num_requests;
-        
+
         }
-        
+
         public function get_requests_by_avail()
         {
             $errdata['heading'] = "Internal error";
@@ -1953,14 +1916,14 @@ class Listmgr extends CI_Controller {
                 return;
             }
             $avail_ref = $_POST["avail_for_requests"];
-            
+
             $new_req_created = false;
             if(isset($_POST["new_req_created"]))
                 $new_req_created = true;
             #$ci =& get_instance();
             #$ci->load->config('flex');
             #$collection_id = $ci->config->item('erlistmgt_collection');
-            
+
             $this->load->library('flexrest/flexrest');
             $success = $this->flexrest->processClientCredentialToken();
             if(!$success)
@@ -1970,11 +1933,11 @@ class Listmgr extends CI_Controller {
                 $this->load->view('reading_listmgr/showerror_view', $errdata);
                 return;
             }
-            
+
             $ci =& get_instance();
             $ci->load->config('flex');
             $erlistmgt_collection = $ci->config->item('erlistmgt_collection');
-            
+
             #$institute_url = $ci->config->item('institute_url');
             #echo $institute_url;exit();
             $q = '';
@@ -1985,12 +1948,12 @@ class Listmgr extends CI_Controller {
             $info = 'all';
             $showall = true;
             #$where = "/xml/item/curriculum/assessment/SAMs/files/file/@ref='$avail_ref'";
-                 
+
             $where = "/xml/item/curriculum/avails/avail/@avail_ref='$avail_ref'";
             $where .= " AND /xml/item/@itemstatus='live'";
             $where = urlencode($where);
             #Search in FLEX
-            
+
             $searchsuccess = $this->flexrest->search($response, $q, $erlistmgt_collection, $where, $start, $length, $order, $reverse, $info, $showall);
             if(!$searchsuccess)
             {
@@ -2001,7 +1964,7 @@ class Listmgr extends CI_Controller {
                 $this->load->view('reading_listmgr/showerror_view', $errdata);
                 return;
             }
-            
+
             for($i=0;$i<$response['length'];$i++)
             {
                 $xmlwrapper_name = 'xmlwrapper'.$i;
@@ -2014,23 +1977,23 @@ class Listmgr extends CI_Controller {
                     return;
                 }*/
                 #log_message('error', $response['results'][$i]['metadata']);
-                
+
                 $meta_array = $this->requestXml2Array($this->$xmlwrapper_name);
                 $response['results'][$i]['meta_array'] = $meta_array;
             }
 
 
             #echo '<pre>'; print_r($response);echo '</pre>';exit();
- 
+
             $data['availability'] = $avail_ref;
             $data['requests'] = $response;
             $data["new_req_created"] = $new_req_created;
-            
+
             $this->load->view('reading_listmgr/requests_by_avail_view', $data);
-        
+
         }
-        
-        
+
+
         public function get_one_request()
         {
             #$ci =& get_instance();
@@ -2045,7 +2008,7 @@ class Listmgr extends CI_Controller {
             $uuid = $_POST["uuid"];
             $version = $_POST["version"];
             $topic_code = $_POST["topic_code"];
-            
+
             $this->load->library('flexrest/flexrest');
             $success = $this->flexrest->processClientCredentialToken();
             if(!$success)
@@ -2055,7 +2018,7 @@ class Listmgr extends CI_Controller {
                 $this->load->view('reading_listmgr/showerror_view', $errdata);
                 return;
             }
-            
+
             $success = $this->flexrest->getItem($uuid, $version, $response);
             if(!$success)
             {
@@ -2068,9 +2031,9 @@ class Listmgr extends CI_Controller {
             #echo '<pre>'; print_r($response);echo '</pre>';exit();
 
             $new_req_created = true;
-            
+
             $this->load->library('xmlwrapper/xmlwrapper', array('xmlString' => (string)$response['metadata']));
-        
+
             /*if(!$this->itemIsSam($this->xmlwrapper))
             {
                 $errdata['message'] = "Item is not SAM";
@@ -2079,37 +2042,37 @@ class Listmgr extends CI_Controller {
             }*/
             $meta_array = $this->requestXml2Array($this->xmlwrapper);
             $response['meta_array'] = $meta_array;
-            
+
 
             $data['request'] = $response;
             $data["new_req_created"] = $new_req_created;
             $data["topic_code"] = $topic_code;
-            
+
             $this->load->view('reading_listmgr/view_one_req_view', $data);
-            
+
         }
-        
+
     /**
      * Extract XML data and store it in array
      *
      * @param xmlwrapper $itemXml
      */
-    protected function requestXml2Array($itemXml) 
+    protected function requestXml2Array($itemXml)
     {
-        
-        for ($j = 1; $j <= $itemXml->numNodes('/xml/item/curriculum/topics/topic'); $j++) 
+
+        for ($j = 1; $j <= $itemXml->numNodes('/xml/item/curriculum/topics/topic'); $j++)
         {
             $topicCode = '/xml/item/curriculum/topics/topic['.$j.']/code';
             $topicTitle = '/xml/item/curriculum/topics/topic['.$j.']/name';
 
             $topicSchool = '/xml/item/curriculum/topics/topic['.$j.']/school';
-            
+
             $samsArray['topics'][$j]['tcode'] = $itemXml->nodeValue($topicCode);
             $samsArray['topics'][$j]['topicTitle'] = $itemXml->nodeValue($topicTitle);
-            
+
             $samsArray['topics'][$j]['topicSchool'] = trim($itemXml->nodeValue($topicSchool));
-	}	
-	
+	}
+
         $name = '/xml/item/itembody/name';
         $samsArray['name'] = $itemXml->nodeValue($name);
 	$req_content = '/xml/item/admin/to_do/requests/request[1]/content';
@@ -2124,41 +2087,41 @@ class Listmgr extends CI_Controller {
         $samsArray['added_by_name'] = $itemXml->nodeValue($added_by_name);
         $added_by_fan = '/xml/item/admin/to_do/added_by/@fan';
         $samsArray['added_by_fan'] = $itemXml->nodeValue($added_by_fan);
-		
-        for ($j = 1; $j <= $itemXml->numNodes('/xml/item/curriculum/avails/avail'); $j++) 
+
+        for ($j = 1; $j <= $itemXml->numNodes('/xml/item/curriculum/avails/avail'); $j++)
         {
 
             $avYear = '/xml/item/curriculum/avails/avail['.$j.']/year';
 
             $avLocation = '/xml/item/curriculum/avails/avail['.$j.']/location_display';
             $avLocation_code = '/xml/item/curriculum/avails/avail['.$j.']/location_code';
-            
+
             $av_ref = '/xml/item/curriculum/avails/avail['.$j.']/@avail_ref';
 
             $samsArray['availability'][$j]['avYear'] = $itemXml->nodeValue($avYear);
 
             $samsArray['availability'][$j]['avLocation'] = $itemXml->nodeValue($avLocation);
             $samsArray['availability'][$j]['avLocation_code'] = $itemXml->nodeValue($avLocation_code);
-            
+
             $samsArray['availability'][$j]['avRef'] = $itemXml->nodeValue($av_ref);
 
         }
-	
+
         $samsArray['owners'][1]['fan'] = null;
         $samsArray['owners'][1]['full_name'] = null;
-	for ($j = 1; $j <= $itemXml->numNodes('/xml/item/item_owners/owner'); $j++) 
+	for ($j = 1; $j <= $itemXml->numNodes('/xml/item/item_owners/owner'); $j++)
         {
             $owner_full_name = '/xml/item/item_owners/owner['.$j.']/full_name';
             $samsArray['owners'][$j]['full_name'] = $itemXml->nodeValue($owner_full_name);
             $owner_fan = '/xml/item/item_owners/owner['.$j.']/fan';
             $samsArray['owners'][$j]['fan'] = $itemXml->nodeValue($owner_fan);
 
-	}	
-		
+	}
+
         return $samsArray;
 
     }
-    
+
         /**
          * Get the availabilities of From/ topic codes
          *
@@ -2168,27 +2131,27 @@ class Listmgr extends CI_Controller {
         /*
         public function get_from_availabilities()
 	{
-            $this->load->helper('url');    
+            $this->load->helper('url');
             #$this->load->helper('form');
             #$this->load->library('form_validation');
-            
+
             if(!isset($_POST["from_topic_code"]))
             {
                 $error_data = array('error_info'=>'Invalid input topic code.');
                 $this->load->view('reading_listmgr/fromto_avails_error_view', $error_data);
                 return;
             }
-            
+
             $from_topic_code = strtoupper(trim($_POST["from_topic_code"]));
            # $to_topic_code = strtoupper(trim($_POST["to_topic_code"]));
             #log_message('error', $topic_code);
             #$topic_code = strtoupper(trim(set_value('topic_code')));
             #log_message('error', $topic_code);
             $this->load->model('reading_listmgr/listmgr_model');
-                
+
             $from_avails = $this->listmgr_model->db_get_all_avails_by_topic($from_topic_code);
             #$from_avails = $this->listmgr_model->db_chk_avails_by_topic($from_topic_code);
-            
+
             if($from_avails === false )
             {
                 $error_data = array('error_info'=>'No availability found for the topic code.');
@@ -2200,20 +2163,20 @@ class Listmgr extends CI_Controller {
             #$tmp_count = count($from_avails);
             #$from_avails[$tmp_count]['availability'] = $from_topic_code . '_OTHER';
             #$from_avails[$tmp_count]['in_equella'] = 'existing';
-            
+
             #
             $from_topic_name = $this->listmgr_model->db_get_topicname($from_topic_code);
             #$to_topic_name = $this->listmgr_model->db_get_topicname($to_topic_code);
-            
+
             $from_avails_num_readings = $this->listmgr_model->db_get_numof_readings_by_avail($from_avails);
             #$to_avails_num_readings = $this->listmgr_model->db_get_numof_readings_by_avail($to_avails);
-            
+
             #Number of readings rolled over or activated in this system today.
             $from_avails_rollover_readings = $this->listmgr_model->db_get_numof_rollover_readings_by_avail($from_avails);
             #$to_avails_rollover_readings = $this->listmgr_model->db_get_numof_rollover_readings_by_avail($to_avails);
-            
+
             $avails_num_requests = $this->get_count_of_requests($from_topic_code, $from_avails);
-            
+
             $data = array("from_avails"=>$from_avails,
                             "from_topic_code"=>$from_topic_code,
                             "from_topic_name"=>$from_topic_name,
@@ -2224,7 +2187,7 @@ class Listmgr extends CI_Controller {
             $this->load->view('reading_listmgr/from_availabilities_view', $data);
         }
         */
-    
+
         public function home()
         {
             #$data = null;
@@ -2235,19 +2198,19 @@ class Listmgr extends CI_Controller {
                 $topic_code = $_SESSION['listmgr_topic_code'];
             //$topic_code = strtoupper(trim($_GET["topic_code"]));
             $data["topic_code"] = $topic_code;
-            
+
             $this->load->view('reading_listmgr/home', $data);
-            
+
         }
-        
+
         public function test()
         {
             $data = null;
             #phpinfo();
             #$this->load->view('reading_listmgr/test', $data);
-            
+
         }
-        
+
         /**
          * Get the availabilities of From/ topic codes
          *
@@ -2257,7 +2220,7 @@ class Listmgr extends CI_Controller {
         /*
         public function chktopic_noajax()
 	{
-            $this->load->helper('url');    
+            $this->load->helper('url');
             #$this->load->helper('form');
             #$this->load->library('form_validation');
             $topic_code_input = true;
@@ -2268,17 +2231,17 @@ class Listmgr extends CI_Controller {
                 $this->load->view('reading_listmgr/chktopic_view', $data);
                 return;
             }
-            
+
             $from_topic_code = strtoupper(trim($_GET["topic_code"]));
            # $to_topic_code = strtoupper(trim($_POST["to_topic_code"]));
             #log_message('error', $topic_code);
             #$topic_code = strtoupper(trim(set_value('topic_code')));
             #log_message('error', $topic_code);
             $this->load->model('reading_listmgr/listmgr_model');
-                
+
             $from_avails = $this->listmgr_model->db_get_all_avails_by_topic($from_topic_code);
             #$from_avails = $this->listmgr_model->db_chk_avails_by_topic($from_topic_code);
-            
+
             if($from_avails === false )
             {
                 $data = array("topic_code_input"=>$topic_code_input,
@@ -2290,21 +2253,21 @@ class Listmgr extends CI_Controller {
             #$tmp_count = count($from_avails);
             #$from_avails[$tmp_count]['availability'] = $from_topic_code . '_OTHER';
             #$from_avails[$tmp_count]['in_equella'] = 'existing';
-            
-            
+
+
             #
             $from_topic_name = $this->listmgr_model->db_get_topicname($from_topic_code);
             #$to_topic_name = $this->listmgr_model->db_get_topicname($to_topic_code);
-            
+
             $from_avails_num_readings = $this->listmgr_model->db_get_numof_readings_by_avail($from_avails);
             #$to_avails_num_readings = $this->listmgr_model->db_get_numof_readings_by_avail($to_avails);
-            
+
             #Number of readings rolled over or activated in this system today.
             $from_avails_rollover_readings = $this->listmgr_model->db_get_numof_rollover_readings_by_avail($from_avails);
             #$to_avails_rollover_readings = $this->listmgr_model->db_get_numof_rollover_readings_by_avail($to_avails);
-            
+
             $avails_num_requests = $this->get_count_of_requests($from_topic_code, $from_avails);
-            
+
             $data = array("topic_code_input"=>$topic_code_input,
                             "from_avails"=>$from_avails,
                             "from_topic_code"=>$from_topic_code,
@@ -2316,19 +2279,19 @@ class Listmgr extends CI_Controller {
             $this->load->view('reading_listmgr/chktopic_view', $data);
         }
         */
-        
-        
+
+
         /**
 	Generates a token that is valid for 30 minutes.  This should be appended to URLs so that users are not forced to log in to view content.
-	E.g. 
+	E.g.
 	$itemURL = "http://MYSERVER/myinst/items/619722b1-22f8-391a-2bcf-46cfaab36265/1/?token=" . generateToken("fred.smith", "IntegSecret", "squirrel");
-        
-	In the example above, if fred.smith is a valid username on the EQUELLA server he will be automatically logged into the system so that he can view 
+
+	In the example above, if fred.smith is a valid username on the EQUELLA server he will be automatically logged into the system so that he can view
 	item 619722b1-22f8-391a-2bcf-46cfaab36265/1 (provided he has the permissions to do so).
-        
+
 	Note that to use this functionality, the Shared Secrets user management plugin must be enabled (see User Management in the EQUELLA Administration Console)
 	and a shared secret must be configured.
-	
+
 	@param username :The username of the user to log in as
 	@param sharedSecretId :The ID of the shared secret
 	@param sharedSecretValue :The value of the shared secret
@@ -2341,19 +2304,19 @@ class Listmgr extends CI_Controller {
         $username = $ci->config->item('erlistmgr_shared_secret_username');
         $sharedSecretId = $ci->config->item('erlistmgr_shared_secret_id');
         $sharedSecretValue = $ci->config->item('erlistmgr_shared_secret_value');
-        
+
 		$time = mktime() . '000';
-		/*return urlencode ($username) . ':' . urlencode($sharedSecretId) . ':' .  $time . ':' . 
+		/*return urlencode ($username) . ':' . urlencode($sharedSecretId) . ':' .  $time . ':' .
                         urlencode(base64_encode (pack ('H*', md5 ($username . $sharedSecretId . $time . $sharedSecretValue))));*/
-		  return urlencode ($username) . ':' . urlencode($sharedSecretId) . ':' .  $time . ':' . 
+		  return urlencode ($username) . ':' . urlencode($sharedSecretId) . ':' .  $time . ':' .
                         urlencode(base64_encode (pack ('H*', md5 ($username . $sharedSecretId . $time . $sharedSecretValue))));
-						
+
 	}
-        
+
         /**
          * Report the rollover logs to Equella via REST
          *
-         * 
+         *
          */
         public function report_error_logs()
 	{
@@ -2375,7 +2338,7 @@ class Listmgr extends CI_Controller {
             #$to_topic_code = $_POST["to_topic_code"];
             $request_content = $_POST["log_content"];
             $there_is_error = $_POST["there_is_error"];
-            
+
             $needed_by = "";
             if($there_is_error == 1)
             {
@@ -2387,9 +2350,9 @@ class Listmgr extends CI_Controller {
                 $request_subject = "Notification only: successful eReadings rollover";
                 $request_status = "Notification";
             }
-            
+
             #$to_topic_code = substr($availabilities[0], 0, strpos($availabilities[0],"_"));
-            
+
             /*
             echo("<pre>==========content of to_topic_code:<br>");
             print_r($to_topic_code);echo("</pre>");
@@ -2399,11 +2362,11 @@ class Listmgr extends CI_Controller {
             print_r($request_content);echo("</pre>");
             exit();
             */
-            
+
             $ci =& get_instance();
             $ci->load->config('flex');
             $collection_id = $ci->config->item('erlistmgt_collection');
-            
+
             $this->load->model('reading_listmgr/listmgr_model');
             $school_name = $this->listmgr_model->db_get_orgname($to_topic_code);
             if($school_name === false)
@@ -2415,7 +2378,7 @@ class Listmgr extends CI_Controller {
                 echo json_encode($result);
                 return;
             }
-            
+
             #Check wether there are topic availabilities that are not in FLEX.
             #### need to handle the special availability TOPIC_OTHER
             /*
@@ -2434,7 +2397,7 @@ class Listmgr extends CI_Controller {
                 }
             }
             */
-            
+
             $this->load->library('flexrest/flexrest');
             $success = $this->flexrest->processClientCredentialToken();
             if(!$success)
@@ -2446,9 +2409,9 @@ class Listmgr extends CI_Controller {
                 echo json_encode($result);
                 return;
             }
-            
+
             $item_bean["collection"]["uuid"] = $collection_id;
-            
+
             #$dom = new DOMDocument('1.0');
             #log_message('error', 'new dom: ' . $dom->saveXML());
 
@@ -2457,35 +2420,35 @@ class Listmgr extends CI_Controller {
             $request_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/requests/request");
             $request_content_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/requests/request/content");
             #$request_content_node->nodeValue = $request_content;
-            
+
             $this->xmlwrapper->createTextNode($request_content_node, $request_content);
             #$request_content_node->appendChild($text_content);
-            
+
             $request_date_added_node = $this->xmlwrapper->createAttribute($request_node, "date_added");
             $request_date_added_node->nodeValue = $now;
             $request_status_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/status");
             $request_status_node->nodeValue = $request_status;
             $request_name_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/name");
             $request_name_node->nodeValue = str_replace('&', 'and', $request_subject);
-            
+
             $request_added_by_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/added_by");
             $request_addedby_fan_node = $this->xmlwrapper->createAttribute($request_added_by_node, "fan");
             $request_addedby_fan_node->nodeValue = $_SERVER['REMOTE_USER'];
             $request_neededby_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/needed_by");
             $request_neededby_node->nodeValue = $needed_by;
-            
+
             $date_added_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/admin/to_do/date_added");
             $date_added_node->nodeValue = $now;
-            
+
             $topic_code_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/curriculum/topics/topic/code");
             $topic_code_node->nodeValue = $to_topic_code;
             $topic_school_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/curriculum/topics/topic/school");
             $topic_school_node->nodeValue = str_replace('&', 'and', $school_name);
             $item_name_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/itembody/name");
             $item_name_node->nodeValue = str_replace('&', 'and', $request_subject);
-            
+
             $to_avails_node = $this->xmlwrapper->createNodeFromXPath("/xml/item/curriculum/avails");
-            
+
             if($availabilities != null)
             {
                 foreach($availabilities as $to_avail)
@@ -2505,7 +2468,7 @@ class Listmgr extends CI_Controller {
             #$item_bean['metadata'] = str_replace('&ndash;', '&amp;ndash;', $item_bean['metadata']);
             #echo("<pre>==========content of item_bean:<br>");
             #print_r($item_bean);echo("</pre>");
-            
+
             $success = $this->flexrest->createItem($item_bean, $response1);
             if(!$success)
             {
@@ -2517,7 +2480,7 @@ class Listmgr extends CI_Controller {
                 echo json_encode($result);
                 return;
             }
-            
+
             if(!isset($response1['headers']['location']))
             {
                 $errdata['message'] = 'No Location header in createItem response.';
@@ -2528,7 +2491,7 @@ class Listmgr extends CI_Controller {
                 return;
             }
             $location = $response1['headers']['location'];
-            
+
             $institute_url = $ci->config->item('institute_url');
             $location1 = substr($location, strpos($location, 'item')+4);
             $location1 = $institute_url . 'items' . $location1;
@@ -2542,32 +2505,32 @@ class Listmgr extends CI_Controller {
             {
                 $email_subject = $ci->config->item('listmgr_email_notification_subject');
             }
-            
+
             $this->email_req_created($discipline, $location1, $email_subject, $to_topic_code);
-            
+
             #echo("<pre>==========response of createItem:<br>");
             #print_r($response1); echo("</pre>");
-            
+
             $result['status'] = "success";
-            
-            echo json_encode($result); 
+
+            echo json_encode($result);
             /*
-            $data = array("avails_for_new_req"=>$availabilities,"editor1"=>$request_content, 
+            $data = array("avails_for_new_req"=>$availabilities,"editor1"=>$request_content,
                   "result_status"=>$result['status'], "error_info"=>$result['error_info']);
             $this->load->view('reading_listmgr/create_request_view', $data);
             */
-             
+
         }
-        
+
         /**
          * Send Email when a request is created.
          *
          * TO addresses are based on first four letters of topic code, e.g. EDUC.
          */
-        
+
         public function email_req_created($discipline, $item_location, $email_subject, $topic_code)
         {
-            
+
             $this->load->library('flexrest/flexrest');
             $success = $this->flexrest->processClientCredentialToken();
             if(!$success)
@@ -2577,11 +2540,11 @@ class Listmgr extends CI_Controller {
                 #$this->load->view('reading_listmgr/showerror_view', $errdata);
                 return;
             }
-            
+
             $ci =& get_instance();
             $ci->load->config('flex');
             $erlist_liaison_collection = $ci->config->item('subject_areas_collection');
-            
+
             #$institute_url = $ci->config->item('institute_url');
             #echo $institute_url;exit();
             $q = '';
@@ -2592,12 +2555,12 @@ class Listmgr extends CI_Controller {
             $info = 'all';
             $showall = true;
             #$where = "/xml/item/curriculum/assessment/SAMs/files/file/@ref='$avail_ref'";
-                 
+
             $where = "/xml/item/curriculum/topics/topic/discipline='$discipline'";
             $where .= " AND /xml/item/@itemstatus='live'";
             $where = urlencode($where);
             #Search in FLEX
-            
+
             $searchsuccess = $this->flexrest->search($response, $q, $erlist_liaison_collection, $where, $start, $length, $order, $reverse, $info, $showall);
             if(!$searchsuccess)
             {
@@ -2607,7 +2570,7 @@ class Listmgr extends CI_Controller {
                 return;
             }
             #echo '<pre>';print_r($response);echo '</pre>';exit();
-            
+
             if(intval($response['available']) == 0)
             {
                 log_message('error', 'No item found in the subject areas collection for the Learning Access Team , discipline: ' . $discipline);
@@ -2616,25 +2579,25 @@ class Listmgr extends CI_Controller {
             #log_message('error', (string)$response['results'][0]['metadata']);
             $xmlwrapper_name = 'xmlwrapper_liaison';
             $this->load->library('xmlwrapper/xmlwrapper', array('xmlString' => (string)$response['results'][0]['metadata']), $xmlwrapper_name);
-            
+
             #log_message('error', $this->$xmlwrapper_name->__toString());
             $meta_array = $this->liaisonXml2Array($this->$xmlwrapper_name);
-            
+
             if(!isset($meta_array['coords']) && !isset($meta_array['supports']))
             {
                 log_message('error', 'No coords or supports found in subject areas item, discipline: ' . $discipline);
                 return;
             }
-            
+
             $to_list = array();
-            
+
             if(isset($meta_array['coords']['fan']))
             for($j =1; $j <= count($meta_array['coords']['fan']); $j++)
             {
                 $to_list[] = $meta_array['coords']['fan'][$j] . '@flinders.edu.au';
                 #log_message('error', $meta_array['coords']['fan'][$j] . '@flinders.edu.au');
             }
-            
+
             if(isset($meta_array['supports']['fan']))
             for($j =1; $j <= count($meta_array['supports']['fan']); $j++)
             {
@@ -2647,7 +2610,7 @@ class Listmgr extends CI_Controller {
             $CI->load->config('flex');
             $listmgr_email_from_addr = $CI->config->item('listmgr_email_from_addr');
             $listmgr_email_from_title = $CI->config->item('listmgr_email_from_title');
-            
+
             $mes = '<html><body>
             Dear Learning Access Team,
             <br><br>
@@ -2658,56 +2621,56 @@ class Listmgr extends CI_Controller {
             Regards,<br>
             eReadings list management system
             ';
-            
+
             $this->email->from($listmgr_email_from_addr, $listmgr_email_from_title);
-            $this->email->to($to_list); 
+            $this->email->to($to_list);
             $this->email->subject($email_subject);
             $this->email->set_mailtype("html");
             $this->email->message($mes);
-            
+
             $this->email->send();
             #log_message('error', $this->email->print_debugger());
             #log_message('error', 'After sending email');
             #$this->email->print_debugger();
         }
-        
+
     /**
      * Extract XML data and store it in array
      *
      * @param xmlwrapper $itemXml
      */
-    protected function liaisonXml2Array($itemXml) 
+    protected function liaisonXml2Array($itemXml)
     {
-        
-        for ($j = 1; $j <= $itemXml->numNodes('/xml/item/curriculum/people/coords/coord/fan'); $j++) 
+
+        for ($j = 1; $j <= $itemXml->numNodes('/xml/item/curriculum/people/coords/coord/fan'); $j++)
         {
             $fan = '/xml/item/curriculum/people/coords/coord/fan['.$j.']';
             $xmlArray['coords']['fan'][$j] = $itemXml->nodeValue($fan);
             #log_message('error', '111'.$itemXml->nodeValue($fan));
-	}	
-	for ($j = 1; $j <= $itemXml->numNodes('/xml/item/curriculum/people/supports/support/fan'); $j++) 
+	}
+	for ($j = 1; $j <= $itemXml->numNodes('/xml/item/curriculum/people/supports/support/fan'); $j++)
         {
             $fan = '/xml/item/curriculum/people/supports/support/fan['.$j.']';
             $xmlArray['supports']['fan'][$j] = $itemXml->nodeValue($fan);
             #log_message('error', '222'.$itemXml->nodeValue($fan));
 	}
-        
+
         $name = '/xml/item/itembody/name';
         $xmlArray['name'] = $itemXml->nodeValue($name);
 
         return $xmlArray;
 
     }
-    
+
     /**for TEST
      * Create an activation via REST
      *
-     * 
+     *
      */
     public function create_activation()
     {
-        
-       
+
+
 
         $this->load->library('flexrest/flexrest');
         $success = $this->flexrest->processClientCredentialToken();
@@ -2727,7 +2690,7 @@ class Listmgr extends CI_Controller {
         $activation_bean["attachment"] = "b97413e3-4ca5-42e0-8923-4d53c217184c";
         $activation_bean["course"]["uuid"] = "9c27caa4-fc55-4c34-a8fc-c63303585532";
         $activation_bean["course"]["code"] = "test_new2";
-                
+
         $success = $this->flexrest->createActivation($activation_bean, $response1);
         if(!$success)
         {
@@ -2736,8 +2699,8 @@ class Listmgr extends CI_Controller {
             echo 'eReading list management create_activation failed' . ', error: ' . $errdata['message'];
         }
         echo 'success<br><pre>'; print_r($response1); echo '</pre>'; exit();
-        
-        
+
+
         if(!$success)
         {
             $errdata['message'] = $this->flexrest->error;
@@ -2780,23 +2743,23 @@ class Listmgr extends CI_Controller {
         $result['status'] = "success";
         $result['uuid'] = $uuid;
         $result['version'] = $version;
-        echo json_encode($result); 
+        echo json_encode($result);
         /*
-        $data = array("avails_for_new_req"=>$availabilities,"editor1"=>$request_content, 
+        $data = array("avails_for_new_req"=>$availabilities,"editor1"=>$request_content,
               "result_status"=>$result['status'], "error_info"=>$result['error_info']);
         $this->load->view('reading_listmgr/create_request_view', $data);
         */
 
     }
-    
+
     /**for TEST
      * Create an equella course via soap
      *
-     * 
+     *
      */
     public function create_course_soap()
     {
-        
+
        $ci =& get_instance();
             $ci->load->config('flex');
             $soapusername = $ci->config->item('soap_coursemgt_username');
@@ -2813,18 +2776,18 @@ class Listmgr extends CI_Controller {
                 print_r($result);
                 return;
             }
-         
-         
+
+
             /*$courseXml = $this->flexsoap->getCourse($courseCode="test_new8");
-        
+
             log_message('error', $courseXml);
             echo '<pre>';print_r($courseXml);echo '</pre>';
             exit();*/
-            
+
             /*
             $course_csv = '"Name","Description","Code","Citation","Start","End","Students","Type","DepartmentName"' . "\n";
             $course_csv .= '"TEST NEW 6","TEST NEW 6","test_new6","Generic","15/03/2015 00:00:00.0","15/05/2015T00:00:00+10:30","100","Internal",""';
-            
+
             $this->flexsoap->bulkImportCourses($course_csv);
             if(!$this->flexsoap->success)
             {
@@ -2863,7 +2826,7 @@ class Listmgr extends CI_Controller {
     <courseType>i</courseType>
     <code>test_new18</code>
 </com.tle.beans.item.cal.request.CourseInfo>';
-       
+
         $res = $this->flexsoap->addCourse($courseXml);
         if(!$this->flexsoap->success)
             {
@@ -2878,18 +2841,18 @@ class Listmgr extends CI_Controller {
             #log_message('error', $courseXml);
             echo '<pre>';print_r($res);echo '</pre>';
             exit();
-       
+
 
     }
-    
+
     /**for TEST
      * Edit an equella course via soap
      *
-     * 
+     *
      */
     public function edit_course_soap()
     {
-        
+
        $ci =& get_instance();
             $ci->load->config('flex');
             $soapusername = $ci->config->item('soap_coursemgt_username');
@@ -2906,18 +2869,18 @@ class Listmgr extends CI_Controller {
                 print_r($result);
                 return;
             }
-         
-         
+
+
             /*$courseXml = $this->flexsoap->getCourse($courseCode="test_new8");
-        
+
             log_message('error', $courseXml);
             echo '<pre>';print_r($courseXml);echo '</pre>';
             exit();*/
-            
+
             /*
             $course_csv = '"Name","Description","Code","Citation","Start","End","Students","Type","DepartmentName"' . "\n";
             $course_csv .= '"TEST NEW 6","TEST NEW 6","test_new6","Generic","15/03/2015 00:00:00.0","15/05/2015T00:00:00+10:30","100","Internal",""';
-            
+
             $this->flexsoap->bulkImportCourses($course_csv);
             if(!$this->flexsoap->success)
             {
@@ -2962,7 +2925,7 @@ class Listmgr extends CI_Controller {
   <courseType>i</courseType>
   <code>test_new8</code>
 </com.tle.beans.item.cal.request.CourseInfo>';
-       
+
         $res = $this->flexsoap->editCourse($courseXml);
         if(!$this->flexsoap->success)
             {
@@ -2977,15 +2940,15 @@ class Listmgr extends CI_Controller {
             #log_message('error', $courseXml);
             echo '<pre>';print_r($res);echo '</pre>';
             exit();
-       
+
 
     }
-    
+
     #for TEST
      public function create_cus_rest()
     {
-        
-           
+
+
         $this->load->library('flexrest/flexrest');
         $success = $this->flexrest->processClientCredentialToken();
         if(!$success)
@@ -3003,8 +2966,8 @@ class Listmgr extends CI_Controller {
         $course_bean["citation"] = "Generic";
         $course_bean["from"] = "2015-02-25T00:00:00+10:30";
         $course_bean["until"] = "2015-05-29T00:00:00+09:30";
-        
-                
+
+
         $success = $this->flexrest->createCourse($course_bean, $response1);
         if(!$success)
         {
@@ -3013,9 +2976,9 @@ class Listmgr extends CI_Controller {
             echo 'eReading list management create_activation failed' . ', error: ' . $errdata['message'];
         }
         echo 'success<br><pre>'; print_r($response1); echo '</pre>'; exit();
-        
-        
-       
 
-    }   
+
+
+
+    }
 }
